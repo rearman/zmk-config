@@ -82,7 +82,7 @@
 // .-----------------------------------.     .-----------------------------------.
 // |     |     |     |     | PSC |     |     |     | HOM |  U  | PUP |     |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     | CTL | ALT | GUI | SFT | INS |     |     |  L  |     |  R  |     |     |
+// |     | CTL | ALT | GUI | SFT | INS |     |     |  L  | CAP |  R  |     |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |     |     |     |     |     | DEL |     |     | END |  D  | PDN |     |     |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
@@ -90,7 +90,7 @@
 //		     '-----------------'     '-----------------'
 			bindings = <
    &none &none    &none    &none    &kp PSCRN &kp N5    &none  &kp HOME &kp UP   &kp PG_UP &none &none
-   &none &sk LCTL &sk LALT &sk LGUI &sk LSHFT &kp INS   &none  &kp LEFT &none    &kp RIGHT &none &none
+   &none &sk LCTL &sk LALT &sk LGUI &sk LSHFT &kp INS   &none  &kp LEFT &kp CAPS &kp RIGHT &none &none
    &none &none    &none    &none    &none     &kp DEL   &none  &kp END  &kp DOWN &kp PG_DN &none &none
 			   &trans   &mo 3     &trans    &trans &trans   &trans
 			>;
