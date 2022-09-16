@@ -55,7 +55,7 @@
 //		     '-----------------'     '-----------------'
 			bindings = <
    &kp ESC &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
-   &kp EQUAL &hm LCTL A &hm LALT O &hm LGUI E &hs LSHFT U &kp I &kp D &hs RSFT H &hm RGUI T &hm RALT N &hm RCTL S &kp MINUS
+   &kp EQUAL &hm LGUI A &hm LALT O &hm LCTL E &hs LSHFT U &kp I &kp D &hs RSFT H &hm RCTL T &hm RALT N &hm RGUI S &kp MINUS
    &kp GRAVE &kp SEMI &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
    &kp TAB &mo 1 &kp BSPC &kp SPACE &mo 2 &kp RET
 			>;
@@ -72,7 +72,7 @@
 //		     '-----------------'     '-----------------'
 			bindings = <
    &kp LBKT &kp AMPS &kp PRCNT &kp HASH &kp LPAR &kp EXCL &kp AT &kp RPAR &kp STAR &kp DLLR &kp CARET &kp RBKT
-   &kp N9 &hm LCTL N7 &hm LALT N5 &hm LGUI N3 &hs LSHFT N1 &none &none &hs RSFT N0 &hm RGUI N2 &hm RALT N4 &hm RCTL N6 &kp N8
+   &kp N9 &hm LGUI N7 &hm LALT N5 &hm LCTL N3 &hs LSHFT N1 &none &none &hs RSFT N0 &hm RCTL N2 &hm RALT N4 &hm RGUI N6 &kp N8
    &kp F9 &kp F7 &kp F5 &kp F3 &kp F1 &kp F11 &kp F12 &kp F10 &kp F2 &kp F4 &kp F6 &kp F8
    &trans &trans &trans &trans &mo 3 &trans
 			>;
@@ -82,7 +82,7 @@
 // .-----------------------------------.     .-----------------------------------.
 // |     |     |     |     | PSC |     |     |     | HOM |  U  | PUP |     |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     | CTL | ALT | GUI | SFT | INS |     |     |  L  | CAP |  R  |     |     |
+// |     | GUI | ALT | CTL | SFT | INS |     |     |  L  | CAP |  R  |     |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |     |     |     |     |     | DEL |     |     | END |  D  | PDN |     |     |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
@@ -90,7 +90,7 @@
 //		     '-----------------'     '-----------------'
 			bindings = <
    &none &none &none &none &kp PSCRN &kp N5 &none &kp HOME &kp UP &kp PG_UP &kp CAPS &none
-   &none &sk LCTL &sk LALT &sk LGUI &sk LSHFT &kp INS &none &kp LEFT &none &kp RIGHT &none &none
+   &none &sk LGUI &sk LALT &sk LCTL &sk LSHFT &kp INS &none &kp LEFT &none &kp RIGHT &none &none
    &none &none &none &none &none &kp DEL &none &kp END &kp DOWN &kp PG_DN &none &none
    &trans &mo 3 &trans &trans &trans &trans
 			>;
