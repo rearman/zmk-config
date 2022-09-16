@@ -74,7 +74,7 @@
    &kp LBKT &kp AMPS &kp PRCNT &kp HASH &kp LPAR &kp EXCL &kp AT &kp RPAR &kp STAR &kp DLLR &kp CARET &kp RBKT
    &kp N9 &hm LCTL N7 &hm LALT N5 &hm LGUI N3 &hs LSHFT N1 &none &none &hs RSFT N0 &hm RGUI N2 &hm RALT N4 &hm RCTL N6 &kp N8
    &kp F9 &kp F7 &kp F5 &kp F3 &kp F1 &kp F11 &kp F12 &kp F10 &kp F2 &kp F4 &kp F6 &kp F8
-   &trans &trans &transa &trans &mo 3 &trans
+   &trans &trans &trans &trans &mo 3 &trans
 			>;
 		};
 
