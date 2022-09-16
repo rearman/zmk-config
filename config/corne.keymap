@@ -54,27 +54,27 @@
 //                   | TAB | LWR | BKS |     | SPC | RSE | RET |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &kp ESC   &kp SQT    &kp COMMA  &kp DOT    &kp P       &kp Y       &kp F     &kp G      &kp C      &kp R      &kp L      &kp FSLH
-   &kp EQUAL &hm LCTL A &hm LALT O &hm LGUI E &hs LSHFT U &kp I       &kp D     &hs RSFT H &hm RGUI T &hm RALT N &hm RCTL S &kp MINUS
-   &kp GRAVE &kp SEMI   &kp Q      &kp J      &kp K       &kp X       &kp B     &kp M      &kp W      &kp V      &kp Z      &kp BSLH
-				   &kp TAB    &mo 1       &kp BSPC    &kp SPACE &mo 2      &kp RET
+   &kp ESC &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
+   &kp EQUAL &hm LCTL A &hm LALT O &hm LGUI E &hs LSHFT U &kp I &kp D &hs RSFT H &hm RGUI T &hm RALT N &hm RCTL S &kp MINUS
+   &kp GRAVE &kp SEMI &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
+   &kp TAB &mo 1 &kp BSPC &kp SPACE &mo 2 &kp RET
 			>;
 		};
 		lower_layer {
 // .-----------------------------------.     .-----------------------------------.
-// |     |  1  |  2  |  3  |  4  |  5  |     |  6  |  7  |  8  |  9  |  0  |     |
+// |  [  |  &  |  %  |  #  |  (  |  !  |     |  @  |  )  |  *  |  $  |  ^  |  ]  |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |  [  |  !  |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |  ]  |
+// |  9  |  7  |  5  |  3  |  1  |     |     |     |  0  |  2  |  4  |  6  |  8  |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // | F11 | F01 | F02 | F03 | F04 | F05 |     | F06 | F07 | F08 | F09 | F10 | F12 |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
 //                   |     | LWR |     |     |     | ADJ |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &trans   &kp N1        &kp N2      &kp N3        &kp N4         &kp N5       &kp N6    &kp N7        &kp N8        &kp N9        &kp N0        &trans
-   &kp LBKT &hm LCTL EXCL &hm LALT AT &hm LGUI HASH &hs LSHFT DLLR &kp PRCNT    &kp CARET &hs RSFT AMPS &hm RGUI STAR &hm RALT LPAR &hm RCTL RPAR &kp RBKT
-   &kp F11  &kp F1        &kp F2      &kp F3        &kp F4         &kp F5       &kp F6    &kp F7        &kp F8        &kp F9        &kp F10       &kp F12
-				      &trans        &trans         &trans       &trans    &mo 3         &trans
+   &kp LBKT &kp AMPS &kp PRCNT &kp HASH &kp LPAR &kp EXCL &kp AT &kp RPAR &kp STAR &kp DLLR &kp CARET &kp RBKT
+   &kp N9 &hm LCTL N7 &hm LALT N5 &hm LGUI N3 &hs LSHFT N1 &none &none &hs RSFT N0 &hm RGUI N2 &hm RALT N4 &hm RCTL N6 &kp N8
+   &kp F9 &kp F7 &kp F5 &kp F3 &kp F1 &kp F11 &kp F12 &kp F10 &kp F2 &kp F4 &kp F6 &kp F8
+   &trans &trans &transa &trans &mo 3 &trans
 			>;
 		};
 
@@ -89,19 +89,19 @@
 //                   |     | ADJ |     |     |     | RSE |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &none &none    &none    &none    &kp PSCRN &kp N5    &none  &kp HOME &kp UP   &kp PG_UP &none &none
-   &none &sk LCTL &sk LALT &sk LGUI &sk LSHFT &kp INS   &none  &kp LEFT &kp CAPS &kp RIGHT &none &none
-   &none &none    &none    &none    &none     &kp DEL   &none  &kp END  &kp DOWN &kp PG_DN &none &none
-			   &trans   &mo 3     &trans    &trans &trans   &trans
+   &none &none &none &none &kp PSCRN &kp N5 &none &kp HOME &kp UP &kp PG_UP &kp CAPS &none
+   &none &sk LCTL &sk LALT &sk LGUI &sk LSHFT &kp INS &none &kp LEFT &none &kp RIGHT &none &none
+   &none &none &none &none &none &kp DEL &none &kp END &kp DOWN &kp PG_DN &none &none
+   &trans &mo 3 &trans &trans &trans &trans
 			>;
 		};
 
 		adjust_layer {
 			bindings = <
-   &bootloader &none &none &none &none  &none   &none &none  &none &none &none &bootloader
-   &none       &none &none &none &none  &none   &none &none  &none &none &none &none
-   &none       &none &none &none &none  &none   &none &none  &none &none &none &none
-			   &none &trans &none   &none &trans &none
+   &bootloader &none &none &none &none &none &none &none &none &none &none &bootloader
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &none &none &none &none &none &none &none &none &none &none &none
+   &none &trans &none &none &trans &none
 			>;
 		};
 	};
