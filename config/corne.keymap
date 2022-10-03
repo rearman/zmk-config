@@ -65,16 +65,16 @@
 // .-----------------------------------.     .-----------------------------------.
 // |     |     |     |     |     |     |     |     | HOM |  U  | PUP | PSC |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     |     | INS | DEL |     |     |     |     |  L  | GUI |  R  |     |     |
+// |     | APP | INS | DEL |     |     |     |     |  L  | GUI |  R  |     |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |     |     |     |     | CAP |     |     |     | END |  D  | PDN |     |     |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
 //                   |     | LWR |     |     |     | ADJ |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &trans &none &none   &none    &none &none  &none  &kp HOME &kp UP   &kp PG_UP &kp PSCRN &trans
-   &trans &none &kp INS &kp DEL  &none &none  &none  &kp LEFT &kp LGUI &kp RIGHT &none     &trans
-   &trans &none &none   &kp CAPS &none &none  &none  &kp END  &kp DOWN &kp PG_DN &none     &trans
+   &trans &none     &none   &none    &none &none  &none  &kp HOME &kp UP   &kp PG_UP &kp PSCRN &trans
+   &trans &kp K_APP &kp INS &kp DEL  &none &none  &none  &kp LEFT &kp LGUI &kp RIGHT &none     &trans
+   &trans &none     &none   &kp CAPS &none &none  &none  &kp END  &kp DOWN &kp PG_DN &none     &trans
 			 &trans &trans &trans &trans &mo 3    &trans
 			>;
 		};
