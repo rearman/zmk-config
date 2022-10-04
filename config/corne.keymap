@@ -49,14 +49,14 @@
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |  =  |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  ;  |  '  |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |  `  |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  /  |  \  |
+// |     |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  /  |     |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
 //                   | TAB | LWR | BKS |     | SPC | RSE | RET |
 //		     '-----------------'     '-----------------'
 			bindings = <
    &hm LALT ESC    &kp Q &kp W &kp E   &kp R &kp T    &kp Y     &kp U &kp I     &kp O   &kp P    &hm RALT MINUS
    &hm LCTL EQUAL  &kp A &kp S &kp D   &kp F &kp G    &kp H     &kp J &kp K     &kp L   &kp SEMI &hm RCTL SQT
-   &hs LSHFT GRAVE &kp Z &kp X &kp C   &kp V &kp B    &kp N     &kp M &kp COMMA &kp DOT &kp FSLH &hs RSHFT BSLH
+   &sk LSHFT &kp Z &kp X &kp C   &kp V &kp B    &kp N     &kp M &kp COMMA &kp DOT &kp FSLH &sk RSHFT
 			       &kp TAB &mo 1 &kp BSPC &kp SPACE &mo 2 &kp RET
 			>;
 		};
@@ -85,14 +85,14 @@
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |  [  |  &  |  %  |  #  |  (  |  !  |     |  @  |  )  |  *  |  $  |  ^  |  ]  |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     |     |     |     |     |     |     |     |     |     |     |     |     |
+// |     |     |     |     |     |     |     |     |     |     |  `  |  \  |     |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
 //                   |     | ADJ |     |     |     | RSE |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
    &hm LALT F9   &kp F7   &kp F5    &kp F3   &kp F1   &kp F11  &kp F12 &kp F10  &kp F2   &kp F4   &kp F6    &hm RALT F8
    &hm LCTL LBKT &kp AMPS &kp PRCNT &kp HASH &kp LPAR &kp EXCL &kp AT  &kp RPAR &kp STAR &kp DLLR &kp CARET &hm RCTL RBKT
-   &trans        &none    &none     &none    &none    &none    &none   &none    &none    &none    &none     &trans
+   &trans        &none    &none     &none    &none    &none    &none   &none    &none    &kp GRAVE    &kp BSLH     &trans
 				    &trans   &mo 3    &trans   &trans  &trans   &trans
 			>;
 		};
