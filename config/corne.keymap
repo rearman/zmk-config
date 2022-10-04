@@ -92,7 +92,7 @@
 			bindings = <
    &hm LALT F9   &kp F7   &kp F5    &kp F3   &kp F1   &kp F11  &kp F12 &kp F10  &kp F2   &kp F4   &kp F6    &hm RALT F8
    &hm LCTL LBKT &kp AMPS &kp PRCNT &kp HASH &kp LPAR &kp EXCL &kp AT  &kp RPAR &kp STAR &kp DLLR &kp CARET &hm RCTL RBKT
-   &trans        &none    &none     &none    &none    &none    &none   &none    &none    &kp GRAVE    &kp BSLH     &trans
+   &trans        &none    &none     &none    &none    &none    &none   &none    &none    &kp GRAVE    &kp BSLH &trans
 				    &trans   &mo 3    &trans   &trans  &trans   &trans
 			>;
 		};
