@@ -63,49 +63,40 @@
 
 		lower_layer {
 // .-----------------------------------.     .-----------------------------------.
+// |     | F01 | F02 | F03 | F04 |     |     |     |  7  |  8  |  9  |  [  |     |
+// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
+// |     | F05 | F06 | F07 | F08 |     |     |     |  4  |  5  |  6  |  ]  |     |
+// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
+// |     | F09 | F10 | F11 | F12 |     |     |  `  |  1  |  2  |  3  |  \  |     |
+// '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
+//                   |     | LWR |     |     |     |  0  |  .  |
+//		     '-----------------'     '-----------------'
+			bindings = <
+   &trans &kp F1 &kp F2  &kp F3  &kp F4  &none  &none     &kp 7 &kp 8   &kp 9 &kp LBKT &trans
+   &trans &kp F5 &kp F6  &kp F7  &kp F8  &none  &none     &kp 4 &kp 5   &kp 6 &kp RBKT &trans
+   &trans &kp F9 &kp F10 &kp F11 &kp F12 &none  &kp GRAVE &kp 1 &kp 2   &kp 3 &kp BSLH &trans
+			 &trans  &trans  &trans &trans    &kp 0 &kp DOT
+			>;
+
+		};
+
+		raise_layer {
+// .-----------------------------------.     .-----------------------------------.
 // |     |     |     |     |     |     |     |     | HOM |  U  | PUP | PSC |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |     | APP | INS | DEL |     |     |     |     |  L  | GUI |  R  |     |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     |     |     |     | CAP |     |     |     | END |  D  | PDN |     |     |
+// |     |     |     | CAP |     |     |     |     | END |  D  | PDN |     |     |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
-//                   |     | LWR |     |     |     | ADJ |     |
+//                   |     |     |     |     |     | RSE |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
    &trans &none     &none   &none    &none &none  &none  &kp HOME &kp UP   &kp PG_UP &kp PSCRN &trans
    &trans &kp K_APP &kp INS &kp DEL  &none &none  &none  &kp LEFT &kp LGUI &kp RIGHT &none     &trans
    &trans &none     &none   &kp CAPS &none &none  &none  &kp END  &kp DOWN &kp PG_DN &none     &trans
-			 &trans &trans &trans &trans &mo 3    &trans
+			 &trans &trans &trans &trans &trans    &trans
 			>;
-		};
 
-		raise_layer {
-// .-----------------------------------.     .-----------------------------------.
-// | F09 | F07 | F05 | F03 | F01 | F11 |     | F12 | F10 | F02 | F04 | F06 | F08 |
-// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |  [  |  &  |  %  |  #  |  (  |  !  |     |  @  |  )  |  *  |  $  |  ^  |  ]  |
-// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     |     |     |     |     |     |     |     |     |     |  `  |  \  |     |
-// '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
-//                   |     | ADJ |     |     |     | RSE |     |
-//		     '-----------------'     '-----------------'
-			bindings = <
-   &hm LALT F9   &kp F7   &kp F5    &kp F3   &kp F1   &kp F11  &kp F12 &kp F10  &kp F2   &kp F4    &kp F6    &hm RALT F8
-   &hm LCTL LBKT &kp AMPS &kp PRCNT &kp HASH &kp LPAR &kp EXCL &kp AT  &kp RPAR &kp STAR &kp DLLR  &kp CARET &hm RCTL RBKT
-   &trans        &none    &none     &none    &none    &none    &none   &none    &none    &kp GRAVE &kp BSLH  &trans
-				    &trans   &mo 3    &trans   &trans  &trans   &trans
-			>;
-		};
-
-
-
-		adjust_layer {
-			bindings = <
-   &trans      &none  &none  &none  &none  &none &none &none  &none  &none  &none  &trans
-   &hm LCTL N9 &kp N7 &kp N5 &kp N3 &kp N1 &none &none &kp N0 &kp N2 &kp N4 &kp N6 &hm RCTL N8
-   &trans      &none  &none  &none  &none  &none &none &none  &none  &none  &none  &trans
-			     &none  &trans &none &none &trans &none
-			>;
 		};
 	};
 };
