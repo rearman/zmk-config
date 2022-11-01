@@ -82,19 +82,19 @@
 
 		raise_layer {
 // .-----------------------------------.     .-----------------------------------.
-// |     |     |     |     |     |     |     |     | HOM |  U  | PUP | PSC |     |
+// |     |     | GUI |     |     |     |     |     | HOM |  U  | PUP | PSC |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     | APP | INS | DEL |     |     |     |     |  L  | GUI |  R  |     |     |
+// |     | APP | INS | DEL |     |     |     |     |  L  |     |  R  |     |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |     |     |     | CAP |     |     |     |     | END |  D  | PDN |     |     |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
 //                   |     |     |     |     |     | RSE |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &trans &none     &none   &none    &none  &none  &none  &kp HOME &kp UP   &kp PG_UP &kp PSCRN &trans
-   &trans &kp K_APP &kp INS &kp DEL  &none  &none  &none  &kp LEFT &kp LGUI &kp RIGHT &none     &trans
-   &trans &none     &none   &kp CAPS &none  &none  &none  &kp END  &kp DOWN &kp PG_DN &none     &trans
-			    &trans   &trans &trans &trans &trans   &trans
+   &trans &none     &kp LGUI &none    &none  &none  &none  &kp HOME &kp UP   &kp PG_UP &kp PSCRN &trans
+   &trans &kp K_APP &kp INS  &kp DEL  &none  &none  &none  &kp LEFT &none    &kp RIGHT &none     &trans
+   &trans &none     &none    &kp CAPS &none  &none  &none  &kp END  &kp DOWN &kp PG_DN &none     &trans
+			     &trans   &trans &trans &trans &trans   &trans
 			>;
 
 		};
