@@ -49,7 +49,7 @@
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |  =  |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  ;  |  '  |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  /  |     |
+// | SFT |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  /  | SFT |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
 //                   | TAB | LWR | BKS |     | SPC | RSE | RET |
 //		     '-----------------'     '-----------------'
@@ -84,17 +84,17 @@
 // .-----------------------------------.     .-----------------------------------.
 // |     |     | GUI |     |     |     |     |     | HOM |  U  | PUP | PSC |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     | APP | INS | DEL |     |     |     |     |  L  |     |  R  |     |     |
+// |     | APP | INS |     |     |     |     |     |  L  |     |  R  |     |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |     |     |     | CAP |     |     |     |     | END |  D  | PDN |     |     |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
-//                   |     |     |     |     |     | RSE |     |
+//                   |     |     | DEL |     |     | RSE |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
    &trans &none     &kp LGUI &none    &none  &none  &none  &kp HOME &kp UP   &kp PG_UP &kp PSCRN &trans
-   &trans &kp K_APP &kp INS  &kp DEL  &none  &none  &none  &kp LEFT &none    &kp RIGHT &none     &trans
+   &trans &kp K_APP &kp INS  &none  &none  &none  &none  &kp LEFT &none    &kp RIGHT &none     &trans
    &trans &none     &none    &kp CAPS &none  &none  &none  &kp END  &kp DOWN &kp PG_DN &none     &trans
-			     &trans   &trans &trans &trans &trans   &trans
+			     &trans   &trans &kp DEL &trans &trans   &trans
 			>;
 
 		};
