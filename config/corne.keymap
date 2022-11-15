@@ -8,6 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define as keycode &as LS(keycode) keycode //Autoshift Macro
+
 &mt {
     flavor = "tap-preferred";
     tapping_term_ms = <200>;
@@ -29,13 +31,13 @@
 		      flavor = "tap-preferred";
 		      bindings = <&kp>, <&kp>;
 		      };
-		  hs: homerow_shifts {
+		  as: auto_shift {
 		      compatible = "zmk,behavior-hold-tap";
-		      label = "HOMEROW_SHIFTS";
+		      label = "AUTO_SHIFT";
 		      #binding-cells = <2>;
-		      tapping_term_ms = <150>;
+		      tapping_term_ms = <135>;
 		      quick_tap_ms = <0>;
-		      flavor = "balanced";
+		      flavor = "tap-preferred";
 		      bindings = <&kp>, <&kp>;
 		      };
 
@@ -49,15 +51,15 @@
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |  =  |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  ;  |  '  |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// | SFT |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  /  | SFT |
+// |  `  |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  /  |  \  |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
 //                   | TAB | LWR | BKS |     | SPC | RSE | RET |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &hm LALT ESC    &kp Q &kp W &kp E   &kp R &kp T    &kp Y     &kp U &kp I     &kp O   &kp P    &hm RALT MINUS
-   &hm LCTL EQUAL  &kp A &kp S &kp D   &kp F &kp G    &kp H     &kp J &kp K     &kp L   &kp SEMI &hm RCTL SQT
-   &sk LSHFT       &kp Z &kp X &kp C   &kp V &kp B    &kp N     &kp M &kp COMMA &kp DOT &kp FSLH &sk RSHFT
-			       &kp TAB &mo 1 &kp BSPC &kp SPACE &mo 2 &kp RET
+   &hm LALT ESC    &as Q &as W &as E   &as R &as T         &as Y          &as U &as I     &as O   &as P    &hm RALT MINUS
+   &hm LCTL EQUAL  &as A &as S &as D   &as F &as G         &as H          &as J &as K     &as L   &as SEMI &hm RCTL SQT
+   &as GRAVE       &as Z &as X &as C   &as V &as B         &as N          &as M &as COMMA &as DOT &as FSLH &as BSLH
+			       &kp TAB &mo 1 &hm LSFT BSPC &hm RSFT SPACE &mo 2 &kp RET
 			>;
 		};
 
@@ -67,15 +69,15 @@
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |     | F05 | F06 | F07 | F08 |     |     |     |  4  |  5  |  6  |  ]  |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     | F09 | F10 | F11 | F12 |     |     |  `  |  1  |  2  |  3  |  \  |     |
+// |     | F09 | F10 | F11 | F12 |     |     |     |  1  |  2  |  3  |     |     |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
 //                   |     | LWR |     |     |     |  0  |  .  |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &trans &kp F1 &kp F2  &kp F3  &kp F4  &none  &none     &kp 7 &kp 8   &kp 9 &kp LBKT &trans
-   &trans &kp F5 &kp F6  &kp F7  &kp F8  &none  &none     &kp 4 &kp 5   &kp 6 &kp RBKT &trans
-   &trans &kp F9 &kp F10 &kp F11 &kp F12 &none  &kp GRAVE &kp 1 &kp 2   &kp 3 &kp BSLH &trans
-			 &trans  &trans  &trans &trans    &kp 0 &kp DOT
+   &trans &as F1 &as F2  &as F3  &as F4  &none  &none  &as 7 &as 8   &as 9 &as LBKT &trans
+   &trans &as F5 &as F6  &as F7  &as F8  &none  &none  &as 4 &as 5   &as 6 &as RBKT &trans
+   &trans &as F9 &as F10 &as F11 &as F12 &none  &none  &as 1 &as 2   &as 3 &none    &trans
+			 &trans  &trans  &trans &trans &as 0 &as DOT
 			>;
 
 		};
@@ -91,10 +93,10 @@
 //                   |     |     | DEL |     |     | RSE |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &trans &none     &kp LGUI &none    &none  &none  &none  &kp HOME &kp UP   &kp PG_UP &kp PSCRN &trans
-   &trans &kp K_APP &kp INS  &none  &none  &none  &none  &kp LEFT &none    &kp RIGHT &none     &trans
-   &trans &none     &none    &kp CAPS &none  &none  &none  &kp END  &kp DOWN &kp PG_DN &none     &trans
-			     &trans   &trans &kp DEL &trans &trans   &trans
+   &trans &none     &as LGUI &none    &none  &none   &none  &as HOME &as UP   &as PG_UP &kp PSCRN &trans
+   &trans &kp K_APP &as INS  &none    &none  &none   &none  &as LEFT &none    &as RIGHT &none     &trans
+   &trans &none     &none    &as CAPS &none  &none   &none  &as END  &as DOWN &as PG_DN &none     &trans
+			     &trans   &trans &as DEL &trans &trans   &trans
 			>;
 
 		};
