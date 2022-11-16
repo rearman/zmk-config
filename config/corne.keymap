@@ -56,10 +56,10 @@
 //                   | TAB | LWR | BKS |     | SPC | RSE | RET |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &hm LALT ESC    &AS(Q) &AS(W) &AS(E)   &AS(R) &AS(T)         &AS(Y)          &AS(U) &AS(I)     &AS(O)   &AS(P)    &hm RALT MINUS
-   &hm LCTL EQUAL  &AS(A) &AS(S) &AS(D)   &AS(F) &AS(G)         &AS(H)          &AS(J) &AS(K)     &AS(L)   &AS(SEMI) &hm RCTL SQT
-   &AS(GRAVE)       &AS(Z) &AS(X) &AS(C)   &AS(V) &AS(B)         &AS(N)          &AS(M) &AS(COMMA) &AS(DOT) &AS(FSLH) &AS(BSLH)
-			       &kp TAB &mo 1 &hm LSFT BSPC &hm RSFT SPACE &mo 2 &AS(RET)
+   &hm LALT ESC    AS(Q) AS(W) AS(E)   AS(R) AS(T)         AS(Y)          AS(U) AS(I)     AS(O)   AS(P)    &hm RALT MINUS
+   &hm LCTL EQUAL  AS(A) AS(S) AS(D)   AS(F) AS(G)         AS(H)          AS(J) AS(K)     AS(L)   AS(SEMI) &hm RCTL SQT
+   AS(GRAVE)       AS(Z) AS(X) AS(C)   AS(V) AS(B)         AS(N)          AS(M) AS(COMMA) AS(DOT) AS(FSLH) AS(BSLH)
+			       &kp TAB &mo 1 &hm LSFT BSPC &hm RSFT SPACE &mo 2 AS(RET)
 			>;
 		};
 
@@ -74,10 +74,10 @@
 //                   |     | LWR |     |     |     |  0  |  .  |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &trans &AS(F1) &AS(F2)  &AS(F3)  &AS(F4)  &none  &none  &AS(7) &AS(8)   &AS(9) &AS(LBKT) &trans
-   &trans &AS(F5) &AS(F6)  &AS(F7)  &AS(F8)  &none  &none  &AS(4) &AS(5)   &AS(6) &AS(RBKT) &trans
-   &trans &AS(F9) &AS(F10) &AS(F11) &AS(F12) &none  &none  &AS(1) &AS(2)   &AS(3) &none    &trans
-			 &trans  &trans  &trans &trans &AS(0) &AS(DOT)
+   &trans AS(F1) AS(F2)  AS(F3)  AS(F4)  &none  &none  AS(7) AS(8)   AS(9) AS(LBKT) &trans
+   &trans AS(F5) AS(F6)  AS(F7)  AS(F8)  &none  &none  AS(4) AS(5)   AS(6) AS(RBKT) &trans
+   &trans AS(F9) AS(F10) AS(F11) AS(F12) &none  &none  AS(1) AS(2)   AS(3) &none    &trans
+			 &trans  &trans  &trans &trans AS(0) AS(DOT)
 			>;
 
 		};
@@ -93,10 +93,10 @@
 //                   |     |     | DEL |     |     | RSE |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &trans &none     &AS(LGUI) &none    &none  &none   &none  &AS(HOME) &AS(UP)   &AS(PG_UP) &kp PSCRN &trans
-   &trans &kp K_APP &AS(INS)  &none    &none  &none   &none  &AS(LEFT) &none    &AS(RIGHT) &none     &trans
-   &trans &none     &none    &kp CAPS &none  &none   &none  &AS(END)  &AS(DOWN) &AS(PG_DN) &none     &trans
-			     &trans   &trans &AS(DEL) &trans &trans   &trans
+   &trans &none     AS(LGUI) &none    &none  &none   &none  AS(HOME) AS(UP)   AS(PG_UP) &kp PSCRN &trans
+   &trans &kp K_APP AS(INS)  &none    &none  &none   &none  AS(LEFT) &none    AS(RIGHT) &none     &trans
+   &trans &none     &none    &kp CAPS &none  &none   &none  AS(END)  AS(DOWN) AS(PG_DN) &none     &trans
+			     &trans   &trans AS(DEL) &trans &trans   &trans
 			>;
 
 		};
