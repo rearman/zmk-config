@@ -16,12 +16,12 @@
 };
 
 / {
-	behaviors {
+behaviors {
 		 mo_tog: behavior_mo_tog {
 		 compatible = "zmk,behavior-hold-tap";
 		 label = "mo_tog";
 		 #binding-cells = <2>;
-		 flavor = hold-preferred";
+		 flavor = "hold-preferred";
 		 tapping-term-ms = <150>;
 		 bindings = <&mo>, <&tog>;
 		 };
