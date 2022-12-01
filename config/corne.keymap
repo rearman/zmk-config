@@ -39,10 +39,10 @@ behaviors {
 //                   | TAB | LWR | BKS |     | SPC | RSE | RET |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &mt LALT ESC   Q W E   R           T    Y     U           I     O   P    &mt RALT MINUS
-   &mt LCTL EQUAL A S D   F           G    H     J           K     L   SEMI &mt RCTL SQT
-   &mt LSFT LBKT  Z X C   V           B    N     M           COMMA DOT FSLH &mt RSFT RBKT
-		      TAB &mo_tog 1 2 BSPC SPACE &mo_tog 1 2 RET
+ &mt LALT ESC &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &mt RALT MINUS
+ &mt LCTL EQUAL &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SEMI &mt RCTL SQT
+ &mt LSFT LBKT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp FSLH &mt RSFT RBKT
+		 &kp TAB &mo_tog 1 2 &kp BSPC &kp SPACE &mo_tog 1 2 &kp RET
 			>;
 		};
 
@@ -57,10 +57,10 @@ behaviors {
 //                   |     |     | DEL |     |     | RSE |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   GRAVE  EXCL  AT    HASH   DLLR   PRCNT CARET  AMPS   STAR  LPAR  RPAR BSLH
-   &trans N1    N2    N3     N4     N5    N6     N7     N8    N9    N0   &trans
-   F11    F1    F2    F3     F4     F5    F6     F7     F8    F9    F10  F12
-		      &trans &trans DEL   &trans &trans &trans
+ &kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp BSLH
+ &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
+ &kp F11 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F12
+		 &trans &trans &kp DEL &trans &trans &trans
 			>;
 
 		};
@@ -76,10 +76,10 @@ behaviors {
 //                   |     |     |     |     |     |  0  |  .  |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &trans &none LGUI  &none  &none  &none  &none  KP_N7 KP_N8  KP_N9 PSCRN &trans
-   &trans K_APP &none &none  &none  &none  &none  KP_N4 KP_N5  KP_N6 &none &trans
-   &trans &none &none CAPS   &none  &none  KP_NUM KP_N1 KP_N2  KP_N3 &none &trans
-		      &trans &trans &trans &trans KP_N0 KP_DOT
+ &trans &none &kp LGUI &none &none &none &none &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp PSCRN &trans
+ &trans &kp K_APP &none &none &none &none &none &kp KP_N4 &kp KP_N5 &kp KP_N6 &none &trans
+ &trans &none &none &kp CAPS &none &none &kp KP_NUM &kp KP_N1 &kp KP_N2 &kp KP_N3 &none &trans
+		 &trans &trans &trans &trans &kp KP_N0 &kp KP_DOT
 			>;
 
 		};
