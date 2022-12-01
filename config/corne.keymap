@@ -8,36 +8,33 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define AS(keycode) &as LS(keycode) keycode //Autoshift Macro
+#define TT(layer) &mo_tog layer layer
+
 //Ease of typing Macros
 #define LA(keycode) &mt LALT keycode
 #define RA(keycode) &mt RALT keycode
 #define LC(keycode) &mt LCTL keycode
 #define RC(keycode) &mt RCTL keycode
+#define LS(keycode) &mt LSFT keycode
+#define RS(keycode) &mt RSFT keycode
 
 &mt {
     flavor = "tap-preferred";
-    tapping_term_ms = <200>;
-};
-
-&sk {
-    release-after-ms = <200>;
-    quick-release;
+    tapping_term_ms = <150>;
 };
 
 / {
 	behaviors {
-		  as: auto_shift {
-		      compatible = "zmk,behavior-hold-tap";
-		      label = "AUTO_SHIFT";
-		      #binding-cells = <2>;
-		      tapping_term_ms = <120>;
-		      quick_tap_ms = <0>;
-		      flavor = "tap-preferred";
-		      bindings = <&kp>, <&kp>;
-		      };
+		 mo_tog: behavior_mo_tog {
+		 compatible = "zmk,behavior-hold-tap";
+		 label = "mo_tog";
+		 #binding-cells = <2>;
+		 flavor = hold-preferred";
+		 tapping-term-ms = <150>;
+		 bindings = <&mo>, <&tog>;
+		 };
+		 };
 
-		  };
 	keymap {
 		compatible = "zmk,keymap";
 
@@ -52,10 +49,10 @@
 //                   | TAB | LWR | BKS |     | SPC | RSE | RET |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &kp ESC   AS(Q) AS(W) AS(E)   AS(R) AS(T)    AS(Y)     AS(U) AS(I)     AS(O)   AS(P)    AS(MINUS)
-   AS(EQUAL) AS(A) AS(S) AS(D)   AS(F) AS(G)    AS(H)     AS(J) AS(K)     AS(L)   AS(SEMI) AS(SQT)
-   AS(GRAVE) AS(Z) AS(X) AS(C)	 AS(V) AS(B)    AS(N)     AS(M) AS(COMMA) AS(DOT) AS(FSLH) AS(BSLH)
-			 LA(TAB) &mo 1 LC(BSPC) RC(SPACE) &mo 2 RA(RET)
+   LA(ESC)   &kp Q &kp W &kp E   &kp R &kp T    &kp Y     &kp U &kp I     &kp O   &kp P    RA(MINUS)
+   LC(EQUAL) &kp A &kp S &kp D   &kp F &kp G    &kp H     &kp J &kp K     &kp L   &kp SEMI RC(SQT)
+   LS(GRAVE) &kp Z &kp X &kp C	 &kp V &kp B    &kp N     &kp M &kp COMMA &kp DOT &kp FSLH RS(BSLH)
+			 &kp TAB TT(1) &kp BSPC &kp SPACE TT(2) &kp RET
 			>;
 		};
 
@@ -70,10 +67,10 @@
 //                   |     | LWR |     |     |     |  0  |  .  |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &trans   AS(F1) AS(F2)  AS(F3)  AS(F4)  &none  &none  AS(7) AS(8) AS(9) AS(LBKT) &none
-   &none    AS(F5) AS(F6)  AS(F7)  AS(F8)  &none  &none  AS(4) AS(5) AS(6) AS(RBKT) &none
-   &sk LSFT AS(F9) AS(F10) AS(F11) AS(F12) &none  &none  AS(1) AS(2) AS(3) &none    &sk RSFT
-			   &trans  &trans  &trans &trans AS(0) AS(DOT)
+   &trans &kp F1 &kp F2  &kp F3  &kp F4  &none  &none  &kp 7 &kp 8 &kp 9 &kp LBKT &trans
+   &trans &kp F5 &kp F6  &kp F7  &kp F8  &none  &none  &kp 4 &kp 5 &kp 6 &kp RBKT &trans
+   &trans &kp F9 &kp F10 &kp F11 &kp F12 &none  &none  &kp 1 &kp 2 &kp 3 &none    &trans
+			 &trans  &trans  &trans &trans &kp 0 &kp DOT
 			>;
 
 		};
@@ -89,10 +86,10 @@
 //                   |     |     | DEL |     |     | RSE |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
-   &trans   &none     AS(LGUI) &none    &none  &none   &none  AS(HOME) AS(UP)   AS(PG_UP) &kp PSCRN &none
-   &none    &kp K_APP AS(INS)  &none    &none  &none   &none  AS(LEFT) &none    AS(RIGHT) &none     &none
-   &sk LSFT &none     &none    &kp CAPS &none  &none   &none  AS(END)  AS(DOWN) AS(PG_DN) &none     &sk RSFT
-			       &trans   &trans AS(DEL) &trans &trans   &trans
+   &trans &none     &kp LGUI &none    &none  &none   &none  &kp HOME &kp UP   &kp PG_UP &kp PSCRN &trans
+   &trans &kp K_APP &kp INS  &none    &none  &none   &none  &kp LEFT &none    &kp RIGHT &none     &trans
+   &trans &none     &none    &kp CAPS &none  &none   &none  &kp END  &kp DOWN &kp PG_DN &none     &trans
+			     &trans   &trans &kp DEL &trans &trans   &trans
 			>;
 
 		};
