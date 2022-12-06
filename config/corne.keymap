@@ -8,6 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define TT(layer) &mo_tog layer layer
+
 &mt {
     flavor = "tap-preferred";
     tapping_term_ms = <150>;
@@ -37,6 +39,20 @@ behaviors {
 		 bindings = <&kp RPAR>, <&kp RBKT>;
 		 mods = <(MOD_LSFT|MOD_RSFT)>;
 		 };
+		 cb9: nine_cbk {
+		 compatible = "zmk,behavior-mod-morph";
+		 label = "NINE_CBK";
+		 #binding-cells = <0>;
+		 bindings = <&kp N9>, <&kp LBRC>;
+		 mods = <(MOD_LSFT|MOD_RSFT)>;
+		 };
+		 cb0: zero_cbk {
+		 compatible = "zmk,behavior-mod-morph";
+		 label = "ZERO_CBK";
+		 #binding-cells = <0>;
+		 bindings = <&kp N0>, <&kp RBRC>;
+		 mods = <(MOD_LSFT|MOD_RSFT)>;
+		 };
 		 };
 
 	keymap {
@@ -53,50 +69,41 @@ behaviors {
 //                   | TAB | LYR | BKS |     | SPC | LYR | RET |
 //		     '-----------------'     '-----------------'
 			bindings = <
- &mt LALT ESC &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &mt RALT MINUS
- &mt LCTL EQUAL &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SEMI &mt RCTL SQT
- &mt LSFT &lpbk &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp FSLH &mt RSFT &rpbk
-		 &kp TAB &mo_tog 1 2 &kp BSPC &kp SPACE &mo_tog 1 2 &kp RET
+ &mt LALT ESC   &kp Q &kp W &kp E   &kp R &kp T    &kp Y     &kp U &kp I     &kp O   &kp P    &mt RALT MINUS
+ &mt LCTL EQUAL &kp A &kp S &kp D   &kp F &kp G    &kp H     &kp J &kp K     &kp L   &kp SEMI &mt RCTL SQT
+ &mt LSFT &lpbk &kp Z &kp X &kp C   &kp V &kp B    &kp N     &kp M &kp COMMA &kp DOT &kp FSLH &mt RSFT &rpbk
+			    &kp TAB TT(1) &kp BSPC &kp SPACE TT(2) &kp RET
 			>;
 		};
 
-		lower_layer {
-// .-----------------------------------.     .-----------------------------------.
-// |  `  |  !  |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  {  |  }  |  \  |
-// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     |  1  |  2  |  3  |  4  |  5  |     |  6  |  7  |  8  |  9  |  0  |     |
-// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// | F11 | F01 | F02 | F03 | F04 | F05 |     | F06 | F07 | F08 | F09 | F10 | F12 |
-// '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
-//                   |     |     | DEL |     |     | RSE |     |
-//		     '-----------------'     '-----------------'
+		num_layer {
 			bindings = <
- &kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LBRC &kp RBRC &kp BSLH
- &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
- &kp F11 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F12
-		 &trans &trans &kp DEL &trans &trans &trans
+ &trans &none &none &none  &none  &none   &none  &kp N7 &kp N8  &cb9   &none     &trans
+ &trans &none &none &none  TT(3)  &none   &none  &kp N4 &kp N5  &kp N6 &kp GRAVE &trans
+ &trans &none &none &none  &none  &none   &none  &kp N1 &kp N2  &kp N3 &kp BSLH  &trans
+		    &trans &trans &kp DEL &trans &cb0   &kp DOT
 			>;
 
 		};
 
-		raise_layer {
-// .-----------------------------------.     .-----------------------------------.
-// |     |     | GUI |     |     |     |     |     |  7  |  8  |  9  | PSC |     |
-// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     | APP |     |     |     |     |     |     |  4  |  5  |  6  |     |     |
-// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |     |     |     | CAP |     |     |     | NUM |  1  |  2  |  3  |     |     |
-// '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
-//                   |     |     |     |     |     |  0  |  .  |
-//		     '-----------------'     '-----------------'
+		nav_layer {
 			bindings = <
- &trans &none &kp LGUI &none &none &none &none &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp PSCRN &trans
- &trans &kp K_APP &none &none &none &none &none &kp KP_N4 &kp KP_N5 &kp KP_N6 &none &trans
- &trans &none &none &kp CAPS &none &none &kp KP_NUM &kp KP_N1 &kp KP_N2 &kp KP_N3 &none &trans
-		 &trans &trans &trans &trans &kp KP_N0 &kp KP_DOT
+ &trans &none     &kp LGUI &none    &none  &none   &none  &kp HOME &kp UP   &kp PG_UP &kp PSCRN &trans
+ &trans &kp K_APP &kp INS  &none    &none  &none   &none  &kp LEFT &none    &kp RIGHT &none     &trans
+ &trans &none     &none    &kp CAPS &none  &none   &none  &kp END  &kp DOWN &kp PG_DN &none     &trans
+			   &trans   &trans &kp DEL &trans &trans   &trans
 			>;
 
 		};
 
+		fun_layer {
+			bindings = <
+ &trans &none &none &none  &none  &none  &none  &kp F7 &kp F8 &kp F9 &kp F10 &trans
+ &trans &none &none &none  &trans &none  &none  &kp F4 &kp F5 &kp F6 &kp F11 &trans
+ &trans &none &none &none  &none  &none  &none  &kp F1 &kp F2 &kp F3 &kp F12 &trans
+		    &trans &trans &trans &trans &trans &trans
+			>;
+
+		};
 	};
 };
