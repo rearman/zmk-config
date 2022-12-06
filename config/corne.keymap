@@ -27,14 +27,14 @@ behaviors {
 		 compatible = "zmk,behavior-mod-morph";
 		 label = "LPAR_BKT";
 		 #binding-cells = <0>;
-		 bindings = <&kp LPAR>, <&kp LBKT>
+		 bindings = <&kp LPAR>, <&kp LBKT>;
 		 mods = <(MOD_LSFT|MOD_RSFT)>;
 		 };
 		 rpbk: rpar_bkt {
 		 compatible = "zmk,behavior-mod-morph";
 		 label = "RPAR_BKT";
 		 #binding-cells = <0>;
-		 bindings = <&kp RPAR>, <&kp RBKT>
+		 bindings = <&kp RPAR>, <&kp RBKT>;
 		 mods = <(MOD_LSFT|MOD_RSFT)>;
 		 };
 		 };
