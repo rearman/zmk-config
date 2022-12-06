@@ -23,6 +23,20 @@ behaviors {
 		 tapping-term-ms = <150>;
 		 bindings = <&mo>, <&tog>;
 		 };
+		 lpbk: lpar_bkt {
+		 compatible = "zmk,behavior-mod-morph";
+		 label = "LPAR_BKT";
+		 #binding-cells = <0>;
+		 bindings = <&kp LPAR>, <&kp LBKT>
+		 mods = <(MOD_LSFT|MOD_RSFT)>;
+		 };
+		 rpbk: rpar_bkt {
+		 compatible = "zmk,behavior-mod-morph";
+		 label = "RPAR_BKT";
+		 #binding-cells = <0>;
+		 bindings = <&kp RPAR>, <&kp RBKT>
+		 mods = <(MOD_LSFT|MOD_RSFT)>;
+		 };
 		 };
 
 	keymap {
@@ -34,21 +48,21 @@ behaviors {
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |  =  |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  ;  |  '  |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |  [  |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  /  |  ]  |
+// |  (  |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  /  |  )  |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
-//                   | TAB | LWR | BKS |     | SPC | RSE | RET |
+//                   | TAB | LYR | BKS |     | SPC | LYR | RET |
 //		     '-----------------'     '-----------------'
 			bindings = <
  &mt LALT ESC &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &mt RALT MINUS
  &mt LCTL EQUAL &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SEMI &mt RCTL SQT
- &mt LSFT LBKT &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp FSLH &mt RSFT RBKT
+ &mt LSFT &lpbk &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp FSLH &mt RSFT &rpbk
 		 &kp TAB &mo_tog 1 2 &kp BSPC &kp SPACE &mo_tog 1 2 &kp RET
 			>;
 		};
 
 		lower_layer {
 // .-----------------------------------.     .-----------------------------------.
-// |  `  |  !  |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |  \  |
+// |  `  |  !  |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  {  |  }  |  \  |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |     |  1  |  2  |  3  |  4  |  5  |     |  6  |  7  |  8  |  9  |  0  |     |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
@@ -57,7 +71,7 @@ behaviors {
 //                   |     |     | DEL |     |     | RSE |     |
 //		     '-----------------'     '-----------------'
 			bindings = <
- &kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR &kp BSLH
+ &kp GRAVE &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp STAR &kp LBRC &kp RBRC &kp BSLH
  &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
  &kp F11 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &kp F12
 		 &trans &trans &kp DEL &trans &trans &trans
