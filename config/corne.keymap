@@ -27,30 +27,9 @@ behaviors {
 		 };
 		 lpbk: lpar_bkt {
 		 compatible = "zmk,behavior-mod-morph";
-		 label = "LPAR_BKT";
+		 label = "COLN_SCLN";
 		 #binding-cells = <0>;
-		 bindings = <&kp LPAR>, <&kp LBKT>;
-		 mods = <(MOD_LSFT|MOD_RSFT)>;
-		 };
-		 rpbk: rpar_bkt {
-		 compatible = "zmk,behavior-mod-morph";
-		 label = "RPAR_BKT";
-		 #binding-cells = <0>;
-		 bindings = <&kp RPAR>, <&kp RBKT>;
-		 mods = <(MOD_LSFT|MOD_RSFT)>;
-		 };
-		 cb9: nine_cbk {
-		 compatible = "zmk,behavior-mod-morph";
-		 label = "NINE_CBK";
-		 #binding-cells = <0>;
-		 bindings = <&kp N9>, <&kp LBRC>;
-		 mods = <(MOD_LSFT|MOD_RSFT)>;
-		 };
-		 cb0: zero_cbk {
-		 compatible = "zmk,behavior-mod-morph";
-		 label = "ZERO_CBK";
-		 #binding-cells = <0>;
-		 bindings = <&kp N0>, <&kp RBRC>;
+		 bindings = <&kp COLN>, <&kp SCLN>;
 		 mods = <(MOD_LSFT|MOD_RSFT)>;
 		 };
 		 };
@@ -60,48 +39,46 @@ behaviors {
 
 		default_layer {
 // .-----------------------------------.     .-----------------------------------.
-// | ESC |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U  |  I  |  O  |  P  |  -  |
+// | TAB |  '  |  ,  |  .  |  P  |  Y  |     |  F  |  G  |  C  |  R  |  L  |  /  |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |  =  |  A  |  S  |  D  |  F  |  G  |     |  H  |  J  |  K  |  L  |  ;  |  '  |
+// |  =  |  A  |  O  |  E  |  U  |  I  |     |  D  |  H  |  T  |  N  |  S  |  -  |
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
-// |  (  |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M  |  ,  |  .  |  /  |  )  |
+// | CAP |  :  |  Q  |  J  |  K  |  X  |     |  B  |  M  |  W  |  V  |  Z  | CAP |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
-//                   | TAB | LYR | BKS |     | SPC | LYR | RET |
+//                   | ESC | LR1 | BKS |     | SPC | LR2 | RET |
 //		     '-----------------'     '-----------------'
 			bindings = <
- &mt LALT ESC   &kp Q &kp W &kp E   &kp R &kp T    &kp Y     &kp U &kp I     &kp O   &kp P    &mt RALT MINUS
- &mt LCTL EQUAL &kp A &kp S &kp D   &kp F &kp G    &kp H     &kp J &kp K     &kp L   &kp SEMI &mt RCTL SQT
- &mt LSFT &lpbk &kp Z &kp X &kp C   &kp V &kp B    &kp N     &kp M &kp COMMA &kp DOT &kp FSLH &mt RSFT &rpbk
-			    &kp TAB TT(1) &kp BSPC &kp SPACE TT(2) &kp RET
+ &mt LALT TAB   &kp SQT  &kp COMMA &kp DOT &kp P &kp Y    &kp F     &kp G &kp C &kp R &kp L &mt RALT FSLH
+ &mt LCTL EQUAL &kp A    &kp O     &kp E   &kp U &kp I    &kp D     &kp H &kp T &kp N &kp S &mt RCTL MINUS
+ &mt LSFT CAPS  &kp COLN &kp Q     &kp J   &kp K &kp X    &kp B     &kp M &kp W &kp V &kp Z &mt RSFT CAPS
+				   &kp ESC TT(1) &kp BSPC &kp SPACE TT(2) &kp RET
 			>;
 		};
-
+// .-----------------------------------.     .-----------------------------------.
+// |     |  `  |     |  [  |  ]  |     |     |     |  7  |  8  |  9  |     |  \  |
+// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
+// |     |     |     |  (  |  )  |     |     |     |  4  |  5  |  6  |     |     |
+// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
+// |     |     |     |  {  |  }  |     |     |     |  1  |  2  |  3  |     |     |
+// '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
+//                   |     | LYR | DEL |     |     |  0  |  .  |
+//		     '-----------------'     '-----------------'
 		num_layer {
 			bindings = <
- &trans &none &none &none  &none  &none   &none  &kp N7 &kp N8  &cb9   &none     &trans
- &trans &none &none &none  TT(3)  &none   &none  &kp N4 &kp N5  &kp N6 &kp GRAVE &trans
- &trans &none &none &none  &none  &none   &none  &kp N1 &kp N2  &kp N3 &kp BSLH  &trans
-		    &trans &trans &kp DEL &trans &cb0   &kp DOT
+ &trans &kp GRAVE &none &kp LBKT &kp LBKT &none   &none  &kp N7 &kp N8  &kp N9 &none  &kp BSLH
+ &trans &none     &none &kp LPAR &kp RPAR &none   &none  &kp N4 &kp N5  &kp N6 &trans &trans
+ &trans &none     &none &kp LBRC &kp RBRC &none   &none  &kp N1 &kp N2  &kp N3 &trans &trans
+			&trans   &trans   &kp DEL &trans &kp N0 &kp DOT
 			>;
 
 		};
 
 		nav_layer {
 			bindings = <
- &trans &none     &kp LGUI &none    &none  &none   &none  &kp HOME &kp UP   &kp PG_UP &kp PSCRN &trans
- &trans &kp K_APP &kp INS  &none    &none  &none   &none  &kp LEFT &none    &kp RIGHT &none     &trans
- &trans &none     &none    &kp CAPS &none  &none   &none  &kp END  &kp DOWN &kp PG_DN &none     &trans
-			   &trans   &trans &kp DEL &trans &trans   &trans
-			>;
-
-		};
-
-		fun_layer {
-			bindings = <
- &trans &none &none &none  &none  &none  &none  &kp F7 &kp F8 &kp F9 &kp F10 &trans
- &trans &none &none &none  &trans &none  &none  &kp F4 &kp F5 &kp F6 &kp F11 &trans
- &trans &none &none &none  &none  &none  &none  &kp F1 &kp F2 &kp F3 &kp F12 &trans
-		    &trans &trans &trans &trans &trans &trans
+ &trans &kp F1 &kp F2  &kp F3  &kp F4  &none   &none  &kp HOME &kp UP    &kp PG_UP &none     &trans
+ &trans &kp F5 &kp F6  &kp F7  &kp F8  &kp INS &none  &kp LEFT &kp K_APP &kp RIGHT &kp PSCRN &trans
+ &trans &kp F9 &kp F10 &kp F11 &kp F12 &none   &none  &kp END  &kp DOWN  &kp PG_DN &none     &trans
+		       &trans  &trans  &kp DEL &trans &trans   &trans
 			>;
 
 		};
