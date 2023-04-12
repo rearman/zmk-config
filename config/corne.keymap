@@ -25,7 +25,7 @@ behaviors {
 		 tapping-term-ms = <150>;
 		 bindings = <&mo>, <&tog>;
 		 };
-		 lpbk: lpar_bkt {
+		 cosc: coln_scln {
 		 compatible = "zmk,behavior-mod-morph";
 		 label = "COLN_SCLN";
 		 #binding-cells = <0>;
@@ -48,9 +48,9 @@ behaviors {
 //                   | ESC | LR1 | BKS |     | SPC | LR2 | RET |
 //		     '-----------------'     '-----------------'
 			bindings = <
- &mt LALT TAB   &kp SQT  &kp COMMA &kp DOT &kp P &kp Y    &kp F     &kp G &kp C &kp R &kp L &mt RALT FSLH
- &mt LCTL EQUAL &kp A    &kp O     &kp E   &kp U &kp I    &kp D     &kp H &kp T &kp N &kp S &mt RCTL MINUS
- &mt LSFT CAPS  &kp COLN &kp Q     &kp J   &kp K &kp X    &kp B     &kp M &kp W &kp V &kp Z &mt RSFT CAPS
+ &mt LALT TAB   &kp SQT &kp COMMA &kp DOT &kp P &kp Y    &kp F     &kp G &kp C &kp R &kp L &mt RALT FSLH
+ &mt LCTL EQUAL &kp A   &kp O     &kp E   &kp U &kp I    &kp D     &kp H &kp T &kp N &kp S &mt RCTL MINUS
+ &mt LSFT CAPS  &cosc   &kp Q     &kp J   &kp K &kp X    &kp B     &kp M &kp W &kp V &kp Z &mt RSFT CAPS
 				   &kp ESC TT(1) &kp BSPC &kp SPACE TT(2) &kp RET
 			>;
 		};
