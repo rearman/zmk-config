@@ -61,18 +61,26 @@ behaviors {
 // |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
 // |     |     |     |  {  |  }  |     |     |     |  1  |  2  |  3  |     |     |
 // '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
-//                   |     | LYR | DEL |     |     |  0  |  .  |
+//                   |     | LYR |     |     |     |  0  |  .  |
 //		     '-----------------'     '-----------------'
 		num_layer {
 			bindings = <
- &trans &kp GRAVE &none &kp LBKT &kp LBKT &none   &none  &kp N7 &kp N8  &kp N9 &none  &kp BSLH
- &trans &none     &none &kp LPAR &kp RPAR &none   &none  &kp N4 &kp N5  &kp N6 &trans &trans
- &trans &none     &none &kp LBRC &kp RBRC &none   &none  &kp N1 &kp N2  &kp N3 &trans &trans
-			&trans   &trans   &kp DEL &trans &kp N0 &kp DOT
+ &trans &kp GRAVE &none &kp LBKT &kp LBKT &none  &none  &kp N7 &kp N8  &kp N9 &none  &kp BSLH
+ &trans &none     &none &kp LPAR &kp RPAR &none  &none  &kp N4 &kp N5  &kp N6 &trans &trans
+ &trans &none     &none &kp LBRC &kp RBRC &none  &none  &kp N1 &kp N2  &kp N3 &trans &trans
+			&trans   &trans   &trans &trans &kp N0 &kp DOT
 			>;
 
 		};
-
+// .-----------------------------------.     .-----------------------------------.
+// |     | F01 | F02 | F03 | F04 |     |     |     | HOM |  U  | PUP |     |     |
+// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
+// |     | F05 | F06 | F07 | F08 | INS |     |     |  L  | APP |  R  | PSC |     |
+// |-----+-----+-----+-----+-----+-----|     |-----+-----+-----+-----+-----+-----|
+// |     | F09 | F10 | F11 | F12 |     |     |     | END |  D  | PDN |     |     |
+// '-----------------+-----+-----+-----|     |-----+-----+-----+-----------------'
+//                   |     | LYR | DEL |     |     |     |     |
+//		     '-----------------'     '-----------------'
 		nav_layer {
 			bindings = <
  &trans &kp F1 &kp F2  &kp F3  &kp F4  &none   &none  &kp HOME &kp UP    &kp PG_UP &none     &trans
