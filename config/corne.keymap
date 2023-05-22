@@ -15,16 +15,7 @@
 	tapping_term_ms = <150>;
 };
 
-/ {
-	chosen {
-		zmk,battery = &vbatt;
-		};
-
-	vbatt: vbatt {
-		compatible = "zmk,battery-voltage-divider";
-		label = "JUICE";
-		};
-
+/ {	
 	behaviors {
 		mo_tog: behavior_mo_tog {
 			compatible = "zmk,behavior-hold-tap";
