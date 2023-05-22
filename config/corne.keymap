@@ -16,6 +16,15 @@
 };
 
 / {
+	chosen {
+		zmk,battery = &vbatt;
+		};
+
+	vbatt: vbatt {
+		compatible = "zmk,battery-voltage-divider";
+		label = "JUICE";
+		};
+
 	behaviors {
 		mo_tog: behavior_mo_tog {
 			compatible = "zmk,behavior-hold-tap";
@@ -45,7 +54,7 @@
 
 // DEFAULT LAYER
 // TAB	Q	W	E	R	T		Y	U	I	O	P	-
-// =	A	S	D	F	G		H	J	K	L	:	'
+// =	A	S	D	F	G		H	J	K	L	;	'
 // CAPS	Z	X	C	V	B		N	M	,	.	/	CAPS
 //			ESC	LOWER	B/S		SPACE	RAISE	RET
 
@@ -59,7 +68,7 @@
 			label = "Base";
 			bindings = <
 				&mt LALT TAB &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &mt RALT MINUS
-				&mt LCTL EQUAL &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &cosc &mt RCTL SQT
+				&mt LCTL EQUAL &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SEMI &mt RCTL SQT
 				&mt LSHFT CAPS &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp FSLH &mt RSHFT CAPS
 				&mt LGUI ESC TT(1) &kp BSPC &kp SPACE TT(2) &kp RET
 			>;
