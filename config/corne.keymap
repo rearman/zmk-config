@@ -8,6 +8,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+/* Unicode insert for Plan9/Inferno */
+#define OS_UNICODE_LEAD &macro_tap &kp LALT &kp X
+#define OS_UNICODE_TRAIL &macro_tap &kp SEMI
+#include "../zmk-nodefree-config/helper.h"
+#include "../zmk-nodefree-config/international_chars/greek.dtsi"
+
 #define TT(layer) &mo_tog layer layer
 
 &mt {
@@ -82,5 +88,14 @@
 				&trans &trans &kp DEL &trans &trans &trans
 			>;
 		};
+		greek_layer {
+			label = "Greek";
+			bindings = <
+				&trans &trans &trans &trans &el_pi &el_eta &el_phi &el_gamma &el_xi &el_rho &el_lambda &trans
+				&trans &el_alpha &el_omikron &el_epsilon &el_upsilon &el_iota &el_delta &el_theta &el_tau &el_nu &el_sigma &trans
+				&trans &trans &el_psi &kp trans &el_kappa &el_chi &el_beta &el_mu &el_omega &trans &el_zeta &trans
+				&trans &trans &trans &trans &trans &trans
+			>;
+		};
 	};
-};
+}; 	
