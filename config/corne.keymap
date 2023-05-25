@@ -93,7 +93,7 @@
 			bindings = <
 				&trans &trans &trans &trans &el_pi &el_eta &el_phi &el_gamma &el_xi &el_rho &el_lambda &trans
 				&trans &el_alpha &el_omikron &el_epsilon &el_upsilon &el_iota &el_delta &el_theta &el_tau &el_nu &el_sigma &trans
-				&trans &trans &el_psi &kp trans &el_kappa &el_chi &el_beta &el_mu &el_omega &trans &el_zeta &trans
+				&trans &trans &el_psi &trans &el_kappa &el_chi &el_beta &el_mu &el_omega &trans &el_zeta &trans
 				&trans &trans &trans &trans &trans &trans
 			>;
 		};
