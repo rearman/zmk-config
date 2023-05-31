@@ -3,7 +3,7 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
+// 'Tab 9'
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -61,7 +61,7 @@
 				&mt LALT TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &mt RALT FSLH
 				&mt LCTL EQUAL &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S &mt RCTL MINUS
 				&mt LSHFT CAPS &kp SEMI &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &mt RSHFT CAPS
-				&mt LGUI ESC TT(1) &kp BSPC &kp SPACE TT(2) &kp RET
+				&mt LGUI ESC &mo 1 &kp BSPC &kp SPACE &mo 2 &kp RET
 			>;
 		};
 		num_layer {
@@ -79,7 +79,7 @@
 				&trans &kp F1 &kp F2 &kp F3 &kp F4 &none &none &kp HOME &kp UP &kp PG_UP &none &trans
 				&trans &kp F5 &kp F6 &kp F7 &kp F8 &kp INS &none &kp LEFT &kp K_APP &kp RIGHT &kp PSCRN &trans
 				&trans &kp F9 &kp F10 &kp F11 &kp F12 &none &none &kp END &kp DOWN &kp PG_DN &none &trans
-				&trans TT(3) &kp DEL &trans &trans &trans
+				&trans &mo 3 &kp DEL &trans &trans &trans
 			>;
 		};
 		bt_layer {
