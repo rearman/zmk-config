@@ -2,8 +2,10 @@
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
+ * 
+ * 'Tab 9'
  */
-// 'Tab 9'
+ 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -12,7 +14,7 @@
 
 &mt {
 	flavor = "tap-preferred";
-	tapping_term_ms = <150>;
+	tapping_term_ms = <160>;
 };
 
 / {	
@@ -61,7 +63,7 @@
 				&mt LALT TAB &kp SEMI &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &mt RALT FSLH
 				&mt LCTL EQUAL &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S &mt RCTL MINUS
 				&mt LSHFT CAPS &kp SQT &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &mt RSHFT CAPS
-				&mt LGUI ESC &mo 1 &kp BSPC &kp SPACE &mo 2 &kp RET
+				&mt LGUI ESC &mo 1 &mt LSHFT BSPC &mt RSHFT SPACE &mo 2 &kp RET
 			>;
 		};
 		num_layer {
