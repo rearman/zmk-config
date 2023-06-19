@@ -52,7 +52,7 @@
 //			ESC	LOWER	B/S		SPACE	RAISE	RET
 
 // LOWER (NUM) LAYER
-// ---	`	XXX	[	]	XXX		XXX	7	8	9	XXX	\
+// ---	XXX	XXX	[	]	XXX		XXX	7	8	9	XXX	---
 // ---	XXX	XXX	(	)	XXX		XXX	4	5	6	XXX	---
 // ---	XXX	XXX	{	}	XXX		XXX	1	2	3	XXX	---
 //			---	LYR	---		---	0	.
@@ -62,7 +62,7 @@
 			bindings = <
 				&mt LALT TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &mt RALT FSLH
 				&mt LCTL EQUAL &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S &mt RCTL MINUS
-				&kp GRAVE &kp SEMI &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
+				&kp GRAVE &cosc &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
 				&mt LGUI ESC &mo 1 &mt LSHFT BSPC &mt RSHFT SPACE &mo 2 &kp RET
 			>;
 		};
