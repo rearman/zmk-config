@@ -34,6 +34,16 @@
 			bindings = <&kp COLON>, <&kp SEMI>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
+		lh_pht: left_hand_positional_hold_tap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "LEFT_POSITIONAL_HOLD_TAP";
+			#binding_cells = <2>;
+			flavor = "tap-unless-interrupted";
+			tapping-term-ms = <150>;
+			quick-tap-ms = <200>;
+			bindings = <&kp>, <&kp>;
+			hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+		};
 	};
 
 	keymap {
@@ -61,7 +71,7 @@
 			label = "BASE";
 			bindings = <
 				&mt LALT TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &mt RALT FSLH
-				&mt LCTL EQUAL &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S &mt RCTL MINUS
+				&mt LCTL EQUAL &lh_pht LGUI A &lh_pht LALT O &lh_pht LCTL E &lh_pht LSHFT U &kp I &kp D &kp H &kp T &kp N &kp S &mt RCTL MINUS
 				&kp GRAVE &cosc &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
 				&mt LGUI ESC &mo 1 &mt LSHFT BSPC &mt RSHFT SPACE &mo 2 &kp RET
 			>;
