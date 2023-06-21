@@ -84,9 +84,9 @@
 			label = "NAV";
 			bindings = <
 				&trans &kp F1 &kp F2 &kp F3 &kp F4 &none &none &kp HOME &kp UP &kp PG_UP &kp CAPS &trans
-				&trans &kp F5 &kp F6 &kp F7 &kp F8 &kp INS &none &kp LEFT &kp K_APP &kp RIGHT &kp PSCRN &trans
+				&trans &kp F5 &kp F6 &kp F7 &kp F8 &kp INS &kp DEL &kp LEFT &kp K_APP &kp RIGHT &kp PSCRN &trans
 				&trans &kp F9 &kp F10 &kp F11 &kp F12 &none &none &kp END &kp DOWN &kp PG_DN &none &trans
-				&trans &mo 3 &kp DEL &trans &trans &trans
+				&trans &mo 3 &trans &trans &trans &trans
 			>;
 		};
 		bt_layer {
