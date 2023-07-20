@@ -9,7 +9,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define TT(layer) &mo_tog layer layer
+#define num 1
+#define nav 2
+#define fun 3
 
 &mt {
 	flavor = "tap-preferred";
@@ -18,7 +20,7 @@
 
 / {	
 	behaviors {
-		mo_tog: behavior_mo_tog {
+		tt: behavior_mo_tog {
 			compatible = "zmk,behavior-hold-tap";
 			label = "mo_tog";
 			#binding-cells = <2>;
@@ -48,18 +50,18 @@
 /*
  * RAISE (NAV) LAYER
  *	---	F1	F2	F3	F4	XXX		XXX	HOM	UP	PUP	CAP	---
- *	---	F5	F6	F7	F8	INS		DEL	LT	APP	RT	PSC	---
+ *	---	F5	F6	F7	F8	INS		XXX	LT	APP	RT	PSC	---
  *	---	F9	F10	F11	F12	XXX		XXX	END	DN	PDN	XXX	---
  *				---	---	---		---	LYR	---
  *
  * DEFAULT LAYER
  *	TAB	'	,	.	P	Y		F	G	C	R	L	/
  *	=	A	O	E	U	I		D	H	T	N	S	-
- *	`	;	Q	J	K	X		B	M	W	V	Z	\
- *				ESC	LWR	BSP		SPC	RSE	RET
+ *	DEL	;	Q	J	K	X		B	M	W	V	Z	\
+ *				ESC	BSP	SPC		SPC	DEL	RET
  *
  * LOWER (NUM) LAYER
- *	---	XXX	XXX	[	]	XXX		XXX	7	8	9	CAP	---
+ *	---	`	XXX	[	]	XXX		XXX	7	8	9	CAP	---
  *	---	XXX	XXX	(	)	XXX		XXX	4	5	6	XXX	---
  *	---	XXX	XXX	{	}	XXX		XXX	1	2	3	XXX	---
  *				---	LYR	---		---	0	.
@@ -73,37 +75,37 @@
 		default_layer {
 			label = "BASE";
 			bindings = <
-				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
-				&kp EQUAL &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S &kp MINUS
-				&mt LGUI GRAVE &cosc &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
-				&mt LALT ESC &ml LCTL 1 &mt LSHFT BSPC &mt RSHFT SPACE &ml RCTL 2 &mt RALT RET
+				&lt fun TAB	&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F	&kp G	&kp C	&kp R	&kp L	&lt fun FSLH
+				&t num EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D	&kp H	&kp T	&kp N	&kp S	&t num MINUS
+				&lt nav GRAVE	&cosc	&kp Q		&kp J	&kp K	&kp X	&kp B	&kp M	&kp W	&kp V	&kp Z	&lt nav BSLH
+				&mt LALT ESC	&mt LCTL BSPC	&mt LSHFT SPACE	&mt RSHFT SPACE	&mt RCTL DEL	&mt RALT RET
 			>;
 		};
 		num_layer {
 			label = "NUM";
 			bindings = <
-				&trans &none &none &kp LBKT &kp RBKT &none &none &kp N7 &kp N8 &kp N9 &none &trans
-				&trans &none &none &kp LPAR &kp RPAR &none &none &kp N4 &kp N5 &kp N6 &none &trans
-				&trans &none &none &kp LBRC &kp RBRC &none &none &kp N1 &kp N2 &kp N3 &none  &trans
-				&trans &trans &trans &trans &kp N0 &kp DOT
+				&trans	&kp LBKT		&kp N9	&kp N8	&kp N7	&kp RBKT	&kp LBKT		&kp N7	&kp N8	&kp N9	&kp RBKT	&trans
+				&trans	&kp LPAR		&kp N6	&kp N5	&kp N4	&kp RPAR	&kp LPAR		&kp N4	&kp N5	&kp N6	&kp RPAR	&trans
+				&trans	&kp LBRC	&kp N3	&kp N2	&kp N1	&kp RBRC	&kp LBRC	&kp N1	&kp N2	&kp N3	&kp RBRC 	&trans
+				&mt LALT DOT	&mt LCTL N0	&trans	&trans	&mt RCTL N0	&mt RALT DOT	
 			>;
 		};
 		nav_layer {
 			label = "NAV";
 			bindings = <
-				&trans &kp F1 &kp F2 &kp F3 &kp F4 &none &none &kp HOME &kp UP &kp PG_UP &kp CAPS &trans
-				&trans &kp F5 &kp F6 &kp F7 &kp F8 &kp INS &kp DEL &kp LEFT &kp K_APP &kp RIGHT &kp PSCRN &trans
-				&trans &kp F9 &kp F10 &kp F11 &kp F12 &none &none &kp END &kp DOWN &kp PG_DN &none &trans
-				&trans &mo 3 &trans &trans &trans &trans
+				&trans	&none	&kp HOME	&kp UP		&kp PG_UP	&none	&none	&kp HOME	&kp UP		&kp PG_UP	&kp CAPS	&trans
+				&trans	&none	&kp LEFT		&kp K_APP	&kp RIGHT	&kp INS	&none	&kp LEFT		&kp K_APP	&kp RIGHT	&kp PSCRN	&trans
+				&trans	&kp LGUI	&kp END		&kp DOWN	&kp PG_DN	&none	&none	&kp END		&kp DOWN	&kp PG_DN	&kp RGUI		&trans
+				&trans	&trans	&trans	&trans	&trans	&trans
 			>;
 		};
-		bt_layer {
-			label = "BT";
+		func_layer {
+			label = "FUN";
 			bindings = <
-				&none &none &none &none &none &none &none &bt BT_SEL 0 &none &none &none &none
-				&none &none &none &none &none &none &none &bt BT_SEL 4 &bt BT_SEL 5 &bt BT_SEL 6 &none &none
-				&none &none &none &none &none &none &none &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none  &none
-				&none &trans &none &none &trans &none
+				&trans	&kp F1	&kp F2	&kp F3	&kp F4	&none	&none	&kp F1	&kp F2	&kp F3	&kp F4	&trans
+				&trans	&kp F5	&kp F6	&kp F7	&kp F8	&kp INS	&kp DEL	&kp F5	&kp F6	&kp F7	&kp F8	&trans
+				&trans	&kp F9	&kp F10	&kp F11	&kp F12	&none	&none	&kp F9	&kp F10	&kp F11	&kp F12	&trans
+				&trans	&trans	&trans	&trans	&trans	&trans
 			>;
 		};
 	};
