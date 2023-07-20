@@ -29,7 +29,7 @@
 			label = "mod_tog";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
-			tapping-term-ms = <150>;
+			tapping-term-ms = <160>;
 			bindings = <&kp>, <&tog>;
 		};
 		cosc: coln_scln {
