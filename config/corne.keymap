@@ -45,28 +45,28 @@
 		compatible = "zmk,keymap";
 /*
  * RAISE (NAV) LAYER
- *	---	F1	F2	F3	F4	XXX		XXX	HOM	UP	PUP	CAP	---
- *	---	F5	F6	F7	F8	INS		XXX	LT	APP	RT	PSC	---
- *	---	F9	F10	F11	F12	XXX		XXX	END	DN	PDN	XXX	---
+ *	---	XXX	HOM	UP	PUP	XXX		XXX	HOM	UP	PUP	CAP	---
+ *	---	XXX	LT	APP	RT	INS		XXX	LT	APP	RT	PSC	---
+ *	---	GUI	END	DN	PDN	XXX		XXX	END	DN	PDN	GUI	---
  *				---	---	---		---	LYR	---
  *
  * DEFAULT LAYER
  *	TAB	'	,	.	P	Y		F	G	C	R	L	/
  *	=	A	O	E	U	I		D	H	T	N	S	-
- *	DEL	;	Q	J	K	X		B	M	W	V	Z	\
+ *	`	;	Q	J	K	X		B	M	W	V	Z	\
  *				ESC	BSP	SPC		SPC	DEL	RET
  *
  * LOWER (NUM) LAYER
- *	---	`	XXX	[	]	XXX		XXX	7	8	9	CAP	---
- *	---	XXX	XXX	(	)	XXX		XXX	4	5	6	XXX	---
- *	---	XXX	XXX	{	}	XXX		XXX	1	2	3	XXX	---
- *				---	LYR	---		---	0	.
+ *	---	[	9	8	7	]		[	7	8	9	]	---
+ *	---	(	6	5	4	)		(	4	5	6	)	---
+ *	---	{	3	2	1	}		{	1	2	3	}	---
+ *				.	0	---		---	0	.
  *
- * ADJUST (BT) LAYER
- *	XXX	XXX	XXX	XXX	XXX	XXX		XXX	BT0	XXX	XXX	XXX	XXX
- *	XXX	XXX	XXX	XXX	XXX	XXX		XXX	BT4	BT5	BT6	XXX	XXX
- *	XXX	XXX	XXX	XXX	XXX	XXX		XXX	BT1	BT2	BT3	XXX	XXX
- *				XXX	LYR	XXX		XXX	LYR	XXX
+ * ADJUST (FUN) LAYER
+ *	---	F1	F2	F3	F4	XXX		XXX	F1	F2	F3	F4	---
+ *	---	F5	F6	F7	F8	XXX		XXX	F5	F6	F7	F8	---
+ *	---	F9	F10	F11	F12	XXX		XXX	F9	F10	F11	F12	---
+ *				---	---	---		---	---	---
  */
 		default_layer {
 			label = "BASE";
@@ -99,7 +99,7 @@
 			label = "FUN";
 			bindings = <
 				&trans	&kp F1	&kp F2	&kp F3	&kp F4	&none	&none	&kp F1	&kp F2	&kp F3	&kp F4	&trans
-				&trans	&kp F5	&kp F6	&kp F7	&kp F8	&kp INS	&kp DEL	&kp F5	&kp F6	&kp F7	&kp F8	&trans
+				&trans	&kp F5	&kp F6	&kp F7	&kp F8	&none	&none	&kp F5	&kp F6	&kp F7	&kp F8	&trans
 				&trans	&kp F9	&kp F10	&kp F11	&kp F12	&none	&none	&kp F9	&kp F10	&kp F11	&kp F12	&trans
 				&trans	&trans	&trans	&trans	&trans	&trans
 			>;
