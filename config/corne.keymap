@@ -45,6 +45,7 @@
 			#binding-cells = <2>;
 			flavor = "tap-preferred";
 			tapping-term-ms = <150>;
+			quick-tap-ms = <100>
 			bindings = <&kp>, <&kp>;
 		};
 	};
@@ -52,25 +53,25 @@
 	keymap {
 		compatible = "zmk,keymap";
 /*
- * RAISE (NAV) LAYER
- *	---	XXX	HOM	UP	PUP	XXX		XXX	HOM	UP	PUP	CAP	---
- *	---	XXX	LT	APP	RT	INS		XXX	LT	APP	RT	PSC	---
- *	---	GUI	END	DN	PDN	XXX		XXX	END	DN	PDN	GUI	---
- *				---	---	---		---	LYR	---
- *
- * DEFAULT LAYER
+ * BASE LAYER
  *	TAB	'	,	.	P	Y		F	G	C	R	L	/
  *	=	A	O	E	U	I		D	H	T	N	S	-
  *	`	;	Q	J	K	X		B	M	W	V	Z	\
  *				ESC	DEL	SPC		SPC	BSP	RET
  *
- * LOWER (NUM) LAYER
+ * NUM LAYER
  *	---	[	9	8	7	]		[	7	8	9	]	---
  *	---	(	6	5	4	)		(	4	5	6	)	---
  *	---	{	3	2	1	}		{	1	2	3	}	---
  *				.	0	---		---	0	.
  *
- * ADJUST (FUN) LAYER
+ * NAV LAYER
+ *	---	XXX	HOM	UP	PUP	XXX		XXX	HOM	UP	PUP	CAP	---
+ *	---	XXX	LT	APP	RT	INS		XXX	LT	APP	RT	PSC	---
+ *	---	GUI	END	DN	PDN	XXX		XXX	END	DN	PDN	GUI	---
+ *				---	---	---		---	LYR	---
+ *
+ * FUN LAYER
  *	---	F1	F2	F3	F4	XXX		XXX	F1	F2	F3	F4	---
  *	---	F5	F6	F7	F8	XXX		XXX	F5	F6	F7	F8	---
  *	---	F9	F10	F11	F12	XXX		XXX	F9	F10	F11	F12	---
@@ -79,18 +80,18 @@
 		default_layer {
 			label = "BASE";
 			bindings = <
-				&lt 3 TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F	&kp G	&kp C	&kp R	&kp L	&lt 3 FSLH
-				&lt 1 EQUAL	&hm LGUI A	&hm LALT O		&hm LCTL E	&hm LSFT U	&kp I	&kp D	&hm RSFT H	&hm RCTL T	&hm RALT N	&hm RGUI S	&lt 1 MINUS
-				&lt 2 GRAVE	&cosc	&kp Q		&kp J	&kp K	&kp X	&kp B	&kp M	&kp W	&kp V	&kp Z	&lt 2 BSLH
+				&lt 3 TAB		&kp SQT		&kp COMMA	&kp DOT		&kp P		&kp Y	&kp F	&kp G		&kp C		&kp R		&kp L		&lt 3 FSLH
+				&lt 1 EQUAL	&hm LGUI A	&hm LALT O	&hm LCTL E	&hm LSFT U	&kp I	&kp D	&hm RSFT H	&hm RCTL T	&hm RALT N	&hm RGUI S	&lt 1 MINUS
+				&lt 2 GRAVE	&cosc		&kp Q		&kp J		&kp K		&kp X	&kp B	&kp M		&kp W		&kp V		&kp Z		&lt 2 BSLH
 				&mt LALT ESC	&mt LCTL BSPC	&mt LSFT SPACE	&mt RSFT SPACE	&mt RCTL DEL	&mt RALT RET
 			>;
 		};
 		num_layer {
 			label = "NUM";
 			bindings = <
-				&trans	&kp LBKT		&kp N9	&kp N8	&kp N7	&kp RBKT	&kp LBKT		&kp N7	&kp N8	&kp N9	&kp RBKT	&trans
-				&trans	&hm LGUI LPAR		&hm LALT N6	&hm LCTL N5	&hm LSFT N4	&kp RPAR	&kp LPAR		&hm RSFT N4	&hm RCTL N5	&hm RALT N6	&hm RGUI RPAR	&trans
-				&trans	&kp LBRC	&kp N3	&kp N2	&kp N1	&kp RBRC	&kp LBRC	&kp N1	&kp N2	&kp N3	&kp RBRC 	&trans
+				&trans	&kp LBKT			&kp N9		&kp N8		&kp N7		&kp RBKT	&kp LBKT		&kp N7		&kp N8		&kp N9		&kp RBKT		&trans
+				&trans	&hm LGUI LPAR	&hm LALT N6	&hm LCTL N5	&hm LSFT N4	&kp RPAR	&kp LPAR		&hm RSFT N4	&hm RCTL N5	&hm RALT N6	&hm RGUI RPAR	&trans
+				&trans	&kp LBRC		&kp N3		&kp N2		&kp N1		&kp RBRC	&kp LBRC	&kp N1		&kp N2		&kp N3		&kp RBRC 		&trans
 				&mt LALT DOT	&mt LCTL N0	&trans	&trans	&mt RCTL N0	&mt RALT DOT	
 			>;
 		};
