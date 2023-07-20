@@ -39,6 +39,26 @@
 			bindings = <&kp COLON>, <&kp SEMI>;
 			mods = <(MOD_LSFT|MOD_RSFT)>;
 		};
+		lh: lh_home_row {
+			compatible = "zmk, behavior-hold-tap";
+			label = "LEFT_POSITIONAL_HOLD_TAP";
+			#binding-cells = <2>;
+			flavor = "tap-unless-interrupted";
+			tapping-term-ms = <100>;
+			quick-tap-ms = <200>;
+			bindings = <&kp>, <&kp>;
+			hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+		};
+		rh: rh_home_row {
+			compatible = "zmk, behavior-hold-tap";
+			label = "RIGHT_POSITIONAL_HOLD_TAP";
+			#binding-cells = <2>;
+			flavor = "tap-unless-interrupted";
+			tapping-term-ms = <100>;
+			quick-tap-ms = <200>;
+			bindings = <&kp>, <&kp>;
+			hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+		}
 	};
 
 	keymap {
@@ -54,7 +74,7 @@
  *	TAB	'	,	.	P	Y		F	G	C	R	L	/
  *	=	A	O	E	U	I		D	H	T	N	S	-
  *	`	;	Q	J	K	X		B	M	W	V	Z	\
- *				ESC	BSP	SPC		SPC	DEL	RET
+ *				ESC	DEL	SPC		SPC	BSP	RET
  *
  * LOWER (NUM) LAYER
  *	---	[	9	8	7	]		[	7	8	9	]	---
@@ -72,7 +92,7 @@
 			label = "BASE";
 			bindings = <
 				&lt 3 TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F	&kp G	&kp C	&kp R	&kp L	&lt 3 FSLH
-				&lt 1 EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D	&kp H	&kp T	&kp N	&kp S	&lt 1 MINUS
+				&lt 1 EQUAL	&lh LGUI A	&lh LALT O		&lh LCTL E	&lh LSHFT U	&kp I	&kp D	&rh RSHFT H	&rh RCTL T	&rh RALT N	&rh RGUI S	&lt 1 MINUS
 				&lt 2 GRAVE	&cosc	&kp Q		&kp J	&kp K	&kp X	&kp B	&kp M	&kp W	&kp V	&kp Z	&lt 2 BSLH
 				&mt LALT ESC	&mt LCTL BSPC	&mt LSHFT SPACE	&mt RSHFT SPACE	&mt RCTL DEL	&mt RALT RET
 			>;
@@ -81,7 +101,7 @@
 			label = "NUM";
 			bindings = <
 				&trans	&kp LBKT		&kp N9	&kp N8	&kp N7	&kp RBKT	&kp LBKT		&kp N7	&kp N8	&kp N9	&kp RBKT	&trans
-				&trans	&kp LPAR		&kp N6	&kp N5	&kp N4	&kp RPAR	&kp LPAR		&kp N4	&kp N5	&kp N6	&kp RPAR	&trans
+				&trans	&lh LGUI LPAR		&lh LALT N6	&lh LCTL N5	&lh LSHFT N4	&kp RPAR	&kp LPAR		&rh RSHFT N4	&rh RCTL N5	&rh RALT N6	&rh RGUI RPAR	&trans
 				&trans	&kp LBRC	&kp N3	&kp N2	&kp N1	&kp RBRC	&kp LBRC	&kp N1	&kp N2	&kp N3	&kp RBRC 	&trans
 				&mt LALT DOT	&mt LCTL N0	&trans	&trans	&mt RCTL N0	&mt RALT DOT	
 			>;
