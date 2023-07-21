@@ -82,7 +82,7 @@
 			bindings = <
 				&kp TAB			&kp  SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F	&kp G	&kp C	&kp R	&kp  L	&kp FSLH
 				&mt LCTL EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D	&kp H	&kp T	&kp N	&kp S	&mt RCTL MINUS
-				&kp GRAVE		&cosc	&kp Q		&kp J	&kp K	&kp X	&kp B	&kp M	&kp W	&kp V	&kp Z	&kp BSLH
+				&mt LGUI GRAVE	&cosc	&kp Q		&kp J	&kp K	&kp X	&kp B	&kp M	&kp W	&kp V	&kp Z	&mt RGUI BSLH
 				&mt LALT ESC	&lt 1 BSPC	&mt LSFT SPACE	&mt RSFT SPACE	&lt 2 DEL	&mt RALT RET
 			>;
 		};
@@ -100,7 +100,7 @@
 			bindings = <
 				&none	&kp F1	&kp F2	&kp F3	&kp F4	&none	&none	&kp HOME	&kp UP		&kp PG_UP	&kp CAPS	&none
 				&trans	&kp F5	&kp F6	&kp F7	&kp F8	&kp INS	&none	&kp LEFT		&kp K_APP	&kp RIGHT	&kp PSCRN	&trans
-				&kp LGUI	&kp F9	&kp F10	&kp F11	&kp F12	&none	&none	&kp END		&kp DOWN	&kp PG_DN	&none		&kp RGUI
+				&trans	&kp F9	&kp F10	&kp F11	&kp F12	&none	&none	&kp END		&kp DOWN	&kp PG_DN	&none		&trans
 				&trans	&trans	&trans	&trans	&trans	&trans
 			>;
 		};
