@@ -98,9 +98,9 @@
 		nav_layer {
 			label = "NAV";
 			bindings = <
-				&trans	&kp F1	&kp F2	&kp F3	&kp F4	&none	&none	&kp HOME	&kp UP		&kp PG_UP	&kp CAPS	&trans
+				&none	&kp F1	&kp F2	&kp F3	&kp F4	&none	&none	&kp HOME	&kp UP		&kp PG_UP	&kp CAPS	&none
 				&trans	&kp F5	&kp F6	&kp F7	&kp F8	&kp INS	&none	&kp LEFT		&kp K_APP	&kp RIGHT	&kp PSCRN	&trans
-				&trans	&kp F9	&kp F10	&kp F11	&kp F12	&none	&none	&kp END		&kp DOWN	&kp PG_DN	&kp RGUI		&trans
+				&kp LGUI	&kp F9	&kp F10	&kp F11	&kp F12	&none	&none	&kp END		&kp DOWN	&kp PG_DN	&none		&kp RGUI
 				&trans	&trans	&trans	&trans	&trans	&trans
 			>;
 		};
