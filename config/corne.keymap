@@ -83,7 +83,7 @@
 				&mt LGUI TAB		&kp  SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F	&kp G	&kp C	&kp R	&kp  L	&mt RGUI BSPC
 				&mt LCTL EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D	&kp H	&kp T	&kp N	&kp S	&mt RCTL MINUS
 				&kp DEL			&cosc	&kp Q		&kp J	&kp K	&kp X	&kp B	&kp M	&kp W	&kp V	&kp Z	&kp FSLH
-				&mt LALT ESC	&tt 1	&mt LSFT SPACE	&mt RSFT SPACE	&tt 2	&mt RALT RET
+				&mt LALT ESC	&tt 1	1 &mt LSFT SPACE	&mt RSFT SPACE	&tt 2 2	&mt RALT RET
 			>;
 		};
 		num_layer {
