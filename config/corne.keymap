@@ -80,18 +80,18 @@
 		default_layer {
 			label = "BASE";
 			bindings = <
-				&mt LGUI TAB		&kp  SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F	&kp G	&kp C	&kp R	&kp  L	&mt RGUI FSLH
+				&mt LGUI TAB		&kp  SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F	&kp G	&kp C	&kp R	&kp  L	&mt RGUI BSPC
 				&mt LCTL EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D	&kp H	&kp T	&kp N	&kp S	&mt RCTL MINUS
-				&mt LSFT CAPS	&cosc	&kp Q		&kp J	&kp K	&kp X	&kp B	&kp M	&kp W	&kp V	&kp Z	&mt RSFT CAPS
-				&mt LALT ESC	&kp DEL	&lt 1 SPACE	&lt 2 SPACE	&kp BSPC	&mt RALT RET
+				&kp DEL			&cosc	&kp Q		&kp J	&kp K	&kp X	&kp B	&kp M	&kp W	&kp V	&kp Z	&kp FSLH
+				&mt LALT ESC	&tt 1	&mt LSFT SPACE	&mt RSFT SPACE	&tt 2	&mt RALT RET
 			>;
 		};
 		num_layer {
 			label = "NUM";
 			bindings = <
-				&trans	&kp GRAVE	&none	&kp LBKT		&kp RBKT	&none	&none	&kp N7	&kp N8	&kp N9	&none	&kp BSLH
-				&trans	&none		&none	&kp LPAR		&kp RPAR	&none	&none	&kp N4	&kp N5	&kp N6	&none	&trans
-				&trans	&none		&none	&kp LBRC	&kp RBRC	&none	&none	&kp N1	&kp N2	&kp N3	&none 	&trans
+				&trans	&kp GRAVE	&none	&kp LBKT		&kp RBKT	&none	&none	&kp N7	&kp N8	&kp N9	&none	&trans
+				&trans	&none		&none	&kp LPAR		&kp RPAR	&none	&none	&kp N4	&kp N5	&kp N6	&none	&mt RCTL EQUAL
+				&trans	&none		&none	&kp LBRC	&kp RBRC	&none	&none	&kp N1	&kp N2	&kp N3	&none 	&kp BSLH
 				&trans	&trans		&trans	&trans	&kp N0	&kp DOT	
 			>;
 		};
