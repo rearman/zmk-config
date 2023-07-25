@@ -91,7 +91,7 @@
 				&mt LALT GRAVE	&kp  SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F	&kp G	&kp C	&kp R	&kp  L	&mt RALT FSLH
 				&mt LCTL EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D	&kp H	&kp T	&kp N	&kp S	&mt RCTL MINUS
 				&mt LSFT CAPS	&cosc	&kp Q		&kp J	&kp K	&kp X	&kp B	&kp M	&kp W	&kp V	&kp Z	&mt RSFT CAPS
-				&mt LGUI ESC	&lt 1 BSPC &kp SPACE	&kp SPACE	&lt 2 TAB	&kp RET
+				&mt LGUI ESC	&kp BSPC &lt 1 SPACE	&lt 2 SPACE	&kp TAB	&kp RET
 			>;
 		};
 		num_layer {
