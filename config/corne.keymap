@@ -72,7 +72,7 @@
 			label = "BASE";
 			bindings = <
 				&kp ESC		&kp  SQT		&kp COMMA	&kp DOT		&kp P		&kp Y		&kp F		&kp G		&kp C		&kp R		&kp  L		&kp FSLH
-				&kp EQUAL	&hm LCTL A	&hm LALT O	&hm LGUI E	&hm LSFT U	&kp I		&kp D		&hm RSFT H	&hm RGUI T	&hm RALT N	&hm RCTL S	&kp MINUS
+				&kp EQUAL	&hm LGUI A	&hm LALT O	&hm LCTL E	&hm LSFT U	&kp I		&kp D		&hm RSFT H	&hm RCTL T	&hm RALT N	&hm RGUI S	&kp MINUS
 				&kp GRAVE	&cosc		&kp Q		&kp J		&kp K		&kp X		&kp B		&kp M		&kp W		&kp V		&kp Z		&kp BSLH
 													&kp TAB		&lt 1 BSPC	&kp SPACE	&kp SPACE	&lt 2 DEL		&kp RET
 				>;
@@ -81,7 +81,7 @@
 			label = "NUM";
 			bindings = <
 				&none	&none	&kp LBKT	&kp RBKT	&none	&none	&none	&kp N7		&kp N8		&kp N9		&none	&none
-				&none	&kp LCTL	&kp LALT	&kp LGUI		&kp LSFT	&none	&none	&hm RSFT N4	&hm RGUI N5	&hm RALT N6	&kp RCTL	&none
+				&none	&kp LGUI	&kp LALT	&kp LCTL		&kp LSFT	&none	&none	&hm RSFT N4	&hm RCTL N5	&hm RALT N6	&kp RGUI	&none
 				&none	&none	&none	&none		&none	&none	&none	&kp N1		&kp N2		&kp N3		&none	&none
 										&trans		&trans	&trans	&trans	&kp N0		&kp DOT	
 			>;
@@ -90,7 +90,7 @@
 			label = "NAV";
 			bindings = <
 				&none	&kp F1		&kp F2		&kp F3		&kp F4		&none	&none	&kp HOME		&kp UP			&kp PG_UP		&kp CAPS		&none
-				&none	&hm LCTL F5	&hm LALT F6	&hm LGUI F7	&hm LSFT F8	&kp INS	&none	&hm RSFT LEFT	&hm RGUI K_APP	&hm RALT RIGHT	&hm RCTL PSCRN	&none
+				&none	&hm LGUI F5	&hm LALT F6	&hm LCTL F7	&hm LSFT F8	&kp INS	&none	&hm RSFT LEFT	&hm RCTL K_APP	&hm RALT RIGHT	&hm RGUI PSCRN	&none
 				&none	&kp F9		&kp F10		&kp F11		&kp F12		&none	&none	&kp END			&kp DOWN		&kp PG_DN		&none			&none
 												&trans		&trans		&trans	&trans	&trans			&trans
 			>;
