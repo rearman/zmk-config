@@ -81,7 +81,7 @@
 			label = "NUM";
 			bindings = <
 				&none	&none	&kp LBKT	&kp RBKT	&none	&none	&none	&kp N7		&kp N8		&kp N9		&none	&none
-				&none	&kp LGUI	&kp LALT	&kp LCTL		&kp LSFT	&none	&none	&hm RSFT N4	&hm RCTL N5	&hm RALT N6	&kp RGUI	&none
+				&none	&kp LGUI	&kp LALT	&kp LCTL		&kp LSFT	&none	&none	&hm RSFT N4	&hm RCTL N5	&hm RALT N6	&kp RGUI	&trans
 				&none	&none	&none	&none		&none	&none	&none	&kp N1		&kp N2		&kp N3		&none	&none
 										&trans		&trans	&trans	&trans	&kp N0		&kp DOT	
 			>;
