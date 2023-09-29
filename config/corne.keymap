@@ -28,12 +28,12 @@
 		};
 		combo_copy {
 			timeout-ms = <50>;
-			key-positions = <1 2 3>;
+			key-positions = <2 3 4>;
 			bindings = <&kp LC(C)>;
 		};
 		combo_paste {
 			timeout-ms = <50>;
-			key-positions = <1 3>;
+			key-positions = <2 4>;
 			bindings = <&kp LC(V)>;
 		};
 	};
