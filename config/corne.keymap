@@ -98,10 +98,10 @@
 		sym_layer {
 			label = "SYM";
 			bindings = <
-				&none	&none	&kp LBKT			&kp RBKT		&none	&none	&none	&kp AMPR	&kp ASTR		&kp LPAR			&none	&none
-				&none	&kp LGUI	&hm LALT LPAR	&hm LCTL RPAR	&kp LSFT	&none	&none	&hm RSFT DLR	&hm RCTL PCT	&hm RALT CIRC	&kp RGUI	&trans
-				&none	&none	&none			&none			&none	&none	&none	&kp EXLM	&kp AT			&kp HASH		&none	&none
-												&trans			&trans	&trans	&trans	&kp RPAR	&kp DOT	
+				&none	&none	&kp LBKT			&kp RBKT		&none	&none	&none	&kp AMPS		&kp ASTRK		&kp LPAR			&none	&none
+				&none	&kp LGUI	&hm LALT LPAR	&hm LCTL RPAR	&kp LSFT	&none	&none	&hm RSFT DLLR	&hm RCTL PRCNT	&hm RALT CARET	&kp RGUI	&trans
+				&none	&none	&none			&none			&none	&none	&none	&kp EXCL			&kp AT			&kp HASH		&none	&none
+												&trans			&trans	&trans	&trans	&kp RPAR		&kp DOT	
 			>;
 		};
 	};
