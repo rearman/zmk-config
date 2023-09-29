@@ -30,7 +30,7 @@
 			then-layer = <3>;
 		};
 	};
-	
+		
 	behaviors {
 		tt: behavior_mo_tog {
 			compatible = "zmk,behavior-hold-tap";
@@ -74,16 +74,16 @@
 				&kp TAB		&kp  SQT		&kp COMMA	&kp DOT		&kp P		&kp Y		&kp F		&kp G		&kp C		&kp R		&kp  L		&kp FSLH
 				&kp EQUAL	&hm LGUI A	&hm LALT O	&hm LCTL E	&hm LSFT U	&kp I		&kp D		&hm RSFT H	&hm RCTL T	&hm RALT N	&hm RGUI S	&kp MINUS
 				&kp GRAVE	&kp SEMI		&kp Q		&kp J		&kp K		&kp X		&kp B		&kp M		&kp W		&kp V		&kp Z		&kp BSLH
-													&kp ESC		&lt 1 BSPC	&kp SPACE	&kp SPACE	&lt 2 DEL		&kp RET
+													&kp ESC		&lt 1 BSPC	&lt 3 SPACE	&kp SPACE	&lt 2 DEL		&kp RET
 				>;
 		};
 		num_layer {
 			label = "NUM";
 			bindings = <
-				&none	&none	&kp LBKT	&kp RBKT	&none	&none	&none	&kp N7		&kp N8		&kp N9		&none	&none
-				&none	&kp LGUI	&kp LALT	&kp LCTL		&kp LSFT	&none	&none	&hm RSFT N4	&hm RCTL N5	&hm RALT N6	&kp RGUI	&trans
-				&none	&none	&none	&none		&none	&none	&none	&kp N1		&kp N2		&kp N3		&none	&none
-										&trans		&trans	&trans	&trans	&kp N0		&kp DOT	
+				&none	&kp LC(X)	&kp LC(C)	&kp LC(V)		&none	&none	&none	&kp N7		&kp N8		&kp N9		&none	&none
+				&none	&kp LGUI	&kp LALT		&kp LCTL		&kp LSFT	&none	&none	&hm RSFT N4	&hm RCTL N5	&hm RALT N6	&kp RGUI	&trans
+				&none	&none	&none		&none		&none	&none	&none	&kp N1		&kp N2		&kp N3		&none	&none
+											&trans		&trans	&trans	&trans	&kp N0		&kp DOT	
 			>;
 		};
 		nav_layer {
@@ -93,6 +93,15 @@
 				&none	&hm LGUI F5	&hm LALT F6	&hm LCTL F7	&hm LSFT F8	&kp INS	&none	&hm RSFT LEFT	&hm RCTL K_APP	&hm RALT RIGHT	&hm RGUI PSCRN	&none
 				&none	&kp F9		&kp F10		&kp F11		&kp F12		&none	&none	&kp END			&kp DOWN		&kp PG_DN		&none			&none
 												&trans		&trans		&trans	&trans	&trans			&trans
+			>;
+		};
+		sym_layer {
+			label = "SYM";
+			bindings = <
+				&none	&none	&kp LBKT			&kp RBKT		&none	&none	&none	&kp AMPR	&kp ASTR		&kp LPAR			&none	&none
+				&none	&kp LGUI	&hm LALT LPAR	&hm LCTL RPAR	&kp LSFT	&none	&none	&hm RSFT DLR	&hm RCTL PCT	&hm RALT CIRC	&kp RGUI	&trans
+				&none	&none	&none			&none			&none	&none	&none	&kp EXLM	&kp AT			&kp HASH		&none	&none
+												&trans			&trans	&trans	&trans	&kp RPAR	&kp DOT	
 			>;
 		};
 	};
