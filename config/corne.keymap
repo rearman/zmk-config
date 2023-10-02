@@ -36,20 +36,15 @@
 			key-positions = <2 4>; // ,-p
 			bindings = <&kp LC(V)>;
 		};
-		combo_bsp {
-			timeout-ms = <50>;
-			key-positions = <10 11>; // l-/
-			bindings = <&kp BSPC>;
-		};
 		combo_del {
 			timeout-ms = <50>;
 			key-positions = <12 13>; // =-a
 			bindings = <&kp DEL>;
 		};
-		combo_ret {
+		combo_gui {
 			timeout-ms = <50>;
-			key-positions = <22 23>; // s--
-			bindings = <&kp RET>;
+			key-positions = <24 25>; // =-a
+			bindings = <&kp GUI>;
 		};
 	};
 
@@ -63,6 +58,16 @@
 			quick-tap-ms = <0>;
 			bindings = <&kp>, <&kp>;
 		};
+		tt: tog_tap {
+			compatible = "zmk,behavior-hold-tap";
+			label = "TOGGLE_TAP";
+			#binding-cells = <2>;
+			flavor = "tap-preferred";
+			tapping-term-ms = <210>;
+			quick-tap-ms = <0>;
+			bindings = <&mo>, <&tog>;
+			
+		};
 	};
 
 	keymap {
@@ -73,42 +78,42 @@
 			 *	TAB	'	,	.	P	Y	F	G	C	R	L	/
 			 *	=	A	O	E	U	I	D	H	T	N	S	-
 			 *	`	;	Q	J	K	X	B	M	W	V	Z	\
- 			 *				GUI	BSP	SPC	SPC	DEL	RET
+ 			 *				BSP	NUM	SPC	SPC	NAV	GUI
  			 */						
 			bindings = <
 				&kp TAB &kp  SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp  L &kp FSLH
 				&kp EQUAL &kp A &hm LALT O &hm LCTL E &hm LSFT U &kp I &kp D &hm RSFT H &hm RCTL T &hm RALT N &kp S &kp MINUS
 				&kp GRAVE &kp SEMI &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
-				&kp LGUI &mo 1 &kp SPACE &kp SPACE &mo 2 &kp RGUI
+				&kp BSPC &tt 1 1 &kp SPACE &kp SPACE &tt 2 2 &kp RET
 			>;
 		};
 		num_layer {
 			label = "NUM";
 			/*
-			 *	___	___	[	]	XXX	XXX	XXX	7	8	9	___	___
-			 *	___	___	(	)	SFT	XXX	XXX	4	5	6	___	___
+			 *	___	___	[	]	XXX	XXX	XXX	7	8	9	XXX	XXX
+			 *	___	___	(	)	SFT	XXX	XXX	4	5	6	XXX	___
 			 *	XXX	XXX	{	}	XXX	XXX	XXX	1	2	3	XXX	XXX
  			 *				___	___	___	___	0	.
  			 */						
 			bindings = <
-				&trans &trans &kp LBKT &kp RBKT &none &none &none &kp N7 &kp N8 &kp N9 &trans &trans
-				&trans &trans &hm LALT LPAR &hm LCTL RPAR &kp LSFT &none &none &hm RSFT N4 &hm RCTL N5 &hm RALT N6 &trans &trans
-				&none &none &kp LBRC &kp RBRC &none &none &none &kp N1 &kp N2 &kp N3 &none &none
+				&trans &trans &kp LBKT &kp RBKT &none &none &none &kp N7 &kp N8 &kp N9 &none &none
+				&trans &trans &hm LALT LPAR &hm LCTL RPAR &kp LSFT &none &none &hm RSFT N4 &hm RCTL N5 &hm RALT N6 &none &trans
+				&trans &trans &kp LBRC &kp RBRC &none &none &none &kp N1 &kp N2 &kp N3 &none &none
 				&trans &trans &trans &trans &kp N0 &kp DOT	
 			>;
 		};
 		nav_layer {
 			label = "NAV";
 			/*
-			 *	___	F1	F2	F3	F4	XXX	XXX	HOM	UP	PUP	CAP	___
-			 *	___	F5	F6	F7	F8	INS	XXX	LFT	APP	RHT	PSC	___
-			 *	XXX	F9	F10	F11	F12	XXX	XXX	END	DN	PDN	XXX	XXX
+			 *	___	F1	F2	F3	F4	XXX	XXX	HOM	UP	PUP	CAP	XXX
+			 *	___	F5	F6	F7	F8	INS	XXX	LFT	APP	RHT	PSC	XXX
+			 *	___	F9	F10	F11	F12	XXX	XXX	END	DN	PDN	XXX	XXX
  			 *				___	___	___	___	___	___
  			 */						
 			bindings = <
-				&trans &kp F1 &kp F2 &kp F3 &kp F4 &none &none &kp HOME &kp UP &kp PG_UP &kp CAPS &trans
-				&trans &hm LGUI F5 &hm LALT F6 &hm LCTL F7 &hm LSFT F8 &kp INS &none &hm RSFT LEFT &hm RCTL K_APP &hm RALT RIGHT &hm RGUI PSCRN &trans
-				&none &kp F9 &kp F10 &kp F11 &kp F12 &none &none &kp END &kp DOWN &kp PG_DN &none &none
+				&trans &kp F1 &kp F2 &kp F3 &kp F4 &none &none &kp HOME &kp UP &kp PG_UP &kp CAPS &none
+				&trans &hm LGUI F5 &hm LALT F6 &hm LCTL F7 &hm LSFT F8 &kp INS &none &hm RSFT LEFT &hm RCTL K_APP &hm RALT RIGHT &hm RGUI PSCRN &none
+				&trans &kp F9 &kp F10 &kp F11 &kp F12 &none &none &kp END &kp DOWN &kp PG_DN &none &none
 				&trans &trans &trans &trans &trans &trans
 			>;
 		};
