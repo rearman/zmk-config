@@ -85,10 +85,10 @@
 		num_layer {
 			label = "NUM";
 			/*
-			 *	XXX	XXX	[	]	XXX	XXX	XXX	7	8	9	XXX	XXX
-			 *	XXX	GUI	(	)	SFT	XXX	XXX	4	5	6	GUI	-
+			 *	___	___	[	]	XXX	XXX	XXX	7	8	9	___	___
+			 *	___	___	(	)	SFT	XXX	XXX	4	5	6	___	___
 			 *	XXX	XXX	{	}	XXX	XXX	XXX	1	2	3	XXX	XXX
- 			 *				ESC	XXX	SPC	SPC	0	.
+ 			 *				___	___	___	___	0	.
  			 */						
 			bindings = <
 				&trans &trans &kp LBKT &kp RBKT &none &none &none &kp N7 &kp N8 &kp N9 &trans &trans
@@ -100,14 +100,14 @@
 		nav_layer {
 			label = "NAV";
 			/*
-			 *	XXX	F1	F2	F3	F4	XXX	XXX	HOM	UP	PUP	CAP	XXX
-			 *	XXX	F5	F6	F7	F8	INS	XXX	LFT	APP	RHT	PSC	XXX
+			 *	___	F1	F2	F3	F4	XXX	XXX	HOM	UP	PUP	CAP	___
+			 *	___	F5	F6	F7	F8	INS	XXX	LFT	APP	RHT	PSC	___
 			 *	XXX	F9	F10	F11	F12	XXX	XXX	END	DN	PDN	XXX	XXX
- 			 *				ESC	BSP	SPC	SPC	XXX	RET
+ 			 *				___	___	___	___	___	___
  			 */						
 			bindings = <
-				&none &kp F1 &kp F2 &kp F3 &kp F4 &none &none &kp HOME &kp UP &kp PG_UP &kp CAPS &none
-				&none &hm LGUI F5 &hm LALT F6 &hm LCTL F7 &hm LSFT F8 &kp INS &none &hm RSFT LEFT &hm RCTL K_APP &hm RALT RIGHT &hm RGUI PSCRN &none
+				&trans &kp F1 &kp F2 &kp F3 &kp F4 &none &none &kp HOME &kp UP &kp PG_UP &kp CAPS &trans
+				&trans &hm LGUI F5 &hm LALT F6 &hm LCTL F7 &hm LSFT F8 &kp INS &none &hm RSFT LEFT &hm RCTL K_APP &hm RALT RIGHT &hm RGUI PSCRN &trans
 				&none &kp F9 &kp F10 &kp F11 &kp F12 &none &none &kp END &kp DOWN &kp PG_DN &none &none
 				&trans &trans &trans &trans &trans &trans
 			>;
