@@ -83,9 +83,9 @@
  			 *				ESC	XXX	SPC	SPC	0	.
  			 */						
 			bindings = <
-				&none &none &kp LBRC &kp RBRC &none &none &none &kp N7 &kp N8 &kp N9 &none &none
+				&none &none &kp LBKT &kp RBKT &none &none &none &kp N7 &kp N8 &kp N9 &none &none
 				&none &kp LGUI &hm LALT LPAR &hm LCTL RPAR &kp LSFT &none &none &hm RSFT N4 &hm RCTL N5 &hm RALT N6 &kp RGUI &trans
-				&none &none &kp LCBR &kp RCBR &none &none &none &kp N1 &kp N2 &kp N3 &none &none
+				&none &none &kp LBRC &kp RBRC &none &none &none &kp N1 &kp N2 &kp N3 &none &none
 				&trans &trans &trans &trans &kp N0 &kp DOT	
 			>;
 		};
