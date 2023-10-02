@@ -15,37 +15,7 @@
 
 / {	
 	combos {
-		compatible = "zmk,combos";
-		combo_esc {
-			timeout-ms = <50>; // TAB-'
-			key-positions = <0 1>;
-			bindings = <&kp ESC>;
-		};
-		combo_cut {
-			timeout-ms = <50>;
-			key-positions = <2 3>; // ,-.
-			bindings = <&kp LC(X)>;
-		};
-		combo_copy {
-			timeout-ms = <50>;
-			key-positions = <2 3 4>; // ,-.-p
-			bindings = <&kp LC(C)>;
-		};
-		combo_paste {
-			timeout-ms = <50>;
-			key-positions = <2 4>; // ,-p
-			bindings = <&kp LC(V)>;
-		};
-		combo_del {
-			timeout-ms = <50>;
-			key-positions = <12 13>; // =-a
-			bindings = <&kp DEL>;
-		};
-		combo_gui {
-			timeout-ms = <50>;
-			key-positions = <24 25>; // =-a
-			bindings = <&kp GUI>;
-		};
+		#include "combos.dtsi"
 	};
 
 	behaviors {
@@ -58,15 +28,13 @@
 			quick-tap-ms = <0>;
 			bindings = <&kp>, <&kp>;
 		};
-		tt: tog_tap {
-			compatible = "zmk,behavior-hold-tap";
-			label = "TOGGLE_TAP";
-			#binding-cells = <2>;
-			flavor = "tap-preferred";
-			tapping-term-ms = <210>;
-			quick-tap-ms = <0>;
-			bindings = <&mo>, <&tog>;
-			
+		skq: sticky_key_quick_release {
+			compatible = "zmk,behavior-sticky-key";
+			label = "STICKY_KEY_QUICK_RELEASE";
+			#binding-cells = <1>;
+			bindings = <&kp>;
+			release-after-ms = <1000>;
+			quick-release;
 		};
 	};
 
@@ -83,8 +51,8 @@
 			bindings = <
 				&kp TAB &kp  SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp  L &kp FSLH
 				&kp EQUAL &kp A &hm LALT O &hm LCTL E &hm LSFT U &kp I &kp D &hm RSFT H &hm RCTL T &hm RALT N &kp S &kp MINUS
-				&kp GRAVE &kp SEMI &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
-				&kp BSPC &tt 1 1 &kp SPACE &kp SPACE &tt 2 2 &kp RET
+				&mt LSFT GRAVE &kp SEMI &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &mt RSFT BSLH
+				&kp BSPC &mo 1 &kp SPACE &kp SPACE &mo 2 &kp RET
 			>;
 		};
 		num_layer {
