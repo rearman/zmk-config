@@ -50,9 +50,9 @@
 				&mt LGUI TAB	&kp  SQT	&kp COMMA	&kp DOT		&kp P		&kp Y		&kp F		&kp G		&kp C	&kp R	&kp  L	&mt RGUI FSLH
 				&lt 1 EQUAL	&kp A		&kp O		&kp E		&kp U		&kp I		&kp D		&kp H		&kp T	&kp N	&kp S	&lt 1 MINUS
 				&lt 2 GRAVE	&kp SEMI	&kp Q		&kp J		&kp K		&kp X		&kp B		&kp M		&kp W	&kp V	&kp Z	&lt 2 BSLH
-										&mt LALT BSPC	&mt LSFT CAPS	&mt LCTL SPACE	&mt RCTL SPACE	&mt RSFT CAPS	&mt RALT RET
+										&mt LALT DEL	&mt LSFT CAPS	&mt LCTL BSPC	&mt RCTL SPACE	&mt RSFT CAPS	&mt RALT RET
 			>;
-		};
+		};d
 		num_layer {
 			display-name = "NUM";
 			/*
