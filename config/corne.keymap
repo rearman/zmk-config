@@ -52,7 +52,7 @@
 				&lt 2 GRAVE	&kp SEMI	&kp Q		&kp J		&kp K		&kp X		&kp B		&kp M		&kp W	&kp V	&kp Z	&lt 2 BSLH
 										&mt LALT DEL	&mt LSFT CAPS	&mt LCTL BSPC	&mt RCTL SPACE	&mt RSFT CAPS	&mt RALT RET
 			>;
-		};d
+		};
 		num_layer {
 			display-name = "NUM";
 			/*
