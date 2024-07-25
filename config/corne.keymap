@@ -145,9 +145,9 @@
 			 *				___	___	___	___	___	___
 			 */
 			bindings = <
-				&kp ESC	&kp F1		&kp F2		&kp F3		&kp F4		&none	&none	&kp HOME	&kp UP		&kp PG_UP	&kp CAPS	&trans
+				&trans	&kp F1		&kp F2		&kp F3		&kp F4		&none	&none	&kp HOME	&kp UP		&kp PG_UP	&kp CAPS	&trans
 				&trans	&lhm LGUI F5	&lhm LALT F6	&lhm LSFT F7	&lhm LCTL F8	&kp INS	&none	&rhm RCTL LEFT	&rhm RSFT K_APP	&rhm RALT RIGHT	&rhm RGUI DEL	&trans
-				&trans	&kp F9		&kp F10		&kp F11		&kp F12		&none	&none	&kp END		&kp DOWN	&kp PG_DN	&kp PSCRN	.&trans
+				&trans	&kp F9		&kp F10		&kp F11		&kp F12		&none	&none	&kp END		&kp DOWN	&kp PG_DN	&kp PSCRN	&trans
 									&trans		&trans		&trans	&trans	&trans		&trans
 			>;
 		};
