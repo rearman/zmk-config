@@ -21,13 +21,14 @@
                       wait-ms = <30>;
                       tap-ms = <40>;
                       bindings = <&kp PAUSE_BREAK &kp T &kp H>;
+               };
                eng: eng {
                       compatible = "zmk,behavior-macro";
                       #binding-cells = <0>;
                       wait-ms = <30>;
                       tap-ms = <40>;
                       bindings = <&kp PAUSE_BREAK &kp N &kp G>;
-
+               };
         };
         combos {
                 #include "combos.dtsi"
