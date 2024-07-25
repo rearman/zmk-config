@@ -37,10 +37,10 @@
 		 * <. . result .> - Three adjacent keys combo
 		 * <[. sq result .] angle result .> - One combo for two keys, another for all three
 		 * # # - Separated combo, result at EOL of last key in combo
-		 * 00-11 [.  ESC   .]	<[1 C-x	 .] C-c	  1>	 .	.	2	.	.	.	.  1 C-v
-		 * 12-23 [.  DEL   .]	.	.	.	.	.      [. thorn .]	2	.	.  2 ng digraph
-		 * 24-35 [.  GUI   .]	.	.	.	.	.	.	.	.	.	.
-		 * 36-41			 .	.	.	.	.	.
+		 * 00-11	[. ESC	.]	    <[1 C-x	.] C-c	1>	.	.	2		.	.	.	.	1 C-v
+		 * 12-23	[. DEL	.]		.	.		.	.	.       [. thorn	.]	2	.	.	2 ng digraph
+		 * 24-35	[. GUI	.]		.	.		.	.	.	.		.	.	.	.
+		 * 36-41					.	.		.	.	.	.
 		 */
 		combo_esc {
 			bindings = <&kp ESC>;
@@ -85,13 +85,27 @@
 	};
 
 	behaviors {
-		hm: homerow_mods {
+		lhm: left_homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
-			flavor = "tap-preferred";
+			flavor = "balanced";
 			tapping-term-ms = <210>;
 			quick-tap-ms = <0>;
+			require-prior-idle-ms = <150>;
 			bindings = <&kp>, <&kp>;
+			hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 36 37 38 39 40 41>;
+			hold-trigger-on-release;
+		};
+		rhm: right_homerow_mods {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			flavor = "balanced";
+			tapping-term-ms = <210>;
+			quick-tap-ms = <0>;
+			require-prior-idle-ms = <150>;
+			bindings = <&kp>, <&kp>;
+			hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 30 31 36 37 38 39 40 41>;
+			hold-trigger-on-release;
 		};
 		skq: sticky_key_quick_release {
 			compatible = "zmk,behavior-sticky-key";
@@ -113,9 +127,9 @@
 			 *  3				DEL	SFT	BSP	SPC	SFT	RET
 			 */
 			bindings = <
-				&mt LGUI TAB	&kp  SQT	&kp COMMA	&kp DOT		&kp P		&kp Y		&kp F		&kp G		&kp C	&kp R	&kp  L	&mt RGUI FSLH
-				&lt 1 EQUAL	&kp A		&kp O		&kp E		&kp U		&kp I		&kp D		&kp H		&kp T	&kp N	&kp S	&lt 1 MINUS
-				&lt 2 GRAVE	&kp SEMI	&kp Q		&kp J		&kp K		&kp X		&kp B		&kp M		&kp W	&kp V	&kp Z	&lt 2 BSLH
+				&mt LGUI TAB	&kp  SQT	&kp COMMA	&kp DOT		&kp P		&kp Y		&kp F		&kp G		&kp C		&kp R		&kp  L		&mt RGUI FSLH
+				&lt 1 EQUAL	&lhm LGUI A	&lhm LALT O	&lhm LSFT E	&lhm LCTL U	&kp I		&kp D		&rhm RCTL H	&rhm RSFT T	&rhm RALT N	&rhm RGUI S	&lt 1 MINUS
+				&lt 2 GRAVE	&kp SEMI	&kp Q		&kp J		&kp K		&kp X		&kp B		&kp M		&kp W		&kp V		&kp Z		&lt 2 BSLH
 										&mt LALT DEL	&mt LSFT CAPS	&mt LCTL BSPC	&mt RCTL SPACE	&mt RSFT CAPS	&mt RALT RET
 			>;
 		};
