@@ -14,6 +14,21 @@
 };
 
 / {
+        macros {
+               thorn: thorn {
+                      compatible = "zmk,behavior-macro";
+                      #binding-cells = <0>;
+                      wait-ms = <30>;
+                      tap-ms = <40>;
+                      bindings = <&kp PAUSE_BREAK &kp T &kp H>;
+               eng: eng {
+                      compatible = "zmk,behavior-macro";
+                      #binding-cells = <0>;
+                      wait-ms = <30>;
+                      tap-ms = <40>;
+                      bindings = <&kp PAUSE_BREAK &kp N &kp G>;
+
+        };
         combos {
                 #include "combos.dtsi"
         };
@@ -43,9 +58,9 @@
                          * [. result .] - Two adjacent keys combo
                          * <. . result .> - Three adjacent keys combo
                          * <[. sq result .] angle result .> - One combo for two keys, another for all three
-                         * # # - Separated combo, result at EOL
-                         *  0  [.  ESC   .]   <[# C-x  .] C-c   #>     .	.	.	.	.	.	.  # C-v
-                         *  1  [.  DEL   .]	.	.	.	.	.	.	.	.	.	.
+                         * # # - Separated combo, result at EOL of last key in combo
+                         *  0  [.  ESC   .]   <[1 C-x  .] C-c   1>     .	.	2	.	.	.	.  1 C-v
+                         *  1  [.  DEL   .]	.	.	.	.	.      [. thorn .]	2	.	.  2 ng digraph
                          *  2  [.  GUI   .]	.	.	.	.	.	.	.	.	.	.
                          *  3                           .	.	.	.	.	.
                          */
