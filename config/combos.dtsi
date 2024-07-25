@@ -15,11 +15,10 @@ compatible = "zmk,combos";
  *	24	25	26	27	28	29	|	30	31	32	33	34	35
  *				36	37	38	|	39	40	41
  */
- 
+
 COMBO(esc, &kp ESC, 0 1)
 COMBO(cut, &kp LC(X), 2 3)
 COMBO(copy, &kp LC(C), 2 3 4)
 COMBO(paste, &kp LC(V), 2 4)
 COMBO(del, &kp DEL, 12 13)
 COMBO(gui, &sk LGUI, 24 25)
-COMBO(cap, &kp CAPS, 24 35)
