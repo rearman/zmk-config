@@ -69,9 +69,9 @@
 			tapping-term-ms = <290>;
 			quick-tap-ms = <175>;
 			require-prior-idle-ms = <150>;
-			bindings = <&kp>, <&kp>;
 			hold-trigger-key-positions = <RIGHT_SIDE>;
 			hold-trigger-on-release;
+			bindings = <&kp>, <&kp>;
 		};
 		rhm: right_homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
@@ -80,9 +80,31 @@
 			tapping-term-ms = <290>;
 			quick-tap-ms = <175>;
 			require-prior-idle-ms = <150>;
-			bindings = <&kp>, <&kp>;
 			hold-trigger-key-positions = <LEFT_SIDE>;
 			hold-trigger-on-release;
+			bindings = <&kp>, <&kp>;
+		};
+		lhs: left_homerow_shift {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			flavor = "balanced";
+			tapping-term-ms = <290>;
+			quick-tap-ms = <175>;
+			require-prior-idle-ms = <100>;
+			hold-trigger-key-positions = <RIGHT_SIDE>;
+			hold-trigger-on-release;
+			bindings = <&kp>, <&kp>;
+		};
+		rhs: right_homerow_shift {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			flavor = "balanced";
+			tapping-term-ms = <290>;
+			quick-tap-ms = <175>;
+			require-prior-idle-ms = <100>;
+			hold-trigger-key-positions = <LEFT_SIDE>;
+			hold-trigger-on-release;
+			bindings = <&kp>, <&kp>;
 		};
 		skq: sticky_key_quick_release {
 			compatible = "zmk,behavior-sticky-key";
@@ -105,7 +127,7 @@
 			 */
 			bindings = <
 				&kp TAB		&kp  SQT	&kp COMMA	&kp DOT		&kp P		&kp Y		&kp F		&kp G		&kp C		&kp R		&kp  L		&kp FSLH
-				&kp EQUAL	&lhm LGUI A	&lhm LALT O	&lhm LCTL E	&lhm LSFT U	&kp I		&kp D		&rhm RSFT H	&rhm RCTL T	&rhm RALT N	&rhm RGUI S	&kp MINUS
+				&kp EQUAL	&lhm LGUI A	&lhm LALT O	&lhm LCTL E	&lhs LSFT U	&kp I		&kp D		&rhs RSFT H	&rhm RCTL T	&rhm RALT N	&rhm RGUI S	&kp MINUS
 				&kp GRAVE	&kp SEMI	&kp Q		&kp J		&kp K		&kp X		&kp B		&kp M		&kp W		&kp V		&kp Z		&kp BSLH
 										&kp DEL		&lt 2 ESC	&lt 1 BSPC	&lt 1 SPACE	&lt 2 CAPS	&kp RET
 			>;
@@ -120,7 +142,7 @@
 			 */
 			bindings = <
 				&trans	&none	&kp LBKT	&kp RBKT	&none	&none	&none	&kp N7		&kp N8		&kp N9		&none		&trans
-				&trans	&trans	&lhm LALT LPAR	&lhm LCTL RPAR	&trans	&none	&none	&rhm RSFT N4	&rhm RCTL N5	&rhm RALT N6	&rhm RGUI DOT	&trans
+				&trans	&trans	&lhm LALT LPAR	&lhm LCTL RPAR	&trans	&none	&none	&rhs RSFT N4	&rhm RCTL N5	&rhm RALT N6	&rhm RGUI DOT	&trans
 				&trans	&none	&kp LBRC	&kp RBRC	&none	&none	&none	&kp N1		&kp N2		&kp N3		&none		&trans
 								&trans		&trans	&trans	&trans	&kp N0		&trans
 			>;
@@ -135,7 +157,7 @@
 			 */
 			bindings = <
 				&trans	&kp F1		&kp F2		&kp F3		&kp F4		&none	&none	&kp HOME	&kp UP		&kp PG_UP	&kp CAPS	&trans
-				&trans	&lhm LGUI F5	&lhm LALT F6	&lhm LCTL F7	&lhm LSFT F8	&kp INS	&none	&rhm RSFT LEFT	&rhm RCTL K_APP	&rhm RALT RIGHT	&rhm RGUI DEL	&trans
+				&trans	&lhm LGUI F5	&lhm LALT F6	&lhm LCTL F7	&lhs LSFT F8	&kp INS	&none	&rhs RSFT LEFT	&rhm RCTL K_APP	&rhm RALT RIGHT	&rhm RGUI DEL	&trans
 				&trans	&kp F9		&kp F10		&kp F11		&kp F12		&none	&none	&kp END		&kp DOWN	&kp PG_DN	&kp PSCRN	&trans
 									&trans		&trans		&trans	&trans	&trans		&trans
 			>;
