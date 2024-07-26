@@ -87,7 +87,7 @@
 		lhs: left_homerow_shift {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
-			flavor = "hold-preferred";
+			flavor = "tap-preferred";
 			tapping-term-ms = <280>;
 			quick-tap-ms = <175>;
 			require-prior-idle-ms = <240>;
@@ -97,7 +97,7 @@
 		rhs: right_homerow_shift {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
-			flavor = "hold-preferred";
+			flavor = "tap-preferred";
 			tapping-term-ms = <280>;
 			quick-tap-ms = <175>;
 			require-prior-idle-ms = <240>;
