@@ -16,15 +16,14 @@
 
 / {
 	macros {
+		compatible = "zmk,behavior-macro";
 		thorn: thorn {
-			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			wait-ms = <30>;
 			tap-ms = <40>;
 			bindings = <&kp PAUSE_BREAK &kp T &kp H>;
 		};
 		eng: eng {
-			compatible = "zmk,behavior-macro";
 			#binding-cells = <0>;
 			wait-ms = <30>;
 			tap-ms = <40>;
@@ -33,39 +32,30 @@
 	};
 
 	combos {
-		/* EXAMPLES
-		 * [. result .] - Two adjacent keys combo
-		 * <. . result .> - Three adjacent keys combo
-		 * <[. sq result .] angle result .> - One combo for two keys, another for all three
-		 * # # - Separated combo, result at EOL of last key in combo
-		 * 00-11	.	.     <[1 C-x	.] C-c	1>	.	.	2	.	.	.	.	1 C-v
-		 * 12-23	.	.	.	.	.	.	.      [. thorn	.]	2	.	.	2 ng digraph
-		 * 24-35	.	.	.	.	.	.	.	.	.	.	.	.
-		 * 36-41					.	.		.	.	.	.
-		 */
+		compatible = "zmk,combos";
 		combo_cut {
 			bindings = <&kp LC(X)>;
-			key-positions = <2 3>;
+			key-positions = <LT2 LT3>; // , .
 			timeout-ms = <50>;
 		};
 		combo_copy {
 			bindings = <&kp LC(C)>;
-			key-positions = <2 3 4>;
+			key-positions = <LT2 LT3 LT4>; // , . p
 			timeout-ms = <50>;
 		};
 		combo_paste {
 			bindings = <&kp LC(V)>;
-			key-positions = <2 4>;
+			key-positions = <LT2 LT4>; // , p
 			timeout-ms = <50>;
 		};
 		combo_thorn {
 			bindings = <&thorn>;
-			key-positions = <19 20>;
+			key-positions = <RM1 RM2>; // h t
 			timeout-ms = <50>;
 		};
 		combo_eng {
 			bindings = <&eng>;
-			key-positions = <7 21>;
+			key-positions = <RT1 RM3>; // g n
 			timeout-ms = <50>;
 		};
 	};
@@ -110,7 +100,7 @@
 			 *  0	TAB	'	,	.	P	Y	F	G	C	R	L	/
 			 *  1	=	A	O	E	U	I	D	H	T	N	S	-
 			 *  2	`	;	Q	J	K	X	B	M	W	V	Z	\
-			 *  3				DEL	SFT	BSP	SPC	SFT	RET
+			 *  3				DEL	ESC	BSP	SPC	CAP	RET
 			 */
 			bindings = <
 				&kp TAB		&kp  SQT	&kp COMMA	&kp DOT		&kp P		&kp Y		&kp F		&kp G		&kp C		&kp R		&kp  L		&kp FSLH
