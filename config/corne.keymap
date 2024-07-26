@@ -92,7 +92,6 @@
 			quick-tap-ms = <175>;
 			require-prior-idle-ms = <240>;
 			hold-trigger-key-positions = <RIGHT_SIDE>;
-			hold-trigger-on-release;
 			bindings = <&kp>, <&kp>;
 		};
 		rhs: right_homerow_shift {
@@ -103,7 +102,6 @@
 			quick-tap-ms = <175>;
 			require-prior-idle-ms = <240>;
 			hold-trigger-key-positions = <LEFT_SIDE>;
-			hold-trigger-on-release;
 			bindings = <&kp>, <&kp>;
 		};
 		skq: sticky_key_quick_release {
