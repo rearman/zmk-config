@@ -59,6 +59,26 @@
 			key-positions = <RT1 RM3>; // g n
 			timeout-ms = <50>;
 		};
+		combo_lpar {
+			bindings = <&kp LPAR>;
+			key-positions = <LT2 LM2>; // , o
+			timeout-ms = <50>;
+		};
+		combo_rpar {
+			bindings = <&kp RPAR>;
+			key-positions = <LT3 LM3>; // . e
+			timeout-ms = <50>;
+		};
+		combo_lbkt {
+			bindings = <&kp LBKT>;
+			key-positions = <LM2 LB2>; // o q
+			timeout-ms = <50>;
+		};
+		combo_rbkt {
+			bindings = <&kp RBKT>;
+			key-positions = <LM3 LB3>; // e j
+			timeout-ms = <50>;
+		};
 	};
 
 	behaviors {
@@ -133,22 +153,22 @@
 		num_layer {
 			display-name = "NUM";
 			/*
-			 *	ESC	XXX	[	]	XXX	XXX	XXX	7	8	9	XXX	___
-			 *	___	XXX	(	)	XXX	XXX	XXX	4	5	6	.	___
-			 *	___	XXX	{	}	XXX	XXX	XXX	1	2	3	XXX	___
-			 *				___	___	___	___	0	___
+			 *	___	XXX	9	8	7	XXX	XXX	7	8	9	XXX	___
+			 *	___	.	6	5	4	XXX	XXX	4	5	6	.	___
+			 *	___	XXX	3	2	1	XXX	XXX	1	2	3	XXX	___
+			 *				___	0	___	___	0	___
 			 */
 			bindings = <
-				&trans	&none	&kp LBKT	&kp RBKT	&none	&none	&none	&kp N7		&kp N8		&kp N9		&none		&trans
-				&trans	&trans	&lhm LALT LPAR	&lhm LCTL RPAR	&trans	&none	&none	&rhs RSFT N4	&rhm RCTL N5	&rhm RALT N6	&rhm RGUI DOT	&trans
-				&trans	&none	&kp LBRC	&kp RBRC	&none	&none	&none	&kp N1		&kp N2		&kp N3		&none		&trans
-								&trans		&trans	&trans	&trans	&kp N0		&trans
+				&trans	&none		&kp N9		&kp N8		&kp N7		&none	&none	&kp N7		&kp N8		&kp N9		&none		&trans
+				&trans	&lhm LGUI DOT	&lhm LALT N6	&lhm LCTL N5	&lhs LSFT N4	&none	&none	&rhs RSFT N4	&rhm RCTL N5	&rhm RALT N6	&rhm RGUI DOT	&trans
+				&trans	&none		&kp N3		&kp N2		&kp N1		&none	&none	&kp N1		&kp N2		&kp N3		&none		&trans
+									&trans		&kp N0		&trans	&trans	&kp N0		&trans
 			>;
 		};
 		nav_layer {
 			display-name = "NAV";
 			/*
-			 *	ESC	F1	F2	F3	F4	XXX	XXX	HOM	UP	PUP	CAP	___
+			 *	___	F1	F2	F3	F4	XXX	XXX	HOM	UP	PUP	CAP	___
 			 *	___	F5	F6	F7	F8	INS	XXX	LFT	APP	RHT	DEL	___
 			 *	___	F9	F10	F11	F12	XXX	XXX	END	DN	PDN	PSC	___
 			 *				___	___	___	___	___	___
