@@ -10,26 +10,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include "42-keys.h"
 
-#define ___ &trans
-#define XXX &none
-
-#define PRIOR_IDLE <240>
-#define HOME_ROW_TAPPING_TERM <280>
-#define QUICK_TAP <175>
-
-#define L1(key) &lt 1 key
-#define L2(key) &lt 2 key
-
-#define LP(key) &lhm LGUI key
-#define LR(key) &lhm LCTL key
-#define LM(key) &lhm LALT key
-#define LI(key) &lhs LSFT key
-
-#define RP(key) &rhm RGUI key
-#define RR(key) &rhm RCTL key
-#define RM(key) &rhm RALT key
-#define RI(key) &rhs RSFT key
-
 &mt {
 	tapping-term-ms = <280>;
 	quick-tap-ms = <175>;
@@ -37,82 +17,43 @@
 
 / {
 	macros {
-		thorn: thorn {
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			wait-ms = <30>;
-			tap-ms = <40>;
-			bindings = <&kp PAUSE_BREAK &kp T &kp H>;
-		};
-		eng: eng {
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			wait-ms = <30>;
-			tap-ms = <40>;
-			bindings = <&kp PAUSE_BREAK &kp N &kp G>;
-		};
+		#define MACRO(NAME, BINDINGS) \
+			NAME: NAME { \
+				compatible = "zmk,behavior-macro"; \
+				#binding-cells = <0>; \
+				wait-ms = <30>; \
+				tap-ms = <40>; \
+				bindings = <BINDINGS>; \
+			};
+		MACRO(thorn, &kp PAUSE_BREAK &kp T &kp H)
+		MACRO(eng, &kp PAUSE_BREAK &kp N &kp G)
 	};
 
 	combos {
 		compatible = "zmk,combos";
-
-		combo_cut {
-			bindings = <&kp LC(X)>;
-			layers = <0>;
-			timeout-ms = <50>;
-			key-positions = <LT2 LT3>; // , .
-		};
-		combo_copy {
-			bindings = <&kp LC(C)>;
-			layers = <0>;
-			timeout-ms = <50>;
-			key-positions = <LT2 LT3 LT4>; // , . p
-		};
-		combo_paste {
-			bindings = <&kp LC(V)>;
-			layers = <0>;
-			timeout-ms = <50>;
-			key-positions = <LT2 LT4>; // , p
-		};
-		combo_thorn {
-			bindings = <&thorn>;
-			layers = <0>;
-			timeout-ms = <50>;
-			key-positions = <RM1 RM2>; // h t -> þ
-		};
-		combo_eng {
-			bindings = <&eng>;
-			layers = <0>;
-			timeout-ms = <50>;
-			key-positions = <RT1 RM3>; // g n -> ŋ
-		};
-		combo_lpar {
-			bindings = <&kp LPAR>;
-			layers = <0>;
-			timeout-ms = <50>;
-			key-positions = <LT2 LM2>; // , o -> (
-		};
-		combo_rpar {
-			bindings = <&kp RPAR>;
-			layers = <0>;
-			timeout-ms = <50>;
-			key-positions = <LT3 LM3>; // . e -> )
-		};
-		combo_lbkt {
-			bindings = <&kp LBKT>;
-			layers = <0>;
-			timeout-ms = <50>;
-			key-positions = <LM2 LB2>; // o q -> [
-		};
-		combo_rbkt {
-			bindings = <&kp RBKT>;
-			layers = <0>;
-			timeout-ms = <50>;
-			key-positions = <LM3 LB3>; // e j -> ]
-		};
+		#define COMBO(NAME, BINDINGS, KEYPOS) \
+			combo_##NAME { \
+				bindings = <BINDINGS>; \
+				layers = <0>; \
+				key-positions = <KEYPOS>; \
+				timeout-ms = <50>; \
+			};
+		COMBO(cut, &kp LC(X), LT2 LT3) // , .
+		COMBO(copy, &kp LC(C), LT2 LT3 LT4) // , . p
+		COMBO(paste, &kp LC(V), LT2 LT4) // , p
+		COMBO(thorn, &thorn, RM1 RM2) // h t -> þ
+		COMBO(eng, &eng, RT1 RM3) // g n -> ŋ
+		COMBO(lpar, &kp LPAR, LT2 LM2) // , o -> (
+		COMBO(rpar, &kp RPAR, LT3 LM3) // . e -> )
+		COMBO(lbkt, &kp LBKT, LM2 LB2) // o q -> [
+		COMBO(rbkt, &kp RBKT, LM3 LB3) // e j -> ]
 	};
 
 	behaviors {
+		#define PRIOR_IDLE <240>
+		#define HOME_ROW_TAPPING_TERM <280>
+		#define QUICK_TAP <175>
+
 		lhm: left_homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
@@ -166,6 +107,22 @@
 
 	keymap {
 		compatible = "zmk,keymap";
+
+		#define ___ &trans
+		#define XXX &none
+		#define L1(key) &lt 1 key
+		#define L2(key) &lt 2 key
+
+		#define LP(key) &lhm LGUI key
+		#define LR(key) &lhm LCTL key
+		#define LM(key) &lhm LALT key
+		#define LI(key) &lhs LSFT key
+
+		#define RP(key) &rhm RGUI key
+		#define RR(key) &rhm RCTL key
+		#define RM(key) &rhm RALT key
+		#define RI(key) &rhs RSFT key
+
 		default_layer {
 			display-name = "BASE";
 			/*
