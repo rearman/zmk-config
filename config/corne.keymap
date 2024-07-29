@@ -51,8 +51,8 @@
 
 	behaviors {
 		#define PRIOR_IDLE <240>
-		#define HOME_ROW_TAPPING_TERM <280>
-		#define QUICK_TAP <175>
+		#define HOME_ROW_TAPPING_TERM <150>
+		#define QUICK_TAP <150>
 
 		lhm: left_homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
