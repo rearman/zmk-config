@@ -99,6 +99,8 @@
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "balanced";
+			tapping-term-ms = <280>;
+			quick-tap-ms = <175>;
 			require-prior-idle-ms = <PRIOR_IDLE>;
 			hold-trigger-key-positions = <RIGHT_SIDE>;
 			hold-trigger-on-release;
@@ -108,6 +110,8 @@
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "balanced";
+			tapping-term-ms = <280>;
+			quick-tap-ms = <175>;
 			require-prior-idle-ms = <PRIOR_IDLE>;
 			hold-trigger-key-positions = <LEFT_SIDE>;
 			hold-trigger-on-release;
@@ -117,6 +121,8 @@
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
+			tapping-term-ms = <280>;
+			quick-tap-ms = <175>;
 			require-prior-idle-ms = <PRIOR_IDLE>;
 			hold-trigger-key-positions = <RIGHT_SIDE>;
 			bindings = <&kp>, <&kp>;
@@ -125,6 +131,8 @@
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
+			tapping-term-ms = <280>;
+			quick-tap-ms = <175>;
 			require-prior-idle-ms = <PRIOR_IDLE>;
 			hold-trigger-key-positions = <LEFT_SIDE>;
 			bindings = <&kp>, <&kp>;
