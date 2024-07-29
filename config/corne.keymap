@@ -13,7 +13,9 @@
 #define ___ &trans
 #define XXX &none
 
-#define PRIOR_IDLE 240
+#define PRIOR_IDLE <240>
+#define HOME_ROW_TAPPING_TERM <280>
+#define QUICK_TAP <175>
 
 #define L1(key) &lt 1 key
 #define L2(key) &lt 2 key
@@ -53,43 +55,59 @@
 
 	combos {
 		compatible = "zmk,combos";
-		layers = <0>;
-		timeout-ms = <50>;
 
 		combo_cut {
 			bindings = <&kp LC(X)>;
+			layers = <0>;
+			timeout-ms = <50>;
 			key-positions = <LT2 LT3>; // , .
 		};
 		combo_copy {
 			bindings = <&kp LC(C)>;
+			layers = <0>;
+			timeout-ms = <50>;
 			key-positions = <LT2 LT3 LT4>; // , . p
 		};
 		combo_paste {
 			bindings = <&kp LC(V)>;
+			layers = <0>;
+			timeout-ms = <50>;
 			key-positions = <LT2 LT4>; // , p
 		};
 		combo_thorn {
 			bindings = <&thorn>;
+			layers = <0>;
+			timeout-ms = <50>;
 			key-positions = <RM1 RM2>; // h t -> þ
 		};
 		combo_eng {
 			bindings = <&eng>;
+			layers = <0>;
+			timeout-ms = <50>;
 			key-positions = <RT1 RM3>; // g n -> ŋ
 		};
 		combo_lpar {
 			bindings = <&kp LPAR>;
+			layers = <0>;
+			timeout-ms = <50>;
 			key-positions = <LT2 LM2>; // , o -> (
 		};
 		combo_rpar {
 			bindings = <&kp RPAR>;
+			layers = <0>;
+			timeout-ms = <50>;
 			key-positions = <LT3 LM3>; // . e -> )
 		};
 		combo_lbkt {
 			bindings = <&kp LBKT>;
+			layers = <0>;
+			timeout-ms = <50>;
 			key-positions = <LM2 LB2>; // o q -> [
 		};
 		combo_rbkt {
 			bindings = <&kp RBKT>;
+			layers = <0>;
+			timeout-ms = <50>;
 			key-positions = <LM3 LB3>; // e j -> ]
 		};
 	};
@@ -99,10 +117,10 @@
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "balanced";
-			tapping-term-ms = <280>;
-			quick-tap-ms = <175>;
-			require-prior-idle-ms = <PRIOR_IDLE>;
-			hold-trigger-key-positions = <RIGHT_SIDE>;
+			tapping-term-ms = HOME_ROW_TAPPING_TERM;
+			quick-tap-ms = QUICK_TAP;
+			require-prior-idle-ms = PRIOR_IDLE;
+			hold-trigger-key-positions = RIGHT_SIDE;
 			hold-trigger-on-release;
 			bindings = <&kp>, <&kp>;
 		};
@@ -110,10 +128,10 @@
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "balanced";
-			tapping-term-ms = <280>;
-			quick-tap-ms = <175>;
-			require-prior-idle-ms = <PRIOR_IDLE>;
-			hold-trigger-key-positions = <LEFT_SIDE>;
+			tapping-term-ms = HOME_ROW_TAPPING_TERM;
+			quick-tap-ms = QUICK_TAP;
+			require-prior-idle-ms = PRIOR_IDLE;
+			hold-trigger-key-positions = LEFT_SIDE;
 			hold-trigger-on-release;
 			bindings = <&kp>, <&kp>;
 		};
@@ -121,20 +139,20 @@
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
-			tapping-term-ms = <280>;
-			quick-tap-ms = <175>;
-			require-prior-idle-ms = <PRIOR_IDLE>;
-			hold-trigger-key-positions = <RIGHT_SIDE>;
+			tapping-term-ms = HOME_ROW_TAPPING_TERM;
+			quick-tap-ms = QUICK_TAP;
+			require-prior-idle-ms = PRIOR_IDLE;
+			hold-trigger-key-positions = RIGHT_SIDE;
 			bindings = <&kp>, <&kp>;
 		};
 		rhs: right_homerow_shift {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "hold-preferred";
-			tapping-term-ms = <280>;
-			quick-tap-ms = <175>;
-			require-prior-idle-ms = <PRIOR_IDLE>;
-			hold-trigger-key-positions = <LEFT_SIDE>;
+			tapping-term-ms = HOME_ROW_TAPPING_TERM;
+			quick-tap-ms = QUICK_TAP;
+			require-prior-idle-ms = PRIOR_IDLE;
+			hold-trigger-key-positions = LEFT_SIDE;
 			bindings = <&kp>, <&kp>;
 		};
 		skq: sticky_key_quick_release {
