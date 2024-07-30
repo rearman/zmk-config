@@ -51,7 +51,7 @@
 
 	behaviors {
 		#define PRIOR_IDLE <240>
-		#define HOME_ROW_TAPPING_TERM <150>
+		#define HOME_ROW_TAPPING_TERM <200>
 		#define QUICK_TAP <150>
 
 		lhm: left_homerow_mods {
