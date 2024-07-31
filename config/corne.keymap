@@ -51,6 +51,19 @@
 
 	behaviors {
 		#include "homerow-mods.dtsi"
+		
+		td_lsb1: tap_dance_left_shift_backspace_l1 {
+			compatible = "zmk,behavior-tap-dance";
+			#binding-cells = <0>;
+			tapping-term-ms = <200>;
+			bindings = <&mt LSHIFT BSPC>, <&lt 1 BSPC>;
+		};
+		td_rss1: tap_dance_right_shift_space_l1 {
+			compatible = "zmk,behavior-tap-dance";
+			#binding-cells = <0>;
+			tapping-term-ms = <200>;
+			bindings = <&mt RSHIFT SPACE>, <&lt 1 SPACE>;
+		};
 	};
 
 	keymap {
@@ -65,12 +78,12 @@
 		#define CL(key) &mt LCTL key
 		#define AL(key) &mt LALT key
 		#define SL(key) &mt LSFT key
-		
+
 		#define GR(key) &mt RGUI key
 		#define CR(key) &mt RCTL key
 		#define AR(key) &mt RALT key
 		#define SR(key) &mt RSFT key
-		
+
 		default_layer {
 			display-name = "BASE";
 			/*
@@ -83,7 +96,7 @@
 				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F		&kp G	&kp C	&kp R	&kp L	&kp FSLH
 				CL(EQUAL)	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D		&kp H	&kp T	&kp N	&kp S	CR(MINUS)
 				SL(GRAVE)	AL(SEMI)	&kp Q		&kp J	&kp K	&kp X	&kp B		&kp M	&kp W	&kp V	AR(Z)	SR(BSLH)
-												GL(DEL)	L2(ESC)	L1(BSPC)	L1(SPACE)	L2(CAPS)	GR(RET)
+												GL(DEL)	L2(ESC)	&td_lsb1	&td_rss1	L2(CAPS)	GR(RET)
 			>;
 		};
 		num_layer {
