@@ -130,7 +130,7 @@
 		
 		#define RG(key) &mt RGUI key
 		#define RC(key) &mt RCTL key
-		#define RA(key) &mt RALT key`
+		#define RA(key) &mt RALT key
 		#define RS(key) &mt RSFT key
 		
 		default_layer {
