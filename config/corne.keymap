@@ -117,12 +117,22 @@
 		#define LR(key) &lhm LCTL key
 		#define LM(key) &lhm LALT key
 		#define LI(key) &lhs LSFT key
-
+		
 		#define RP(key) &rhm RGUI key
 		#define RR(key) &rhm RCTL key
 		#define RM(key) &rhm RALT key
 		#define RI(key) &rhs RSFT key
 
+		#define LG(key) &mt LGUI key
+		#define LC(key) &mt LCTL key
+		#define LA(key) &mt LALT key
+		#define LS(key) &mt LSFT key
+		
+		#define RG(key) &mt RGUI key
+		#define RC(key) &mt RCTL key
+		#define RA(key) &mt RALT key`
+		#define RS(key) &mt RSFT key
+		
 		default_layer {
 			display-name = "BASE";
 			/*
@@ -132,9 +142,9 @@
 			 *  3				DEL	ESC	BSP	SPC	CAP	RET
 			 */
 			bindings = <
-				&kp TAB		&kp  SQT	&kp COMMA	&kp DOT	&kp P	&kp Y		&kp F		&kp G		&kp C	&kp R	&kp  L	&kp FSLH
-				&kp EQUAL	LP(A)		LR(O)		LM(E)	LI(U)	&kp I		&kp D		RI(H)		RM(T)	RR(N)	RP(S)	&kp MINUS
-				&kp GRAVE	&kp SEMI	&kp Q		&kp J	&kp K	&kp X		&kp B		&kp M		&kp W	&kp V	&kp Z	&kp BSLH
+				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y		&kp F		&kp G		&kp C	&kp R	&kp L	&kp FSLH
+				LC(EQUAL)	&kp A	&kp O		&kp E	&kp U	&kp I		&kp D		&kp H		&kp T	&kp N	&kp S	RC(MINUS)
+				LS(GRAVE)	LA(SEMI)	LG(Q)		&kp J	&kp K	&kp X		&kp B		&kp M		&kp W	RG(V)	RA(Z)	RS(BSLH)
 										&kp DEL	L2(ESC)	L1(BSPC)	L1(SPACE)	L2(CAPS)	&kp RET
 			>;
 		};
@@ -143,13 +153,13 @@
 			/*
 			 *	___	XXX	9	8	7	XXX	XXX	7	8	9	XXX	___
 			 *	___	.	6	5	4	XXX	XXX	4	5	6	.	___
-			 *	___	XXX	3	2	1	XXX	XXX	1	2	3	XXX	___
+			 *	___	___	3	2	1	XXX	XXX	1	2	3	___	___
 			 *				___	0	___	___	0	___
 			 */
 			bindings = <
-				___	XXX	&kp N9	&kp N8	&kp N7	XXX	XXX	&kp N7	&kp N8	&kp N9	XXX	___
-				___	LP(DOT)	LR(N6)	LM(N5)	LI(N4)	XXX	XXX	RI(N4)	RM(N5)	RR(N6)	RP(DOT)	___
-				___	XXX	&kp N3	&kp N2	&kp N1	XXX	XXX	&kp N1	&kp N2	&kp N3	XXX	___
+				___	XXX		&kp N9	&kp N8	&kp N7	XXX	XXX	&kp N7	&kp N8	&kp N9	XXX		___
+				___	&kp DOT	&kp N6	&kp N5	&kp N4	XXX	XXX	&kp N4	&kp N5	&kp N6	&kp DOT	___
+				___	___		LG(N3)	&kp N2	&kp N1	XXX	XXX	&kp N1	&kp N2	RG(N3)	___		___
 							___	&kp N0	___	___	&kp N0	___
 			>;
 		};
@@ -162,9 +172,9 @@
 			 *				___	___	___	___	___	___
 			 */
 			bindings = <
-				___	&kp F1	&kp F2	&kp F3	&kp F4	XXX	XXX	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
-				___	LP(F5)	LR(F6)	LM(F7)	LI(F8)	&kp INS	XXX	RI(LEFT)	RM(K_APP)	RR(RIGHT)	RP(DEL)		___
-				___	&kp F9	&kp F10	&kp F11	&kp F12	XXX	XXX	&kp END		&kp DOWN	&kp PG_DN	&kp INS		___
+				___	&kp F1	&kp F2	&kp F3	&kp F4	XXX		XXX	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
+				___	&kp F5	&kp F6	&kp F7	&kp F8	&kp INS	XXX	&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
+				___	LA(F9)	LG(F10)	&kp F11	&kp F12	XXX		XXX	&kp END		&kp DOWN	RG(PG_DN)	RA(INS)		___
 							___	___	___	___	___		___
 			>;
 		};
