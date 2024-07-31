@@ -16,7 +16,7 @@
 	lh_##SHORTNAME: left_homerow_##NAME { \
 		compatible = "zmk,behavior-hold-tap"; \
 		#binding-cells = <2>; \
-		flavor = "##FLAVOR"; \
+		flavor = FLAVOR; \
 		tapping-term-ms = HOME_ROW_TAPPING_TERM; \
 		quick-tap-ms = QUICK_TAP; \
 		require-prior-idle-ms = PRIOR_IDLE; \
@@ -29,7 +29,7 @@
 	rh_##SHORTNAME: right_homerow_##NAME { \
 		compatible = "zmk,behavior-hold-tap"; \
 		#binding-cells = <2>; \
-		flavor = "##FLAVOR"; \
+		flavor = FLAVOR; \
 		tapping-term-ms = HOME_ROW_TAPPING_TERM; \
 		quick-tap-ms = QUICK_TAP; \
 		require-prior-idle-ms = PRIOR_IDLE; \
@@ -38,8 +38,8 @@
 		bindings = <&kp>, <&kp>; \
 	};
 
-LEFT_HOMEROW(mods, m, balanced)
-LEFT_HOMEROW(shift, s, hold-preferred)
+LEFT_HOMEROW(mods, m, "balanced")
+LEFT_HOMEROW(shift, s, "hold-preferred")
 
-RIGHT_HOMEROW(mods, m, balanced)
-RIGHT_HOMEROW(shift, s, hold-preferred)
+RIGHT_HOMEROW(mods, m, "balanced")
+RIGHT_HOMEROW(shift, s, "hold-preferred")
