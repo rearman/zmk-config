@@ -1,0 +1,45 @@
+#define PRIOR_IDLE <240>
+#define HOME_ROW_TAPPING_TERM <200>
+#define QUICK_TAP <150>
+
+#define LP(key) &lhm LGUI key	// Pinkie
+#define LR(key) &lhm LCTL key	// Ring
+#define LM(key) &lhm LALT key	// Middle
+#define LI(key) &lhs LSFT key		// Index
+
+#define RP(key) &rhm RGUI key
+#define RR(key) &rhm RCTL key
+#define RM(key) &rhm RALT key
+#define RI(key) &rhs RSFT key
+
+#define LEFT_HOMEROW(NAME, SHORTNAME, FLAVOR) \
+	lh_##SHORTNAME: left_homerow_##NAME { \
+		compatible = "zmk,behavior-hold-tap"; \
+		#binding-cells = <2>; \
+		flavor = "FLAVOR"; \
+		tapping-term-ms = HOME_ROW_TAPPING_TERM; \
+		quick-tap-ms = QUICK_TAP; \
+		require-prior-idle-ms = PRIOR_IDLE; \
+		hold-trigger-key-positions = RIGHT_SIDE; \
+		hold-trigger-on-release; \
+		bindings = <&kp>, <&kp>; \
+	};
+	
+#define RIGHT_HOMEROW(NAME, SHORTNAME, FLAVOR) \
+	lh_##SHORTNAME: left_homerow_##NAME { \
+		compatible = "zmk,behavior-hold-tap"; \
+		#binding-cells = <2>; \
+		flavor = "FLAVOR"; \
+		tapping-term-ms = HOME_ROW_TAPPING_TERM; \
+		quick-tap-ms = QUICK_TAP; \
+		require-prior-idle-ms = PRIOR_IDLE; \
+		hold-trigger-key-positions = LEFT_SIDE; \
+		hold-trigger-on-release; \
+		bindings = <&kp>, <&kp>; \
+	};
+
+LEFT_HOMEROW(mods, m, balanced)
+LEFT_HOMEROW(shift, s, hold-preferred)
+
+RIGHT_HOMEROW(mods, m, balanced)
+RIGHT_HOMEROW(shift, s, hold-preferred)
