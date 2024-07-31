@@ -11,7 +11,7 @@
 #include "42-keys.h"
 
 &mt {
-	tapping-term-ms = <280>;
+	tapping-term-ms = <150>;
 	quick-tap-ms = <175>;
 };
 
@@ -144,8 +144,8 @@
 			bindings = <
 				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y		&kp F		&kp G		&kp C	&kp R	&kp L	&kp FSLH
 				LC(EQUAL)	&kp A	&kp O		&kp E	&kp U	&kp I		&kp D		&kp H		&kp T	&kp N	&kp S	RC(MINUS)
-				LS(GRAVE)	LA(SEMI)	LG(Q)		&kp J	&kp K	&kp X		&kp B		&kp M		&kp W	RG(V)	RA(Z)	RS(BSLH)
-										&kp DEL	L2(ESC)	L1(BSPC)	L1(SPACE)	L2(CAPS)	&kp RET
+				LS(GRAVE)	LA(SEMI)	&kp Q		&kp J	&kp K	&kp X		&kp B		&kp M		&kp W	&kp V	RA(Z)	RS(BSLH)
+										LG(DEL)	L2(ESC)	L1(BSPC)	L1(SPACE)	L2(CAPS)	RG(RET)
 			>;
 		};
 		num_layer {
@@ -159,7 +159,7 @@
 			bindings = <
 				___	XXX		&kp N9	&kp N8	&kp N7	XXX	XXX	&kp N7	&kp N8	&kp N9	XXX		___
 				___	&kp DOT	&kp N6	&kp N5	&kp N4	XXX	XXX	&kp N4	&kp N5	&kp N6	&kp DOT	___
-				___	___		LG(N3)	&kp N2	&kp N1	XXX	XXX	&kp N1	&kp N2	RG(N3)	___		___
+				___	___		&kp N3	&kp N2	&kp N1	XXX	XXX	&kp N1	&kp N2	&kp N3	___		___
 							___	&kp N0	___	___	&kp N0	___
 			>;
 		};
@@ -174,7 +174,7 @@
 			bindings = <
 				___	&kp F1	&kp F2	&kp F3	&kp F4	XXX		XXX	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
 				___	&kp F5	&kp F6	&kp F7	&kp F8	&kp INS	XXX	&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
-				___	LA(F9)	LG(F10)	&kp F11	&kp F12	XXX		XXX	&kp END		&kp DOWN	RG(PG_DN)	RA(INS)		___
+				___	LA(F9)	&kp F10	&kp F11	&kp F12	XXX		XXX	&kp END		&kp DOWN	&kp PG_DN	RA(INS)		___
 							___	___	___	___	___		___
 			>;
 		};
