@@ -55,14 +55,26 @@
 		td_lsb1: tap_dance_left_shift_backspace_l1 {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <200>;
+			tapping-term-ms = <150>;
 			bindings = <&mt LSHIFT BSPC>, <&lt 1 BSPC>;
 		};
 		td_rss1: tap_dance_right_shift_space_l1 {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <200>;
+			tapping-term-ms = <150>;
 			bindings = <&mt RSHIFT SPACE>, <&lt 1 SPACE>;
+		};
+		td_lcel2: tap_dance_left_control_esc_l2 {
+			compatible = "zmk,behavior-tap-dance";
+			#binding-cells = <0>;
+			tapping-term-ms = <150>;
+			bindings = <&mt LCTL ESC>, <&lt 2 ESC>;
+		};
+		td_rccl2: tap_dance_right_control_caps_l2 {
+			compatible = "zmk,behavior-tap-dance";
+			#binding-cells = <0>;
+			tapping-term-ms = <150>;
+			bindings = <&mt LCTL CAPS>, <&lt 2 CAPS>;
 		};
 	};
 
@@ -93,10 +105,10 @@
 			 *  3				DEL	ESC	BSP	SPC	CAP	RET
 			 */
 			bindings = <
-				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F		&kp G	&kp C	&kp R	&kp L	&kp FSLH
-				CL(EQUAL)	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D		&kp H	&kp T	&kp N	&kp S	CR(MINUS)
-				SL(GRAVE)	AL(SEMI)	&kp Q		&kp J	&kp K	&kp X	&kp B		&kp M	&kp W	&kp V	AR(Z)	SR(BSLH)
-												GL(DEL)	L2(ESC)	&td_lsb1	&td_rss1	L2(CAPS)	GR(RET)
+				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F	&kp G	&kp C	&kp R	&kp L	&kp FSLH
+				&kp EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D	&kp H	&kp T	&kp N	&kp S	&kp MINUS
+				GR(GRAVE)	&kp SEMI	&kp Q		&kp J	&kp K	&kp X	&kp B	&kp M	&kp W	&kp V	&kp Z	GR(BSLH)
+												AL(DEL)	&td_lcel2	&td_lsb1	&td_rss1	&td_rccl2	AR(RET)
 			>;
 		};
 		num_layer {
@@ -111,7 +123,7 @@
 				___	XXX		&kp N9	&kp N8	&kp N7	XXX	XXX	&kp N7	&kp N8	&kp N9	XXX		___
 				___	&kp DOT	&kp N6	&kp N5	&kp N4	XXX	XXX	&kp N4	&kp N5	&kp N6	&kp DOT	___
 				___	___		&kp N3	&kp N2	&kp N1	XXX	XXX	&kp N1	&kp N2	&kp N3	___		___
-									___		&kp N0	___	___	&kp N0	___
+									___		CL(N0) 	___	___	CR(N0)	___
 			>;
 		};
 		nav_layer {
@@ -125,7 +137,7 @@
 			bindings = <
 				___	&kp F1	&kp F2	&kp F3	&kp F4	XXX		XXX	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
 				___	&kp F5	&kp F6	&kp F7	&kp F8	&kp INS	XXX	&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
-				___	AL(F9)	&kp F10	&kp F11	&kp F12	XXX		XXX	&kp END		&kp DOWN	&kp PG_DN	AR(INS)		___
+				___	&kp F9	&kp F10	&kp F11	&kp F12	XXX		XXX	&kp END		&kp DOWN	&kp PG_DN	&kp INS		___
 									___		___		___		___	___			___
 			>;
 		};
