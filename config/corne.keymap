@@ -56,25 +56,25 @@
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
 			tapping-term-ms = <150>;
-			bindings = <&mt LSHIFT BSPC>, <&lt 1 BSPC>;
+			bindings = <&mt LSHIFT BSPC>, <&mo 1>;
 		};
 		td_rss1: tap_dance_right_shift_space_l1 {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
 			tapping-term-ms = <150>;
-			bindings = <&mt RSHIFT SPACE>, <&lt 1 SPACE>;
+			bindings = <&mt RSHIFT SPACE>, <&mo 1>;
 		};
 		td_lcel2: tap_dance_left_control_esc_l2 {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <150>;
-			bindings = <&mt LCTL ESC>, <&lt 2 ESC>;
+			tapping-term-ms = <200>;
+			bindings = <&mt LCTL ESC>, <&mo 2>;
 		};
 		td_rccl2: tap_dance_right_control_caps_l2 {
 			compatible = "zmk,behavior-tap-dance";
 			#binding-cells = <0>;
-			tapping-term-ms = <150>;
-			bindings = <&mt LCTL CAPS>, <&lt 2 CAPS>;
+			tapping-term-ms = <200>;
+			bindings = <&mt LCTL CAPS>, <&mo 2>;
 		};
 	};
 
