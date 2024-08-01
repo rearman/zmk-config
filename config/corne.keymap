@@ -48,7 +48,7 @@
 		COMBO(lbkt, &kp LBKT, LM2 LB2) // o q -> [
 		COMBO(rbkt, &kp RBKT, LM3 LB3) // e j -> ]
 		COMBO(esc, &kp ESC, LT0 LT1) // TAB ' -> ESC
-		COMBO(caps, &kp CAPS, LM0 LB0) // = ` -> CAPS
+		COMBO(caps, &kp CAPS, LT0 LM0) // = ` -> CAPS
 	};
 
 	behaviors {
@@ -100,7 +100,7 @@
 			>;
 		};
 		num_layer {
-			display-name = "NUM";
+			display-name = "NUM | NAV";
 			/*
 			 *	___	PSC	HOM	UP	PUP	MO3	MO3	7	8	9	XXX	___
 			 *	___	.	LFT	APP	RHT	XXX	XXX	4	5	6	.	___
@@ -115,7 +115,7 @@
 			>;
 		};
 		nav_layer {
-			display-name = "NAV";
+			display-name = "NAV | NUM";
 			/*
 			 *	___	XXX	7	8	9	MO3	MO3	HOM	UP	PUP	PSC	___
 			 *	___	.	4	5	6	XXX	XXX	LFT	APP	RHT	DEL	___
