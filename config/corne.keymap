@@ -15,6 +15,10 @@
 	quick-tap-ms = <150>;
 };
 
+&sk {
+	release-after-ms = <2000>;
+};
+
 / {
 	macros {
 		#define MACRO(NAME, BINDINGS) \
@@ -38,18 +42,16 @@
 				key-positions = <KEYPOS>; \
 				timeout-ms = <50>; \
 			};
+
 		COMBO(cut, &kp LC(X), LT2 LT3) // , .
 		COMBO(copy, &kp LC(C), LT2 LT3 LT4) // , . p
 		COMBO(paste, &kp LC(V), LT2 LT4) // , p
-		COMBO(thorn, &thorn, RM1 RM2) // h t -> þ
-		COMBO(eng, &eng, RT1 RM3) // g n -> ŋ
-		/* 
-		 * COMBO(lpar, &kp LPAR, LT2 LM2) // , o -> (
-		 * COMBO(rpar, &kp RPAR, LT3 LM3) // . e -> )
-		 */
 		COMBO(esc, &kp ESC, LT0 LT1) // TAB ' -> ESC
 		COMBO(caps, &kp CAPS, LT0 LM0) // = ` -> CAPS
-		
+
+		COMBO(thorn, &thorn, RM1 RM2) // h t -> þ
+		COMBO(eng, &eng, RT1 RM3) // g n -> ŋ
+
 		COMBO(7, &kp N7, LT1 LM1) // ' a -> 7
 		COMBO(5, &kp N5, LT2 LM2) // , o -> 5
 		COMBO(3, &kp N3, LT3 LM3) // . e -> 3
@@ -65,7 +67,6 @@
 	};
 
 	behaviors {
-		#include "homerow-mods.dtsi"
 		mod_tog: modifier_layer_tog {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
@@ -96,14 +97,14 @@
 
 		#define LCT(layer) &mod_tog LCTL layer
 		#define RCT(layer) &mod_tog RCTL layer
-		
+
 		default_layer {
 			display-name = "BASE";
-			/*
-			 *  0	TAB	'	,	.	P	Y	F	G	C	R	L	/
-			 *  1	=	A	O	E	U	I	D	H	T	N	S	-
-			 *  2	`	;	Q	J	K	X	B	M	W	V	Z	\
-			 *  3				DEL	ESC	BSP	SPC	CAP	RET
+			/*	L0	L1	L2	L3	L4	L5	R0	R1	R2	R3	R4	R5
+			 *  T	TAB	'	,	.	P	Y	F	G	C	R	L	/
+			 *  M	=	A	O	E	U	I	D	H	T	N	S	-
+			 *  B	`	;	Q	J	K	X	B	M	W	V	Z	\
+			 *  H				DEL	ESC	BSP	SPC	CAP	RET
 			 */
 			bindings = <
 				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F		&kp G	&kp C	&kp R	&kp L	&kp FSLH
@@ -115,13 +116,13 @@
 		num_layer {
 			display-name = "^ | #";
 			/*
-			 *	___	PSC	HOM	UP	PUP	MO3	MO3	7	8	9	XXX	___
+			 *	___	PSC	HOM	UP	PUP	SK3	SK3	7	8	9	XXX	___
 			 *	___	.	LFT	APP	RHT	XXX	XXX	4	5	6	.	___
 			 *	___	___	END	DN	PDN	XXX	XXX	1	2	3	___	___
 			 *				___	0	___	___	0	___
 			 */
 			bindings = <
-				___	&kp PSCRN	&kp HOME	&kp UP		&kp PG_UP	&mo 3	&mo 3	&kp N7	&kp N8	&kp N9	XXX		___
+				___	&kp PSCRN	&kp HOME	&kp UP		&kp PG_UP	&sk 3	&sk 3	&kp N7	&kp N8	&kp N9	XXX		___
 				___	XXX			&kp LEFT		&kp K_APP	&kp RIGHT	XXX		XXX		&kp N4	&kp N5	&kp N6	&kp DOT	___
 				___	___			&kp END		&kp DOWN	&kp PG_DN	XXX		XXX		&kp N1	&kp N2	&kp N3	___		___
 											___			LCT(1)		___		___		CR(N0)	___
@@ -130,13 +131,13 @@
 		nav_layer {
 			display-name = "# | ^";
 			/*
-			 *	___	XXX	7	8	9	MO3	MO3	HOM	UP	PUP	PSC	___
+			 *	___	XXX	7	8	9	SK3	SK3	HOM	UP	PUP	PSC	___
 			 *	___	.	4	5	6	XXX	XXX	LFT	APP	RHT	DEL	___
 			 *	___	___	1	2	3	XXX	XXX	END	DN	PDN	INS	___
 			 *				___	0	___	___	___	___
 			 */
 			bindings = <
-				___	XXX		&kp N7	&kp N8	&kp N9	&mo 3	&mo 3	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
+				___	XXX		&kp N7	&kp N8	&kp N9	&sk 3	&sk 3	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
 				___	&kp DOT	&kp N4	&kp N5	&kp N6	XXX		XXX		&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
 				___	XXX		&kp N1	&kp N2	&kp N3	XXX		XXX		&kp END		&kp DOWN	&kp PG_DN	&kp INS		___
 									___		CL(N0)	___		___		RCT(2)		___
