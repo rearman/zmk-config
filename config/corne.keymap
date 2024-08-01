@@ -52,7 +52,7 @@
 		COMBO(thorn, &thorn, RM1 RM2) // h t -> þ
 		COMBO(eng, &eng, RT1 RM3) // g n -> ŋ
 
-		COMBO(lbkt, &kp LBKT, LM5 LB5) // TAB = -> [
+		COMBO(lbkt, &kp LBKT, LT5 LM5) // TAB = -> [
 		COMBO(7, &kp N7, LT4 LM4) // ' a -> 7
 		COMBO(5, &kp N5, LT3 LM3) // , o -> 5
 		COMBO(3, &kp N3, LT2 LM2) // . e -> 3
@@ -63,7 +63,7 @@
 		COMBO(4, &kp N4, RT2 RM2) // c t -> 4
 		COMBO(6, &kp N6, RT3 RM3) // r n -> 6
 		COMBO(8, &kp N8, RT4 RM4) // l s -> 8
-		COMBO(rbkt, &kp RBKT, RM5 RB5) // / - -> ]
+		COMBO(rbkt, &kp RBKT, RT5 RM5) // / - -> ]
 
 		COMBO(F11, &kp F7, LM5 LB5) // = ` -> F11
 		COMBO(F7, &kp F7, LM4 LB4) // a ; -> F7
@@ -76,7 +76,7 @@
 		COMBO(F4, &kp F4, RM2 RB2) // t w -> F4
 		COMBO(F6, &kp F6, RM3 RB3) // n v -> F6
 		COMBO(F8, &kp F8, RM4 RB4) // s z -> F8
-		COMBO(F12, &kp F12, RM4 RB4) // - \ -> F12
+		COMBO(F12, &kp F12, RM5 RB5) // - \ -> F12
 	};
 
 	behaviors {
