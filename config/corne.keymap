@@ -85,7 +85,7 @@
 				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P		&kp Y	&kp F		&kp G	&kp C	&kp R	&kp L	&kp FSLH
 				&kp EQUAL	&kp A	&kp O		&kp E	&kp U		&kp I	&kp D		&kp H	&kp T	&kp N	&kp S	&kp MINUS
 				GR(GRAVE)	&kp SEMI	&kp Q		&kp J	&kp K		&kp X	&kp B		&kp M	&kp W	&kp V	&kp Z	GR(BSLH)
-												AL(DEL)	CL(&tog 1)	SL(BSPC)	SR(SPACE)	CR(&tog 2)	AR(RET)
+												AL(DEL)	&tog 1	SL(BSPC)	SR(SPACE)	&tog 2	AR(RET)
 			>;
 		};
 		num_layer {
@@ -100,7 +100,7 @@
 				___	&kp PSCRN	&kp HOME	&kp UP		&kp PG_UP	&mo 3	&mo 3	&kp N7	&kp N8	&kp N9	XXX		___
 				___	XXX			&kp LEFT		&kp K_APP	&kp RIGHT	XXX		XXX		&kp N4	&kp N5	&kp N6	&kp DOT	___
 				___	___			&kp END		&kp DOWN	&kp PG_DN	XXX		XXX		&kp N1	&kp N2	&kp N3	___		___
-											___			CL(&tog 1) 	___		___		CR(N0)	___
+											___			&tog 1	___		___		CR(N0)	___
 			>;
 		};
 		nav_layer {
@@ -115,7 +115,7 @@
 				___	XXX		&kp N7	&kp N8	&kp N9	&mo 3	&mo 3	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
 				___	&kp DOT	&kp N4	&kp N5	&kp N6	XXX		XXX		&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
 				___	XXX		&kp N1	&kp N2	&kp N3	XXX		XXX		&kp END		&kp DOWN	&kp PG_DN	&kp INS		___
-									___		CL(N0)	___		___		CR(&tog 2)	___
+									___		CL(N0)	___		___		&tog 2	___
 			>;
 		};
 		func_layer {
