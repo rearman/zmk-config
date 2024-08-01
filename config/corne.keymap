@@ -15,9 +15,6 @@
 	quick-tap-ms = <150>;
 };
 
-&sl {
-	
-
 / {
 	macros {
 		#define MACRO(NAME, BINDINGS) \
