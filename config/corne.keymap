@@ -81,8 +81,8 @@
 		#define AR(key) &mt RALT key
 		#define SR(key) &mt RSFT key
 
-		#define LCT(layer) &mod tog LCTL layer
-		#define RCT(layer) &mod tog RCTL layer
+		#define LCT(layer) &mod_tog LCTL layer
+		#define RCT(layer) &mod_tog RCTL layer
 		
 		default_layer {
 			display-name = "BASE";
