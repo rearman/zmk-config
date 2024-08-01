@@ -2,10 +2,10 @@
 #define HOME_ROW_TAPPING_TERM <200>
 #define QUICK_TAP <150>
 
-#define LP(key) &lhm LGUI key	// Pinkie
-#define LR(key) &lhm LCTL key	// Ring
-#define LM(key) &lhm LALT key	// Middle
-#define LI(key) &lhs LSFT key		// Index
+#define LP(key) &lhm LGUI key
+#define LR(key) &lhm LCTL key
+#define LM(key) &lhm LALT key
+#define LI(key) &lhs LSFT key
 
 #define RP(key) &rhm RGUI key
 #define RR(key) &rhm RCTL key
