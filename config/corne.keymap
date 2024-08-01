@@ -76,7 +76,7 @@
 		COMBO(F4, &kp F4, RM2 RB2) // t w -> F4
 		COMBO(F6, &kp F6, RM3 RB3) // n v -> F6
 		COMBO(F8, &kp F8, RM4 RB4) // s z -> F8
-		COMBO(F8, &kp F12, RM4 RB4) // - \ -> F12
+		COMBO(F12, &kp F12, RM4 RB4) // - \ -> F12
 	};
 
 	behaviors {
