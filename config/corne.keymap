@@ -65,7 +65,7 @@
 		COMBO(8, &kp N8, RT4 RM4) // l s -> 8
 		COMBO(rbkt, &kp RBKT, RT5 RM5) // / - -> ]
 
-		COMBO(F11, &kp F7, LM5 LB5) // = ` -> F11
+		COMBO(F11, &kp F11, LM5 LB5) // = ` -> F11
 		COMBO(F7, &kp F7, LM4 LB4) // a ; -> F7
 		COMBO(F5, &kp F5, LM3 LB3) // o q -> F5
 		COMBO(F3, &kp F3, LM2 LB2) // e j -> F3
