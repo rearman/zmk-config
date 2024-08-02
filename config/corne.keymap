@@ -77,6 +77,19 @@
 		COMBO(F6, &kp F6, RM3 RB3)		// n v -> F6
 		COMBO(F8, &kp F8, RM4 RB4)		// s z -> F8
 		COMBO(F12, &kp F12, RM5 RB5)	// - \ -> F12
+		
+		combo_left_num {
+				bindings = <&tog 1>;
+				layers = <0 1>;
+				key-positions = <LH0 LH1>;
+				timeout-ms = <50>;
+			};
+		combo_right_num {
+				bindings = <&tog 1>;
+				layers = <0 1>;
+				key-positions = <RH0 RH1>;
+				timeout-ms = <50>;
+			};
 	};
 
 	behaviors {
@@ -131,37 +144,37 @@
 				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F		&kp G	&kp C	&kp R	&kp L	&kp FSLH
 				&kp EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D		&kp H	&kp T	&kp N	&kp S	&kp MINUS
 				GR(GRAVE)	&kp SEMI	&kp Q		&kp J	&kp K	&kp X	&kp B		&kp M	&kp W	&kp V	&kp Z	GR(BSLH)
-												AL(DEL)	LSC(1)	SL(BSPC)	SR(SPACE)	RSC(2)	AR(RET)
+												AL(DEL)	LSC(2)	SL(BSPC)	SR(SPACE)	RSC(2)	AR(RET)
 			>;
 		};
 		num_layer {
-			display-name = "^ | #";
+			display-name = "NUM";
 			/*
-			 *	___	PSC	HOM	UP	PUP	SK3	SK3	7	8	9	XXX	___
-			 *	___	DEL	LFT	APP	RHT	XXX	XXX	4	5	6	.	___
-			 *	___	INS	END	DN	PDN	XXX	XXX	1	2	3	___	___
+			 *	___	XXX	7	8	9	XXX	XXX	7	8	9	XXX	___
+			 *	___	.	4	5	6	XXX	XXX	4	5	6	.	___
+			 *	___	___	1	2	3	XXX	XXX	1	2	3	___	___
 			 *				___	0	___	___	0	___
 			 */
 			bindings = <
-				___	&kp PSCRN	&kp HOME	&kp UP		&kp PG_UP	&sl 3	&sl 3	&kp N7	&kp N8	&kp N9	XXX		___
-				___	&kp DEL		&kp LEFT		&kp K_APP	&kp RIGHT	XXX		XXX		&kp N4	&kp N5	&kp N6	&kp DOT	___
-				___	&kp INS		&kp END		&kp DOWN	&kp PG_DN	XXX		XXX		&kp N1	&kp N2	&kp N3	___		___
-											___			LCT(1)		___		___		CR(N0)	___
+				___	XXX		&kp N7	&kp N8	&kp N9	XXX	XXX	&kp N7	&kp N8	&kp N9	XXX		___
+				___	&kp DOT	&kp N4	&kp N5	&kp N6	XXX	XXX	&kp N4	&kp N5	&kp N6	&kp DOT	___
+				___	XXX		&kp N1	&kp N2	&kp N3	XXX	XXX	&kp N1	&kp N2	&kp N3	___		___
+									___		CL(N0)	___	___	CR(N0)	___
 			>;
 		};
 		nav_layer {
-			display-name = "# | ^";
+			display-name = "NAV";
 			/*
-			 *	___	XXX	7	8	9	XXX	XXX	HOM	UP	PUP	PSC	___
-			 *	___	.	4	5	6	XXX	XXX	LFT	APP	RHT	DEL	___
-			 *	___	___	1	2	3	XXX	XXX	END	DN	PDN	INS	___
-			 *				___	0	___	___	___	___
+			 *	___	PSC	HOM	UP	PUP	XXX	XXX	HOM	UP	PUP	PSC	___
+			 *	___	DEL	LFT	APP	RHT	XXX	XXX	LFT	APP	RHT	DEL	___
+			 *	___	INS	END	DN	PDN	XXX	XXX	END	DN	PDN	INS	___
+			 *				___	___	___	___	___	___
 			 */
 			bindings = <
-				___	XXX		&kp N7	&kp N8	&kp N9	XXX	XXX	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
-				___	&kp DOT	&kp N4	&kp N5	&kp N6	XXX	XXX		&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
-				___	XXX		&kp N1	&kp N2	&kp N3	XXX	XXX		&kp END		&kp DOWN	&kp PG_DN	&kp INS		___
-									___		CL(N0)	___	___		RCT(2)		___
+				___	&kp PSCRN	&kp HOME	&kp UP		&kp PG_UP	XXX	XXX	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
+				___	&kp DEL		&kp LEFT		&kp K_APP	&kp RIGHT	XXX	XXX	&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
+				___	&kp INS		&kp END		&kp DOWN	&kp PG_DN	XXX	XXX	&kp END		&kp DOWN	&kp PG_DN	&kp INS		___
+											___			___			___	___	___			___
 			>;
 		};
 	};
