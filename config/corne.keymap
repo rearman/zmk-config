@@ -88,6 +88,14 @@
 			flavor = "hold-preferred";
 			bindings = <&kp>, <&tog>;
 		};
+		sk_mo: sticky_mod_mom_lyr {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <2>;
+			tapping_term_ms = <175>;
+			quick_tap_ms = <150>;
+			flavor = "hold-preferred";
+			bindings = <&sk>, <&mo>;
+		};
 	};
 
 	keymap {
@@ -110,6 +118,9 @@
 
 		#define LCT(layer) &mod_tog LCTL layer
 		#define RCT(layer) &mod_tog RCTL layer
+		
+		#define LSC(layer) &sk_mo LCTL layer
+		#define RSC(layer) &sk_mo RCTL layer
 
 		default_layer {
 			display-name = "BASE";
@@ -123,52 +134,37 @@
 				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F		&kp G	&kp C	&kp R	&kp L	&kp FSLH
 				&kp EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D		&kp H	&kp T	&kp N	&kp S	&kp MINUS
 				GR(GRAVE)	&kp SEMI	&kp Q		&kp J	&kp K	&kp X	&kp B		&kp M	&kp W	&kp V	&kp Z	GR(BSLH)
-												AL(DEL)	LCT(1)	SL(BSPC)	SR(SPACE)	RCT(2)	AR(RET)
+												AL(DEL)	LSC(1)	SL(BSPC)	SR(SPACE)	RSC(2)	AR(RET)
 			>;
 		};
 		num_layer {
 			display-name = "^ | #";
 			/*
 			 *	___	PSC	HOM	UP	PUP	SK3	SK3	7	8	9	XXX	___
-			 *	___	.	LFT	APP	RHT	XXX	XXX	4	5	6	.	___
-			 *	___	___	END	DN	PDN	XXX	XXX	1	2	3	___	___
+			 *	___	DEL	LFT	APP	RHT	XXX	XXX	4	5	6	.	___
+			 *	___	INS	END	DN	PDN	XXX	XXX	1	2	3	___	___
 			 *				___	0	___	___	0	___
 			 */
 			bindings = <
 				___	&kp PSCRN	&kp HOME	&kp UP		&kp PG_UP	&sl 3	&sl 3	&kp N7	&kp N8	&kp N9	XXX		___
-				___	XXX			&kp LEFT		&kp K_APP	&kp RIGHT	XXX		XXX		&kp N4	&kp N5	&kp N6	&kp DOT	___
-				___	___			&kp END		&kp DOWN	&kp PG_DN	XXX		XXX		&kp N1	&kp N2	&kp N3	___		___
+				___	&kp DEL		&kp LEFT		&kp K_APP	&kp RIGHT	XXX		XXX		&kp N4	&kp N5	&kp N6	&kp DOT	___
+				___	&kp INS		&kp END		&kp DOWN	&kp PG_DN	XXX		XXX		&kp N1	&kp N2	&kp N3	___		___
 											___			LCT(1)		___		___		CR(N0)	___
 			>;
 		};
 		nav_layer {
 			display-name = "# | ^";
 			/*
-			 *	___	XXX	7	8	9	SK3	SK3	HOM	UP	PUP	PSC	___
+			 *	___	XXX	7	8	9	XXX	XXX	HOM	UP	PUP	PSC	___
 			 *	___	.	4	5	6	XXX	XXX	LFT	APP	RHT	DEL	___
 			 *	___	___	1	2	3	XXX	XXX	END	DN	PDN	INS	___
 			 *				___	0	___	___	___	___
 			 */
 			bindings = <
-				___	XXX		&kp N7	&kp N8	&kp N9	&sl 3	&sl 3	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
-				___	&kp DOT	&kp N4	&kp N5	&kp N6	XXX		XXX		&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
-				___	XXX		&kp N1	&kp N2	&kp N3	XXX		XXX		&kp END		&kp DOWN	&kp PG_DN	&kp INS		___
-									___		CL(N0)	___		___		RCT(2)		___
-			>;
-		};
-		func_layer {
-			display-name = "FUNC";
-			/*
-			 *	___	F10	F7	F8	F9	___	___	F7	F8	F9	F10	___
-			 *	___	F11	F4	F5	F6	XXX	XXX	F4	F5	F6	F11	___
-			 *	___	F12	F1	F2	F3	XXX	XXX	F1	F2	F3	F12	___
-			 *				___	___	___	___	___	___
-			 */
-			bindings = <
-				___	&kp F10	&kp F7	&kp F8	&kp F9	___	___	&kp F7	&kp F8	&kp F9	&kp F10	___
-				___	&kp F11	&kp F4	&kp F5	&kp F6	XXX	XXX	&kp F4	&kp F5	&kp F6	&kp F11	___
-				___	&kp F12	&kp F1	&kp F2	&kp F3	XXX	XXX	&kp F1	&kp F2	&kp F3	&kp F12	___
-									___		___		___	___	___		___
+				___	XXX		&kp N7	&kp N8	&kp N9	XXX	XXX	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
+				___	&kp DOT	&kp N4	&kp N5	&kp N6	XXX	XXX		&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
+				___	XXX		&kp N1	&kp N2	&kp N3	XXX	XXX		&kp END		&kp DOWN	&kp PG_DN	&kp INS		___
+									___		CL(N0)	___	___		RCT(2)		___
 			>;
 		};
 	};
