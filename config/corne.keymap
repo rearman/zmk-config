@@ -119,8 +119,8 @@
 		#define LCT(layer) &mod_tog LCTL layer
 		#define RCT(layer) &mod_tog RCTL layer
 		
-		#define LSC(layer) &sk_mo LCTL layer
-		#define RSC(layer) &sk_mo RCTL layer
+		#define LSC(layer) &sk_mo layer LCTL
+		#define RSC(layer) &sk_mo layer RCTL
 
 		default_layer {
 			display-name = "BASE";
