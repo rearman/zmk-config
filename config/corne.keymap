@@ -87,6 +87,12 @@
 		combo_right_num {
 				bindings = <&tog 1>;
 				layers = <0 1>;
+				key-positions = <RH1 RH2>;
+				timeout-ms = <50>;
+			};
+		combo_right_nav {
+				bindings = <&mo 2>;
+				layers = <0 1>;
 				key-positions = <RH0 RH1>;
 				timeout-ms = <50>;
 			};
