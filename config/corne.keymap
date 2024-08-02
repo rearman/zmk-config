@@ -77,17 +77,11 @@
 		COMBO(F6, &kp F6, RM3 RB3)		// n v -> F6
 		COMBO(F8, &kp F8, RM4 RB4)		// s z -> F8
 		COMBO(F12, &kp F12, RM5 RB5)	// - \ -> F12
-		
-		combo_left_num {
-				bindings = <&tog 1>;
+
+		combo_left_nav {
+				bindings = <&mo 2>;
 				layers = <0 1>;
 				key-positions = <LH0 LH1>;
-				timeout-ms = <50>;
-			};
-		combo_right_num {
-				bindings = <&tog 1>;
-				layers = <0 1>;
-				key-positions = <RH1 RH2>;
 				timeout-ms = <50>;
 			};
 		combo_right_nav {
@@ -134,7 +128,10 @@
 		#define CR(key) &mt RCTL key
 		#define AR(key) &mt RALT key
 		#define SR(key) &mt RSFT key
-		
+
+		#define LAT(layer) &mod_tog LALT layer
+		#define RAT(layer) &mod_tog RALT layer
+
 		#define LSC(layer) &sk_mo layer LCTL
 		#define RSC(layer) &sk_mo layer RCTL
 
@@ -150,7 +147,7 @@
 				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F		&kp G	&kp C	&kp R	&kp L	&kp FSLH
 				&kp EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D		&kp H	&kp T	&kp N	&kp S	&kp MINUS
 				GR(GRAVE)	&kp SEMI	&kp Q		&kp J	&kp K	&kp X	&kp B		&kp M	&kp W	&kp V	&kp Z	GR(BSLH)
-												AL(DEL)	LSC(2)	SL(BSPC)	SR(SPACE)	RSC(2)	AR(RET)
+												LAT(1)	CL(DEL)	SL(BSPC)	SR(SPACE)	CR(RET)	RAT(1)
 			>;
 		};
 		num_layer {
