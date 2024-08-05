@@ -92,8 +92,8 @@
  * 				layers = <0 1>;
  * 				key-positions = <RH0 RH1>;
  * 				timeout-ms = <50>;
+ *			};
  */
-			};
 	};
 
 	behaviors {
