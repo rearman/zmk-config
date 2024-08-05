@@ -47,7 +47,9 @@
 		COMBO(copy, &kp LC(C), LT1 LT2 LT3)	// p . ,
 		COMBO(paste, &kp LC(V), LT1 LT3)		// p ,
 		COMBO(esc, &kp ESC, LT4 LT5)		// ' TAB -> ESC
-		COMBO(caps, &kp CAPS, LH0 RH0)		// BKSP SPC (both shifts) -> CAPS
+		COMBO(caps, &kp CAPS, LB5 RB5)		// ` \ (both shifts) -> CAPS
+		COMBO(lgui, &kp LGUI, LB4 LB5)		// ; ` -> LGUI
+		COMBO(rgui, &kp RGUI, RB4 RB5)		// z \ -> RGUI
 
 		COMBO(thorn, &thorn, RM1 RM2)	// h t -> þ
 		COMBO(eng, &eng, RT1 RM3)		// g n -> ŋ
@@ -78,17 +80,19 @@
 		COMBO(F8, &kp F8, RM4 RB4)		// s z -> F8
 		COMBO(F12, &kp F12, RM5 RB5)	// - \ -> F12
 
-		combo_left_nav {
-				bindings = <&mo 2>;
-				layers = <0 1>;
-				key-positions = <LH0 LH1>;
-				timeout-ms = <50>;
-			};
-		combo_right_nav {
-				bindings = <&mo 2>;
-				layers = <0 1>;
-				key-positions = <RH0 RH1>;
-				timeout-ms = <50>;
+/* 
+ *		combo_left_nav {
+ * 				bindings = <&mo 2>;
+ * 				layers = <0 1>;
+ * 				key-positions = <LH0 LH1>;
+ * 				timeout-ms = <50>;
+ * 			};
+ * 		combo_right_nav {
+ * 				bindings = <&mo 2>;
+ * 				layers = <0 1>;
+ * 				key-positions = <RH0 RH1>;
+ * 				timeout-ms = <50>;
+ */
 			};
 	};
 
@@ -146,38 +150,38 @@
 			bindings = <
 				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F		&kp G	&kp C	&kp R	&kp L	&kp FSLH
 				&kp EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D		&kp H	&kp T	&kp N	&kp S	&kp MINUS
-				GR(GRAVE)	&kp SEMI	&kp Q		&kp J	&kp K	&kp X	&kp B		&kp M	&kp W	&kp V	&kp Z	GR(BSLH)
-												LAT(1)	CL(DEL)	SL(BSPC)	SR(SPACE)	CR(RET)	RAT(1)
+				SL(GRAVE)	&kp SEMI	&kp Q		&kp J	&kp K	&kp X	&kp B		&kp M	&kp W	&kp V	&kp Z	SR(BSLH)
+												LAT(1)	CL(DEL)	L1(BSPC)	L2(SPACE)	CR(RET)	RAT(2)
 			>;
 		};
 		num_layer {
-			display-name = "NUM";
+			display-name = "^ | #";
 			/*
-			 *	___	XXX	7	8	9	XXX	XXX	7	8	9	XXX	___
-			 *	___	.	4	5	6	XXX	XXX	4	5	6	.	___
-			 *	___	___	1	2	3	XXX	XXX	1	2	3	___	___
-			 *				___	0	___	___	0	___
+			 *	___	PSC	HOM	UP	PUP	XXX	XXX	7	8	9	XXX	___
+			 *	___	DEL	LFT	APP	RHT	XXX	XXX	4	5	6	.	___
+			 *	___	INS	END	DN	PDN	XXX	XXX	1	2	3	___	___
+			 *				___	___	___	___	0	___
 			 */
 			bindings = <
-				___	XXX		&kp N7	&kp N8	&kp N9	XXX	XXX	&kp N7	&kp N8	&kp N9	XXX		___
-				___	&kp DOT	&kp N4	&kp N5	&kp N6	XXX	XXX	&kp N4	&kp N5	&kp N6	&kp DOT	___
-				___	XXX		&kp N1	&kp N2	&kp N3	XXX	XXX	&kp N1	&kp N2	&kp N3	___		___
-									___		CL(N0)	___	___	CR(N0)	___
+				___	&kp PSCRN	&kp HOME	&kp UP		&kp PG_UP	XXX	XXX	&kp N7	&kp N8	&kp N9	XXX		___
+				___	&kp DEL		&kp LEFT		&kp K_APP	&kp RIGHT	XXX	XXX	&kp N4	&kp N5	&kp N6	&kp DOT	___
+				___	&kp INS		&kp END		&kp DOWN	&kp PG_DN	XXX	XXX	&kp N1	&kp N2	&kp N3	___		___
+											___			___			___	___	CR(N0)	___
 			>;
 		};
 		nav_layer {
-			display-name = "NAV";
+			display-name = "# | ^";
 			/*
-			 *	___	PSC	HOM	UP	PUP	XXX	XXX	HOM	UP	PUP	PSC	___
-			 *	___	DEL	LFT	APP	RHT	XXX	XXX	LFT	APP	RHT	DEL	___
-			 *	___	INS	END	DN	PDN	XXX	XXX	END	DN	PDN	INS	___
-			 *				___	___	___	___	___	___
+			 *	___	XXX	7	8	9	XXX	XXX	HOM	UP	PUP	PSC	___
+			 *	___	.	4	5	6	XXX	XXX	LFT	APP	RHT	DEL	___
+			 *	___	___	1	2	3	XXX	XXX	END	DN	PDN	INS	___
+			 *				___	0	___	___	___	___
 			 */
 			bindings = <
-				___	&kp PSCRN	&kp HOME	&kp UP		&kp PG_UP	XXX	XXX	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
-				___	&kp DEL		&kp LEFT		&kp K_APP	&kp RIGHT	XXX	XXX	&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
-				___	&kp INS		&kp END		&kp DOWN	&kp PG_DN	XXX	XXX	&kp END		&kp DOWN	&kp PG_DN	&kp INS		___
-											___			___			___	___	___			___
+				___	XXX		&kp N7	&kp N8	&kp N9	XXX		XXX	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
+				___	&kp DOT	&kp N4	&kp N5	&kp N6	XXX		XXX	&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
+				___	XXX		&kp N1	&kp N2	&kp N3	XXX		XXX	&kp END		&kp DOWN	&kp PG_DN	&kp INS		___
+											___		CL(N0)	___	___	___			___
 			>;
 		};
 	};
