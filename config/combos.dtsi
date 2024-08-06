@@ -1,0 +1,51 @@
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+	combo_##NAME { \
+		compatible = "zmk,combos"; \
+		bindings = <BINDINGS>; \
+		layers = <0>; \
+		key-positions = <KEYPOS>; \
+		timeout-ms = <50>; \
+	};
+
+/* HELPERS */
+COMBO(cut, &kp LC(X), LT2 LT3)		// . ,
+COMBO(copy, &kp LC(C), LT1 LT2 LT3)	// p . ,
+COMBO(paste, &kp LC(V), LT1 LT3)		// p ,
+
+/* MAIN FUNCTIONS */
+COMBO(esc, &kp ESC, LT4 LT5)		// ' TAB -> ESC
+COMBO(caps, &kp CAPS, LB5 RB5)		// ` \ (both shifts) -> CAPS
+COMBO(lgui, &kp LGUI, LB4 LB5)		// ; ` -> LGUI
+COMBO(rgui, &kp RGUI, RB4 RB5)		// z \ -> RGUI
+
+/* SPECIAL CHARACTERS */
+COMBO(thorn, &thorn, RM1 RM2)	// h t -> þ
+COMBO(eng, &eng, RT1 RM3)		// g n -> ŋ
+
+/* NUMBER ROW */
+COMBO(lbkt, &kp LBKT, LT5 LM5)	// TAB = -> [
+COMBO(7, &kp N7, LT4 LM4)		// ' a -> 7
+COMBO(5, &kp N5, LT3 LM3)		// , o -> 5
+COMBO(3, &kp N3, LT2 LM2)		// . e -> 3
+COMBO(1, &kp N1, LT1 LM1)		// p u -> 1
+COMBO(9, &kp N9, LT0 LM0)		// y i -> 9
+COMBO(0, &kp N0, RT0 RM0)		// f d -> 0
+COMBO(2, &kp N2, RT1 RM1)		// g h -> 2
+COMBO(4, &kp N4, RT2 RM2)		// c t -> 4
+COMBO(6, &kp N6, RT3 RM3)		// r n -> 6
+COMBO(8, &kp N8, RT4 RM4)		// l s -> 8
+COMBO(rbkt, &kp RBKT, RT5 RM5)	// / - -> ]
+
+/* F-KEYS */
+COMBO(F11, &kp F11, LM5 LB5)	// = ` -> F11
+COMBO(F7, &kp F7, LM4 LB4)		// a ; -> F7
+COMBO(F5, &kp F5, LM3 LB3)		// o q -> F5
+COMBO(F3, &kp F3, LM2 LB2)		// e j -> F3
+COMBO(F1, &kp F1, LM1 LB1)		// u k -> F1
+COMBO(F9, &kp F9, LM0 LB0)		// i x -> F9
+COMBO(F10, &kp F10, RM0 RB0)	// d b -> F10
+COMBO(F2, &kp F2, RM1 RB1)		// h m -> F2
+COMBO(F4, &kp F4, RM2 RB2)		// t w -> F4
+COMBO(F6, &kp F6, RM3 RB3)		// n v -> F6
+COMBO(F8, &kp F8, RM4 RB4)		// s z -> F8
+COMBO(F12, &kp F12, RM5 RB5)	// - \ -> F12
