@@ -1,1 +1,1 @@
-ZMK config for wireless corne.
+![Keymap SVG](corne.svg)

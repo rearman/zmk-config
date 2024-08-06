@@ -92,7 +92,7 @@
 			>;
 		};
 		num_layer {
-			display-name = "^ | #";
+			display-name = "^|#";
 			/*
 			 *	___	PSC	HOM	UP	PUP	XXX	XXX	7	8	9	XXX	___
 			 *	___	DEL	LFT	APP	RHT	XXX	XXX	4	5	6	.	___
@@ -107,7 +107,7 @@
 			>;
 		};
 		nav_layer {
-			display-name = "# | ^";
+			display-name = "#|^";
 			/*
 			 *	___	XXX	7	8	9	XXX	XXX	HOM	UP	PUP	PSC	___
 			 *	___	.	4	5	6	XXX	XXX	LFT	APP	RHT	DEL	___
