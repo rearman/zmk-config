@@ -1,16 +1,15 @@
 #define COMBO(NAME, BINDINGS, KEYPOS) \
 	combo_##NAME { \
-		compatible = "zmk,combos"; \
+		timeout-ms = <50>; \
+		key-positions = <KEYPOS>; \
 		bindings = <BINDINGS>; \
 		layers = <0>; \
-		key-positions = <KEYPOS>; \
-		timeout-ms = <50>; \
 	};
 
 /* HELPERS */
-COMBO(cut, &kp LC(X), LT2 LT3)		// . ,
-COMBO(copy, &kp LC(C), LT1 LT2 LT3)	// p . ,
-COMBO(paste, &kp LC(V), LT1 LT3)	// p ,
+COMBO(cut, &kp LC(X), LT2 LT3)		// . , -> C-X
+COMBO(copy, &kp LC(C), LT1 LT2 LT3)	// p . , -> C-C
+COMBO(paste, &kp LC(V), LT1 LT3)	// p , -> C-V
 
 /* MAIN FUNCTIONS */
 COMBO(esc, &kp ESC, LT4 LT5)	// ' TAB -> ESC
