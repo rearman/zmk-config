@@ -19,7 +19,7 @@ COMBO(esc, &kp ESC, LT4 LT5)	// ' TAB -> ESC
 combo_caps {
 	   compatible = "zmk,combos";
 	   bindings = <&kp CAPS>;
-	   layers = <0>;
+	   layers = <-1>;
 	   key-positions = <LB5 RB5>; // ` \ (both shifts) -> CAPS
 	   timeout-ms = <50>;
 	   slow-release;
