@@ -30,11 +30,12 @@
 	};
 
 	combos {
+		compatible = "zmk,combos";
 		combo_caps {
-			compatible = "zmk,combos";
-			bindings = <&kp CAPS>;
-			key-positions = <24 35>; // ` \ (both shifts) -> CAPS
 			timeout-ms = <50>;
+			key-positions = <0 1>; // ` \ (both shifts) -> CAPS
+			bindings = <&kp CAPS>;
+			layers = <0>;
 		};
 	};
 
