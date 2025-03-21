@@ -7,12 +7,6 @@
 		timeout-ms = <50>; \
 	};
 
-/* BLUETOOTH */
-/*
-COMBO(btclear, &bt BT_CLR_ALL, RB0 RT2)	// b c
-COMBO(btdisco, &bt BT_DISC 0, RB0 RM0)	// b d
- */
-
 /* HELPERS */
 COMBO(cut, &kp LC(X), LT2 LT3)		// . ,
 COMBO(copy, &kp LC(C), LT1 LT2 LT3)	// p . ,
