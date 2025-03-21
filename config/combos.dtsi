@@ -5,7 +5,6 @@
 		layers = <0>; \
 		key-positions = <KEYPOS>; \
 		timeout-ms = <50>; \
-		slow-release; \
 	};
 
 /* HELPERS */
@@ -22,7 +21,6 @@ combo_caps {
 	   layers = <-1>;
 	   key-positions = <LB5 RB5>; // ` \ (both shifts) -> CAPS
 	   timeout-ms = <50>;
-	   slow-release;
 	   };
 
 COMBO(lgui, &kp LGUI, LB4 LB5)	// ; ` -> LGUI

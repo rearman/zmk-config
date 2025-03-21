@@ -30,7 +30,13 @@
 	};
 
 	combos {
-		#include "combos.dtsi"
+		combo_caps {
+			compatible = "zmk,combos";
+			bindings = <&kp CAPS>;
+			layers = <-1>;
+			key-positions = <24 35>; // ` \ (both shifts) -> CAPS
+			timeout-ms = <50>;
+		};
 	};
 
 	behaviors {
