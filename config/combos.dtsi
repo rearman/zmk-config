@@ -15,7 +15,16 @@ COMBO(paste, &kp LC(V), LT1 LT3)	// p ,
 
 /* MAIN FUNCTIONS */
 COMBO(esc, &kp ESC, LT4 LT5)	// ' TAB -> ESC
-COMBO(caps, &kp CAPS, LB5 RB5)	// ` \ (both shifts) -> CAPS
+/* COMBO(caps, &kp CAPS, LB5 RB5) */
+combo_caps {
+	   compatible = "zmk,combos";
+	   bindings = <&kp CAPS>;
+	   layers = <0>;
+	   key-positions = <LB5 RB5>; // ` \ (both shifts) -> CAPS
+	   timeout-ms = <50>;
+	   slow-release;
+	   };
+
 COMBO(lgui, &kp LGUI, LB4 LB5)	// ; ` -> LGUI
 COMBO(rgui, &kp RGUI, RB4 RB5)	// z \ -> RGUI
 
