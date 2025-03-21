@@ -7,10 +7,13 @@
 		timeout-ms = <50>; \
 	};
 
+/* BLUETOOTH */
+COMBO(btclear, &bt BT_CLR, RB0 RM2 RT2 RH1)	// b t c RET
+
 /* HELPERS */
-COMBO(cut, &kp LC(X), LT2 LT3)		// , .
-COMBO(copy, &kp LC(C), LT1 LT2 LT3)	// , . p
-COMBO(paste, &kp LC(V), LT1 LT3)	// , p
+COMBO(cut, &kp LC(X), LT2 LT3)		// . ,
+COMBO(copy, &kp LC(C), LT1 LT2 LT3)	// p . ,
+COMBO(paste, &kp LC(V), LT1 LT3)	// p ,
 
 /* MAIN FUNCTIONS */
 COMBO(esc, &kp ESC, LT4 LT5)	// ' TAB -> ESC
