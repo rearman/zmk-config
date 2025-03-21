@@ -1,0 +1,143 @@
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
+layers:
+  BASE:
+  - [TAB, '''', ',', ., P, Y, F, G, C, R, L, /]
+  - ['=', A, O, E, U, I, D, H, T, N, S, '-']
+  - - {t: '`', h: LSFT}
+    - ;
+    - Q
+    - J
+    - K
+    - X
+    - B
+    - M
+    - W
+    - V
+    - Z
+    - {t: \, h: RSFT}
+  - - {t: '#|^', h: LALT}
+    - {t: DEL, h: LCTL}
+    - {t: BSPC, h: ^|#}
+    - {t: SPACE, h: '#|^'}
+    - {t: RET, h: RCTL}
+    - {t: '^|#', h: RALT}
+  ^|#:
+  - - {t: ▽, type: trans}
+    - PSCRN
+    - HOME
+    - UP
+    - PG UP
+    - ''
+    - ''
+    - '7'
+    - '8'
+    - '9'
+    - ''
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - DEL
+    - LEFT
+    - APP
+    - RIGHT
+    - ''
+    - ''
+    - '4'
+    - '5'
+    - '6'
+    - .
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - INS
+    - END
+    - DOWN
+    - PG DN
+    - ''
+    - ''
+    - '1'
+    - '2'
+    - '3'
+    - {t: ▽, type: trans}
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: held}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+    - {t: '0', h: RCTL}
+    - {t: ▽, type: trans}
+  '#|^':
+  - - {t: ▽, type: trans}
+    - ''
+    - '7'
+    - '8'
+    - '9'
+    - ''
+    - ''
+    - HOME
+    - UP
+    - PG UP
+    - PSCRN
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - .
+    - '4'
+    - '5'
+    - '6'
+    - ''
+    - ''
+    - LEFT
+    - APP
+    - RIGHT
+    - DEL
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - ''
+    - '1'
+    - '2'
+    - '3'
+    - ''
+    - ''
+    - END
+    - DOWN
+    - PG DN
+    - INS
+    - {t: ▽, type: trans}
+  - - {t: ▽, type: trans}
+    - {t: '0', h: LCTL}
+    - {t: ▽, type: trans}
+    - {type: held}
+    - {t: ▽, type: trans}
+    - {t: ▽, type: held}
+combos:
+  - {p: [2, 3], k: "C-x", l: ["BASE"]}
+  - {p: [2, 4], k: "C-v", l: ["BASE"], a: top, offset: 1}
+  - {p: [2, 3, 4],   k: "C-c", l: ["BASE"], a: top, offset: 0.3}
+  - {p: [0, 1], k: "ESC", l: ["BASE"]}
+  - {p: [24, 35], k: "CAPS", l: ["BASE"], a: bottom, offset: 2}
+  - {p: [24, 25], k: "LGUI", l: ["BASE"]}
+  - {p: [34, 35], k: "RGUI", l: ["BASE"]}
+  - {p: [19, 20], k: "þ", l: ["BASE"]}
+  - {p: [7, 21], k: "ŋ", l: ["BASE"], a: top, offset: 0.4}
+  - {p: [0, 12], k: "[", l: ["BASE"]}
+  - {p: [1, 13], k: "7", l: ["BASE"]}
+  - {p: [2, 14], k: "5", l: ["BASE"]}
+  - {p: [3, 15], k: "3", l: ["BASE"]}
+  - {p: [4, 16], k: "1", l: ["BASE"]}
+  - {p: [5, 17], k: "9", l: ["BASE"]}
+  - {p: [6, 18], k: "0", l: ["BASE"]}
+  - {p: [7, 19], k: "2", l: ["BASE"]}
+  - {p: [8, 20], k: "4", l: ["BASE"]}
+  - {p: [9, 21], k: "6", l: ["BASE"]}
+  - {p: [10, 22], k: "8", l: ["BASE"]}
+  - {p: [11, 23], k: "]", l: ["BASE"]}
+  - {p: [12, 24], k: "F11", l: ["BASE"]}
+  - {p: [13, 25], k: "F7", l: ["BASE"]}
+  - {p: [14, 26], k: "F5", l: ["BASE"]}
+  - {p: [15, 27], k: "F3", l: ["BASE"]}
+  - {p: [16, 28], k: "F1", l: ["BASE"]}
+  - {p: [17, 29], k: "F9", l: ["BASE"]}
+  - {p: [18, 30], k: "F10", l: ["BASE"]}
+  - {p: [19, 31], k: "F2", l: ["BASE"]}
+  - {p: [20, 32], k: "F4", l: ["BASE"]}
+  - {p: [21, 33], k: "F6", l: ["BASE"]}
+  - {p: [22, 34], k: "F8", l: ["BASE"]}
+  - {p: [23, 35], k: "F12", l: ["BASE"]}

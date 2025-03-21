@@ -82,13 +82,13 @@
 			 *  T	TAB	'	,	.	P	Y	F	G	C	R	L	/
 			 *  M	=	A	O	E	U	I	D	H	T	N	S	-
 			 *  B	`	;	Q	J	K	X	B	M	W	V	Z	\
-			 *  H				DEL	ESC	BSP	SPC	CAP	RET
+			 *  H				LY2	DEL	BSP	SPC	RET	LY1
 			 */
 			bindings = <
-				&kp TAB		&kp SQT	&kp COMMA	&kp DOT	&kp P	&kp Y	&kp F		&kp G	&kp C	&kp R	&kp L	&kp FSLH
-				&kp EQUAL	&kp A	&kp O		&kp E	&kp U	&kp I	&kp D		&kp H	&kp T	&kp N	&kp S	&kp MINUS
-				SL(GRAVE)	&kp SEMI	&kp Q		&kp J	&kp K	&kp X	&kp B		&kp M	&kp W	&kp V	&kp Z	SR(BSLH)
-												LAT(1)	CL(DEL)	L1(BSPC)	L2(SPACE)	CR(RET)	RAT(2)
+				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
+				&kp EQUAL &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S &kp MINUS
+				SL(GRAVE) &kp SEMI &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
+				LAT(2) CL(DEL) L1(BSPC) L2(SPACE) CR(RET) RAT(1)
 			>;
 		};
 		num_layer {
@@ -100,10 +100,10 @@
 			 *				___	___	___	___	0	___
 			 */
 			bindings = <
-				___	&kp PSCRN	&kp HOME	&kp UP		&kp PG_UP	XXX	XXX	&kp N7	&kp N8	&kp N9	XXX		___
-				___	&kp DEL		&kp LEFT		&kp K_APP	&kp RIGHT	XXX	XXX	&kp N4	&kp N5	&kp N6	&kp DOT	___
-				___	&kp INS		&kp END		&kp DOWN	&kp PG_DN	XXX	XXX	&kp N1	&kp N2	&kp N3	___		___
-											___			___			___	___	CR(N0)	___
+				___ &kp PSCRN &kp HOME &kp UP &kp PG_UP XXX XXX &kp N7 &kp N8 &kp N9 XXX ___
+				___ &kp DEL &kp LEFT &kp K_APP &kp RIGHT XXX XXX &kp N4 &kp N5 &kp N6 &kp DOT ___
+				___ &kp INS &kp END &kp DOWN &kp PG_DN XXX XXX &kp N1 &kp N2 &kp N3 ___ ___
+				___ ___ ___ ___ CR(N0) ___
 			>;
 		};
 		nav_layer {
@@ -115,10 +115,10 @@
 			 *				___	0	___	___	___	___
 			 */
 			bindings = <
-				___	XXX		&kp N7	&kp N8	&kp N9	XXX		XXX	&kp HOME	&kp UP		&kp PG_UP	&kp PSCRN	___
-				___	&kp DOT	&kp N4	&kp N5	&kp N6	XXX		XXX	&kp LEFT		&kp K_APP	&kp RIGHT	&kp DEL		___
-				___	XXX		&kp N1	&kp N2	&kp N3	XXX		XXX	&kp END		&kp DOWN	&kp PG_DN	&kp INS		___
-											___		CL(N0)	___	___	___			___
+				___ XXX &kp N7 &kp N8 &kp N9 XXX XXX &kp HOME &kp UP &kp PG_UP &kp PSCRN ___
+				___ &kp DOT &kp N4 &kp N5 &kp N6 XXX XXX &kp LEFT &kp K_APP &kp RIGHT &kp DEL ___
+				___ XXX &kp N1 &kp N2 &kp N3 XXX XXX &kp END &kp DOWN &kp PG_DN &kp INS ___
+				___ CL(N0) ___ ___ ___ ___
 			>;
 		};
 	};
