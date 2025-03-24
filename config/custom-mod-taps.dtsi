@@ -1,5 +1,5 @@
 #define CUSTOM_MOD_TAP(NAME, MOD, CUSTOM) \
-	cmt_##NAME: custom_mod_tap_##NAME {
+	cmt_##NAME: custom_mod_tap_##NAME { \
 		compatible = "zmk,behavior-hold-tap"; \
 		#binding-cells = <2>; \
 		tapping_term_ms = <175>; \
