@@ -1,0 +1,13 @@
+#define SWAP(NAME, UNSHIFTED, SHIFTED) \
+	re_##NAME: swap_##NAME { \
+		compatible = "zmk,behavior-mod-morph"; \
+		#binding-cells = <0>; \
+		bindings = <&kp UNSHIFTED>, <&kp SHIFTED>; \
+		mods = <(MOD_LSFT|MOD_RSFT)>; \
+	};
+
+SWAP(colon, COLON, SEMI)
+SWAP(lpar, LPAR, LBKT)
+SWAP(rpar, RPAR, RBKT)
+SWAP(nine, N9, LBRC)
+SWAP(zero, N0, RBRC)
