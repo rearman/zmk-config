@@ -5,7 +5,7 @@
 		tapping_term_ms = <175>; \
 		quick_tap_ms = <150>; \
 		flavor = "hold-preferred"; \
-		bindings = <MOD>, <CUSTOM>; \
+		bindings = <&kp>, <CUSTOM>; \
 	};
 
 CUSTOM_MOD_TAP(ls_tilde, &kp LSFT, &re_tilde)
