@@ -8,4 +8,4 @@
 		bindings = <&kp>, <CUSTOM>; \
 	};
 
-CUSTOM_MOD_TAP(ls_tilde, &re_tilde)
+CUSTOM_MOD_TAP(tilde, &re_tilde)
