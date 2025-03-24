@@ -51,7 +51,7 @@
 
 		lsft_tilde: lsft_tilde_grave {
 			compatible = "zmk,behavior-hold-tap";
-			#binding-cells = <0>;
+			#binding-cells = <2>;
 			tapping_term_ms = <175>;
 			quick_tap_ms = <150>;
 			flavor = "hold-preferred";
@@ -61,7 +61,7 @@
 
 	combos {
 		compatible = "zmk,combos";
-		#include "combos.dtsi";
+		#include "combos.dtsi"
 	};
 
 	keymap {
