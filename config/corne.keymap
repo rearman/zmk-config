@@ -96,7 +96,7 @@
 				>;
 		};
 		num_layer {
-			display-name = "^|#";
+			display-name = "NUM";
 			/*
 			 *	___	XXX	XXX	XXX	PSC	XXX	XXX	7	8	9	___	___
 			 *	LY3	XXX	XXX	APP	XXX	INS	XXX	4	5	6	.	___
@@ -111,7 +111,7 @@
 				>;
 		};
 		nav_layer {
-			display-name = "#|^";
+			display-name = "NAV";
 			/*
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	HOM	UP	PUP	PSC	___
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	LFT	APP	RHT	DEL	___
