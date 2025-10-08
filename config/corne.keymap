@@ -80,8 +80,6 @@ include "42-keys.h"
 		#define LSC(layer) &sk_mo layer LCTL
 		#define RSC(layer) &sk_mo layer RCTL
 
-		#define TILD &cmt_tilde LSFT 0
-
 		default_layer {
 			display-name = "BASE";
 			/*	L5	L4	L3	L2	L1	L0	R0	R1	R2	R3	R4	R5
@@ -93,7 +91,7 @@ include "42-keys.h"
 			bindings = <
 				GL(TAB) &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L GR(FSLH)
 				CL(EQUAL) &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S CR(MINUS)
-				TILD &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
+				&cmt_tilde LSFT 0 &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
 				LAT(2) &kp DEL L1(BSPC) L2(SPACE) &kp RET RAT(1)
 				>;
 		};
