@@ -23,18 +23,18 @@ COMBO(thorn, &thorn, RM1 RM2)	// h t -> þ
 COMBO(eng, &eng, RT1 RM3)	// g n -> ŋ
 
 /* NUMBER ROW */
-COMBO(lbkt, &re_lpar, LT5 LM5)	// TAB = -> [
+COMBO(lpar, &re_lpar, LT5 LM5)	// TAB = -> (
 COMBO(7, &kp N7, LT4 LM4)	// ' a -> 7
 COMBO(5, &kp N5, LT3 LM3)	// , o -> 5
 COMBO(3, &kp N3, LT2 LM2)	// . e -> 3
 COMBO(1, &kp N1, LT1 LM1)	// p u -> 1
-COMBO(9, &kp N9, LT0 LM0)	// y i -> 9
-COMBO(0, &kp N0, RT0 RM0)	// f d -> 0
+COMBO(9, &re_nine, LT0 LM0)	// y i -> 9
+COMBO(0, &re_zero, RT0 RM0)	// f d -> 0
 COMBO(2, &kp N2, RT1 RM1)	// g h -> 2
 COMBO(4, &kp N4, RT2 RM2)	// c t -> 4
 COMBO(6, &kp N6, RT3 RM3)	// r n -> 6
 COMBO(8, &kp N8, RT4 RM4)	// l s -> 8
-COMBO(rbkt, &re_rpar, RT5 RM5)	// / - -> ]
+COMBO(rpar, &re_rpar, RT5 RM5)	// / - -> )
 
 /* F-KEYS */
 COMBO(F11, &kp F11, LM5 LB5)	// = ` -> F11

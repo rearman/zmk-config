@@ -8,7 +8,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include "42-keys.h"
+include "42-keys.h"
 
 &mt {
 	tapping-term-ms = <175>;
@@ -80,6 +80,8 @@
 		#define LSC(layer) &sk_mo layer LCTL
 		#define RSC(layer) &sk_mo layer RCTL
 
+		#define TILD &cmt_tilde LSFT 0
+
 		default_layer {
 			display-name = "BASE";
 			/*	L5	L4	L3	L2	L1	L0	R0	R1	R2	R3	R4	R5
@@ -90,40 +92,55 @@
 			 */
 			bindings = <
 				GL(TAB) &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L GR(FSLH)
-				&kp EQUAL &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S &kp MINUS
-				&cmt_tilde LSFT 0 &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
-				LAT(2) CL(DEL) L1(BSPC) L2(SPACE) CR(RET) RAT(1)
-			>;
+				CL(EQUAL) &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S CR(MINUS)
+				TILD &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
+				LAT(2) &kp DEL L1(BSPC) L2(SPACE) &kp RET RAT(1)
+				>;
 		};
 		num_layer {
 			display-name = "^|#";
 			/*
-			 *	___	PSC	HOM	UP	PUP	XXX	XXX	7	8	9	XXX	___
-			 *	___	DEL	LFT	APP	RHT	XXX	XXX	4	5	6	.	___
-			 *	___	INS	END	DN	PDN	XXX	XXX	1	2	3	___	___
+			 *	___	XXX	XXX	XXX	PSC	XXX	XXX	7	8	9	___	___
+			 *	LY3	XXX	XXX	APP	XXX	INS	XXX	4	5	6	.	___
+			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	1	2	3	___	___
 			 *				___	___	___	___	0	___
 			 */
 			bindings = <
-				___ &kp PSCRN &kp HOME &kp UP &kp PG_UP XXX XXX &kp N7 &kp N8 &re_nine XXX ___
-				___ &kp DEL &kp LEFT &kp K_APP &kp RIGHT XXX XXX &kp N4 &kp N5 &kp N6 &kp DOT ___
-				___ &kp INS &kp END &kp DOWN &kp PG_DN XXX XXX &kp N1 &kp N2 &kp N3 ___ ___
+				___ XXX XXX XXX XXX  XXX XXX &kp N7 &kp N8 &re_nine ___ ___
+				&mo 3 XXX XXX XXX XXX XXX XXX &kp N4 &kp N5 &kp N6 &kp DOT ___
+				___ XXX XXX XXX XXX XXX XXX &kp N1 &kp N2 &kp N3 ___ ___
 				___ ___ ___ ___ &re_zero ___
-			>;
+				>;
 		};
 		nav_layer {
 			display-name = "#|^";
 			/*
-			 *	___	XXX	7	8	9	XXX	XXX	HOM	UP	PUP	PSC	___
-			 *	___	.	4	5	6	XXX	XXX	LFT	APP	RHT	DEL	___
-			 *	___	___	1	2	3	XXX	XXX	END	DN	PDN	INS	___
-			 *				___	0	___	___	___	___
+			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	HOM	UP	PUP	PSC	___
+			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	LFT	APP	RHT	DEL	___
+			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	END	DN	PDN	INS	___
+			 *				___	___	___	___	___	___
 			 */
 			bindings = <
-				___ XXX &kp N7 &kp N8 &re_nine XXX XXX &kp HOME &kp UP &kp PG_UP &kp PSCRN ___
-				___ &kp DOT &kp N4 &kp N5 &kp N6 XXX XXX &kp LEFT &kp K_APP &kp RIGHT &kp DEL ___
-				___ XXX &kp N1 &kp N2 &kp N3 XXX XXX &kp END &kp DOWN &kp PG_DN &kp INS ___
-				___ &re_zero ___ ___ ___ ___
-			>;
+				___ XXX XXX XXX XXX XXX XXX &kp HOME &kp UP &kp PG_UP &kp PSCRN ___
+				___ XXX XXX XXX XXX XXX XXX &kp LEFT &kp K_APP &kp RIGHT &kp DEL ___
+				___ XXX XXX XXX XXX XXX XXX &kp END &kp DOWN &kp PG_DN &kp INS ___
+				___ ___ ___ ___ ___ ___
+				>;
+		};
+		fun_layer {
+			display-name = "FN";
+			/*
+			 *	___	___	___	___	___	XXX	XXX	F7	F8	F9	F11	___
+			 *	___	___	___	___	___	XXX	XXX	F4	F5	F6	___	___
+			 *	___	___	___	___	___	XXX	XXX	F1	F2	F3	F12	___
+			 *				___	___	___	___	F10	___
+			 */
+			bindings = <
+				___ ___ ___ ___ ___ XXX XXX &kp F7 &kp F8 &kp F9 &kp F11 ___
+				___ ___ ___ ___ ___ XXX XXX &kp F4 &kp F5 &kp F6 ___ ___
+				___ ___ ___ ___ ___ XXX XXX &kp F1 &kp F2 &kp F3 &kp F12 ___
+				___ ___ ___ ___ &kp F10 ___
+				>;
 		};
 	};
 };
