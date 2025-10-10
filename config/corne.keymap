@@ -92,7 +92,7 @@
 				GL(TAB) &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L GR(FSLH)
 				CL(EQUAL) &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S CR(MINUS)
 				&cmt_tilde LSFT 0 &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
-				&kp DEL LAT(2) L1(BSPC) L2(SPACE) RAT(1) &kp RET
+				&tog 2 AL(DEL) L1(BSPC) L2(SPACE) AR(RET) &tog 1
 				>;
 		};
 		num_layer {
@@ -107,7 +107,7 @@
 				___ XXX XXX XXX XXX  XXX XXX &kp N7 &kp N8 &re_nine ___ ___
 				___ XXX XXX XXX XXX XXX XXX &kp N4 &kp N5 &kp N6 &kp DOT ___
 				___ XXX XXX XXX XXX XXX XXX &kp N1 &kp N2 &kp N3 ___ ___
-				___ ___ &mo 3 ___ &re_zero ___
+				___ ___ ___ &mo 3 &re_zero ___
 				>;
 		};
 		nav_layer {
