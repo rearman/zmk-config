@@ -76,11 +76,8 @@
 
 		#define LAT(layer) &mod_tog LALT layer
 		#define RAT(layer) &mod_tog RALT layer
-
-		#define LSC(layer) &sk_mo layer LCTL
-		#define RSC(layer) &sk_mo layer RCTL
-		#define LSG(layer) &sk_mo layer LGUI
-		#define RSG(layer) &sk_mo layer RGUI
+		#define LGT(layer) &sk_mo layer LGUI
+		#define RGT(layer) &sk_mo layer RGUI
 
 		default_layer {
 			display-name = "BASE";
@@ -94,7 +91,7 @@
 				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
 				&kp EQUAL &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S &kp MINUS
 				SL(GRAVE) &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
-				LSG(1) AL(DEL) CL(BSPC) CR(SPACE) AR(RET) RSG(2)
+				LGT(1) AL(DEL) CL(BSPC) CR(SPACE) AR(RET) RGT(2)
 				>;
 		};
 		num_layer {
