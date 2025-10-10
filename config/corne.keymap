@@ -68,8 +68,8 @@
 
 		#define LAT(layer) &mod_tog LALT layer
 		#define RAT(layer) &mod_tog RALT layer
-		#define LGT(layer) &mod_tog layer LGUI
-		#define RGT(layer) &mod_tog layer RGUI
+		#define LGT(layer) &mod_tog LGUI layer
+		#define RGT(layer) &mod_tog RGUI layer
 
 		default_layer {
 			display-name = "BASE";
