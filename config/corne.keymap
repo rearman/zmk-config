@@ -92,22 +92,22 @@
 				GL(TAB) &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L GR(FSLH)
 				CL(EQUAL) &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S CR(MINUS)
 				&cmt_tilde LSFT 0 &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
-				LAT(2) &kp DEL L1(BSPC) L2(SPACE) &kp RET RAT(1)
+				&kp DEL LAT(2) L1(BSPC) L2(SPACE) RAT(1) &kp RET
 				>;
 		};
 		num_layer {
 			display-name = "NUM";
 			/*
 			 *	___	XXX	XXX	XXX	PSC	XXX	XXX	7	8	9	___	___
-			 *	LY3	XXX	XXX	APP	XXX	INS	XXX	4	5	6	.	___
+			 *	___	XXX	XXX	APP	XXX	INS	XXX	4	5	6	.	___
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	1	2	3	___	___
-			 *				___	___	___	___	0	___
+			 *				___	___	LY3	___	0	___
 			 */
 			bindings = <
 				___ XXX XXX XXX XXX  XXX XXX &kp N7 &kp N8 &re_nine ___ ___
-				&mo 3 XXX XXX XXX XXX XXX XXX &kp N4 &kp N5 &kp N6 &kp DOT ___
+				___ XXX XXX XXX XXX XXX XXX &kp N4 &kp N5 &kp N6 &kp DOT ___
 				___ XXX XXX XXX XXX XXX XXX &kp N1 &kp N2 &kp N3 ___ ___
-				___ ___ ___ ___ &re_zero ___
+				___ ___ &mo 3 ___ &re_zero ___
 				>;
 		};
 		nav_layer {
