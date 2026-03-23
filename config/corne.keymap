@@ -32,13 +32,21 @@
 	behaviors {
 		#include "swapped-keys.dtsi"
 
-	mod_tog: modifier_layer_tog {
+		mod_tog: modifier_layer_tog {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			tapping_term_ms = <175>;
 			quick_tap_ms = <150>;
 			flavor = "hold-preferred";
 			bindings = <&kp>, <&tog>;
+		};
+		ls_tilde: modifier_layer_tog {
+			compatible = "zmk,behavior-hold-tap";
+			#binding-cells = <0>;
+			tapping_term_ms = <175>;
+			quick_tap_ms = <150>;
+			flavor = "hold-preferred";
+			bindings = <&kp LSFT &re_tilde>;
 		};
 	};
 
@@ -50,25 +58,25 @@
 	keymap {
 		compatible = "zmk,keymap";
 
-#define ___ &trans
-#define XXX &none
-#define L1(key) &lt 1 key
-#define L2(key) &lt 2 key
+		#define ___ &trans
+		#define XXX &none
+		#define L1(key) &lt 1 key
+		#define L2(key) &lt 2 key
 
-#define GL(key) &mt LGUI key
-#define CL(key) &mt LCTL key
-#define AL(key) &mt LALT key
-#define SL(key) &mt LSFT key
+		#define GL(key) &mt LGUI key
+		#define CL(key) &mt LCTL key
+		#define AL(key) &mt LALT key
+		#define SL(key) &mt LSFT key
 
-#define GR(key) &mt RGUI key
-#define CR(key) &mt RCTL key
-#define AR(key) &mt RALT key
-#define SR(key) &mt RSFT key
+		#define GR(key) &mt RGUI key
+		#define CR(key) &mt RCTL key
+		#define AR(key) &mt RALT key
+		#define SR(key) &mt RSFT key
 
-#define LAT(layer) &mod_tog LALT layer
-#define RAT(layer) &mod_tog RALT layer
-#define LGT(layer) &mod_tog LGUI layer
-#define RGT(layer) &mod_tog RGUI layer
+		#define LAT(layer) &mod_tog LALT layer
+		#define RAT(layer) &mod_tog RALT layer
+		#define LGT(layer) &mod_tog LGUI layer
+		#define RGT(layer) &mod_tog RGUI layer
 
 		default_layer {
 			display-name = "BASE";
@@ -81,7 +89,7 @@
 			bindings = <
 				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
 				CL(EQUAL) &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S CR(MINUS)
-				SL(GRAVE) &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
+				&ls_tilde &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
 				LGT(1) AL(DEL) L1(BSPC) L2(SPACE) AR(RET) RGT(2)
 				>;
 		};
