@@ -40,7 +40,7 @@
 			flavor = "hold-preferred";
 			bindings = <&kp>, <&tog>;
 		};
-		ls_tilde: modifier_layer_tog {
+		ls_tilde: lshift_and_tilde {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <0>;
 			tapping_term_ms = <175>;
