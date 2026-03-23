@@ -43,7 +43,7 @@
 
 		sl_grave: sl_grave {
 			compatible = "zmk,behavior-hold-tap";
-			#binding-cells = <2>;
+			#binding-cells = <0>;
 			tapping_term_ms = <175>;
 			quick_tap_ms = <150>;
 			flavor = "hold-preferred";
