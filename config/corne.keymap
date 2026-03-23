@@ -66,7 +66,7 @@
 		#define GL(key) &mt LGUI key
 		#define CL(key) &mt LCTL key
 		#define AL(key) &mt LALT key
-		#define SL(key) &mt LSFT key
+		#define SL(key) &ls_tilde LSFT key
 
 		#define GR(key) &mt RGUI key
 		#define CR(key) &mt RCTL key
@@ -89,7 +89,7 @@
 			bindings = <
 				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
 				CL(EQUAL) &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S CR(MINUS)
-				&ls_tilde LSFT &re_tilde &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
+				SR(&re_tilde) &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
 				LGT(1) AL(DEL) L1(BSPC) L2(SPACE) AR(RET) RGT(2)
 				>;
 		};
