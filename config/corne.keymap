@@ -46,7 +46,7 @@
 			tapping_term_ms = <175>;
 			quick_tap_ms = <150>;
 			flavor = "hold-preferred";
-			bindings = <&kp> <&re_tilde>;
+			bindings = <&kp>, <&re_tilde>;
 		};
 	};
 
@@ -89,7 +89,7 @@
 			bindings = <
 				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
 				CL(EQUAL) &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S CR(MINUS)
-				&ls_tilde LSFT &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
+				&ls_tilde LSFT &re_tilde &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
 				LGT(1) AL(DEL) L1(BSPC) L2(SPACE) AR(RET) RGT(2)
 				>;
 		};
