@@ -81,9 +81,9 @@
 			 */
 			bindings = <
 				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
-				&kp EQUAL &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S &kp MINUS
+				CL(EQUAL) &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S CR(MINUS)
 				SL(GRAVE) &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
-				LGT(1) AL(DEL) CL(BSPC) CR(SPACE) AR(RET) RGT(2)
+				LGT(1) AL(DEL) L1(BSPC) L2(SPACE) AR(RET) RGT(2)
 				>;
 		};
 		num_layer {
@@ -114,21 +114,6 @@
 				___ XXX XXX XXX XXX XXX XXX &kp LEFT &kp K_APP &kp RIGHT &kp DEL ___
 				___ XXX XXX XXX XXX XXX XXX &kp END &kp DOWN &kp PG_DN &kp INS ___
 				___ ___ ___ ___ ___ ___
-				>;
-		};
-		fun_layer {
-			display-name = "FN";
-			/*
-			 *	___	___	___	___	___	XXX	XXX	F7	F8	F9	F11	___
-			 *	___	___	___	___	___	XXX	XXX	F4	F5	F6	___	___
-			 *	___	___	___	___	___	XXX	XXX	F1	F2	F3	F12	___
-			 *				___	___	___	___	F10	___
-			 */
-			bindings = <
-				___ ___ ___ ___ ___ XXX XXX &kp F7 &kp F8 &kp F9 &kp F11 ___
-				___ ___ ___ ___ ___ XXX XXX &kp F4 &kp F5 &kp F6 ___ ___
-				___ ___ ___ ___ ___ XXX XXX &kp F1 &kp F2 &kp F3 &kp F12 ___
-				___ ___ ___ ___ &kp F10 ___
 				>;
 		};
 	};
