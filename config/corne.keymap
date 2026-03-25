@@ -83,14 +83,14 @@
 			/*	L5	L4	L3	L2	L1	L0	R0	R1	R2	R3	R4	R5
 			 *  T	TAB	'	,	.	P	Y	F	G	C	R	L	/
 			 *  M	=	A	O	E	U	I	D	H	T	N	S	-
-			 *  B	`	;	Q	J	K	X	B	M	W	V	Z	\
-			 *  H				LY2	DEL	BSP	SPC	RET	LY1
+			 *  B	~	:	Q	J	K	X	B	M	W	V	Z	\
+			 *  H				GUI	DEL	BSP	SPC	RET	GUI
 			 */
 			bindings = <
 				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
 				CL(EQUAL) &kp A &kp O &kp E &kp U &kp I &kp D &kp H &kp T &kp N &kp S CR(MINUS)
 				SL(&re_tilde) &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z SR(BSLH)
-				LGT(1) AL(DEL) L1(BSPC) L2(SPACE) AR(RET) RGT(2)
+				LGUI AL(DEL) L1(BSPC) L2(SPACE) AR(RET) RGUI
 				>;
 		};
 		num_layer {
