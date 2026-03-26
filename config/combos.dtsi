@@ -13,7 +13,7 @@ COMBO(paste, &kp LC(V), LT1 LT3)	// p , -> C-V
 
 /* MAIN FUNCTIONS */
 COMBO(esc, &kp ESC, LT4 LT5)	// ' TAB -> ESC
-COMBO(caps, &kp CAPS, LB5 RB5)	// ` \ (both shifts) -> CAPS
+// COMBO(caps, &kp CAPS, LB5 RB5)	// ` \ (both shifts) -> CAPS
 
 /* SPECIAL CHARACTERS */
 COMBO(thorn, &thorn, RM1 RM2)	// h t -> þ

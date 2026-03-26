@@ -122,7 +122,7 @@
 				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
 				&kp EQUAL LHG(A) LHA(O) LHC(E) LHS(U) &kp I &kp D RHS(H) RHC(T) RHA(N) RHG(S) &kp MINUS
 				&re_tilde &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
-				&kp LGUI &kp DEL L1(BSPC) L2(SPACE) &kp RET &kp RGUI
+				&kp ESC &kp DEL L1(BSPC) L2(SPACE) &kp RET &kp CAPS
 				>;
 		};
 		num_layer {
@@ -137,7 +137,7 @@
 				___ XXX XXX XXX XXX XXX XXX &kp N7 &kp N8 &re_nine ___ ___
 				___ ___ ___ ___ ___ XXX XXX &kp N4 &kp N5 &kp N6 &kp DOT ___
 				___ XXX XXX XXX XXX XXX XXX &kp N1 &kp N2 &kp N3 &re_colon ___
-				___ ___ ___ &mo 3 &re_zero ___
+				___ ___ ___ ___ &re_zero ___
 				>;
 		};
 		nav_layer {
