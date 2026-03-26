@@ -62,12 +62,13 @@
 		hmr: homerow_mods_right {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
-			flavor = "hold-preferred";
+			flavor = "balanced";
 			tapping-term-ms = <280>;
 			quick-tap-ms = <150>;
 			require-prior-idle-ms = <150>;
 			bindings = <&kp>, <&kp>;
 			hold-trigger-key-positions = LEFT_SIDE;
+			hold-trigger-on-release;
 		};
 	};
 
@@ -119,7 +120,7 @@
 			 */
 			bindings = <
 				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
-				&kp EQUAL LHG(A) LHA(O) LHC(E) LHS(U) &kp I &kp D LHS(H) LHC(T) LHA(N) LHG(S) &kp MINUS
+				&kp EQUAL LHG(A) LHA(O) LHC(E) LHS(U) &kp I &kp D RHS(H) RHC(T) RHA(N) RHG(S) &kp MINUS
 				&re_tilde &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
 				&kp LGUI &kp DEL L1(BSPC) L2(SPACE) &kp RET &kp RGUI
 				>;
