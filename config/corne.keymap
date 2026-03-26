@@ -49,7 +49,7 @@
 			bindings = <&kp>, <&re_tilde>;
 		};
 		hml: homerow_mods_left {
-			compatible, = "zmk,behavior-hold-tap";
+			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "balanced";
 			tapping-term-ms = <280>;
@@ -60,7 +60,7 @@
 			hold-trigger-on-release;
 		};
 		hmr: homerow_mods_right {
-			compatible, = "zmk,behavior-hold-tap";
+			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
 			flavor = "balanced";
 			tapping-term-ms = <280>;
