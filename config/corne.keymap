@@ -65,7 +65,7 @@
 			flavor = "balanced";
 			tapping-term-ms = <280>;
 			quick-tap-ms = <150>;
-			require-prior-idle-ms = <150>;
+			require-prior-idle-ms = <100>;
 			bindings = <&kp>, <&kp>;
 			hold-trigger-key-positions = LEFT_SIDE;
 			hold-trigger-on-release;
