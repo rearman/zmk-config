@@ -50,7 +50,7 @@
 
 / {
 	macros {
-		#include "macros.dtsi";
+		#include "macros.dtsi"
 	};
 
 	behaviors {
