@@ -61,6 +61,7 @@
 	};
 
 	behaviors {
+		#include "swapped-keys.dtsi"
 		mod_tog: modifier_layer_tog {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
@@ -108,7 +109,6 @@
 
 	keymap {
 		compatible = "zmk,keymap";
-		#include "swapped-keys.dtsi"
 		default_layer {
 			display-name = "GROUND";
 			/*	L5	L4	L3	L2	L1	L0	R0	R1	R2	R3	R4	R5
