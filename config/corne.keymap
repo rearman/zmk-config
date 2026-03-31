@@ -116,7 +116,7 @@
 			 *  T	TAB	'	,	.	P	Y	F	G	C	R	L	/
 			 *  M	=	A	O	E	U	I	D	H	T	N	S	-
 			 *  B	~	:	Q	J	K	X	B	M	W	V	Z	\
-			 *  H				GUI	DEL	BSP	SPC	RET	GUI
+			 *  H				ESC	DEL	BSP	SPC	RET	CAPS
 			 */
 			bindings = <
 				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
