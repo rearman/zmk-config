@@ -51,24 +51,24 @@
 		hml: homerow_mods_left {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
-			flavor = "hold-preferred";
+			flavor = "balanced";
 			tapping-term-ms = <280>;
 			quick-tap-ms = <150>;
-			require-prior-idle-ms = <120>;
+			require-prior-idle-ms = <100>;
 			bindings = <&kp>, <&kp>;
 			hold-trigger-key-positions = RIGHT_SIDE;
-			// hold-trigger-on-release;
+			hold-trigger-on-release;
 		};
 		hmr: homerow_mods_right {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
-			flavor = "hold-preferred";
+			flavor = "balanced";
 			tapping-term-ms = <280>;
 			quick-tap-ms = <150>;
-			require-prior-idle-ms = <120>;
+			require-prior-idle-ms = <100>;
 			bindings = <&kp>, <&kp>;
 			hold-trigger-key-positions = LEFT_SIDE;
-			// hold-trigger-on-release;
+			hold-trigger-on-release;
 		};
 	};
 
@@ -111,7 +111,7 @@
 		#define RHS(key) &hmr RSFT key
 
 		default_layer {
-			display-name = "BASE";
+			display-name = "GROUND";
 			/*	L5	L4	L3	L2	L1	L0	R0	R1	R2	R3	R4	R5
 			 *  T	TAB	'	,	.	P	Y	F	G	C	R	L	/
 			 *  M	=	A	O	E	U	I	D	H	T	N	S	-
@@ -126,7 +126,7 @@
 				>;
 		};
 		num_layer {
-			display-name = "NUM";
+			display-name = "RIME";
 			/*
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	7	8	9	XXX	___
 			 *	___	___	___	___	___	XXX	XXX	4	5	6	.	___
@@ -141,7 +141,7 @@
 				>;
 		};
 		nav_layer {
-			display-name = "NAV";
+			display-name = "STEER";
 			/*
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	HOM	UP	PUP	PSC	___
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	LFT	APP	RHT	DEL	___
