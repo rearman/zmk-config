@@ -15,8 +15,8 @@
 #define L1(key) &lt 1 key
 #define L2(key) &lt 2 key
 #define L3(key) &lt 3 key
-#define L3(key) &lt 4 key
-#define L3(key) &lt 5 key
+#define L4(key) &lt 4 key
+#define L5(key) &lt 5 key
 
 #define GL(key) &mt LGUI key
 #define CL(key) &mt LCTL key
