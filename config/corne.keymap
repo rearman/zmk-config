@@ -51,24 +51,24 @@
 		hml: homerow_mods_left {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
-			flavor = "balanced";
+			flavor = "hold-preferred";
 			tapping-term-ms = <280>;
 			quick-tap-ms = <150>;
-			require-prior-idle-ms = <90>;
+			require-prior-idle-ms = <120>;
 			bindings = <&kp>, <&kp>;
 			hold-trigger-key-positions = RIGHT_SIDE;
-			hold-trigger-on-release;
+			// hold-trigger-on-release;
 		};
 		hmr: homerow_mods_right {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
-			flavor = "balanced";
+			flavor = "hold-preferred";
 			tapping-term-ms = <280>;
 			quick-tap-ms = <150>;
-			require-prior-idle-ms = <90>;
+			require-prior-idle-ms = <120>;
 			bindings = <&kp>, <&kp>;
 			hold-trigger-key-positions = LEFT_SIDE;
-			hold-trigger-on-release;
+			// hold-trigger-on-release;
 		};
 	};
 
@@ -128,16 +128,16 @@
 		num_layer {
 			display-name = "NUM";
 			/*
-			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	7	8	9	___	___
+			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	7	8	9	XXX	___
 			 *	___	___	___	___	___	XXX	XXX	4	5	6	.	___
-			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	1	2	3	___	___
+			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	1	2	3	:	___
 			 *				___	___	___	LY3	0	___
 			 */
 			bindings = <
-				___ XXX XXX XXX XXX XXX XXX &kp N7 &kp N8 &re_nine ___ ___
+				___ XXX XXX XXX XXX XXX XXX &kp N7 &kp N8 &re_nine XXX ___
 				___ ___ ___ ___ ___ XXX XXX &kp N4 &kp N5 &kp N6 &kp DOT ___
 				___ XXX XXX XXX XXX XXX XXX &kp N1 &kp N2 &kp N3 &re_colon ___
-				___ ___ ___ ___ &re_zero ___
+				___ ___ ___ &mo 3 &re_zero ___
 				>;
 		};
 		nav_layer {
@@ -146,13 +146,28 @@
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	HOM	UP	PUP	PSC	___
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	LFT	APP	RHT	DEL	___
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	END	DN	PDN	INS	___
-			 *				___	___	___	___	___	___
+			 *				___	___	LY3	___	___	___
 			 */
 			bindings = <
 				___ XXX XXX XXX XXX XXX XXX &kp HOME &kp UP &kp PG_UP &kp PSCRN ___
 				___ ___ ___ ___ ___ XXX XXX &kp LEFT &kp K_APP &kp RIGHT &kp DEL ___
 				___ XXX XXX XXX XXX XXX XXX &kp END &kp DOWN &kp PG_DN &kp INS ___
-				___ ___ ___ ___ ___ ___
+				___ ___ &mo 3 ___ ___ ___
+				>;
+		};
+		bt_layer {
+			display-name = "BT";
+			/*
+			 *	XXX	XXX	XXX	XXX	XXX	XXX	XXX	XXX	XXX	XXX	XXX	XXX
+			 *	XXX	XXX	XXX	XXX	XXX	XXX	XXX	BT4	BT5	BT6	XXX	XXX
+			 *	XXX	XXX	XXX	XXX	XXX	XXX	XXX	BT1	BT2	BT3	XXX	XXX
+			 *				XXX	XXX	___	___	XXX	XXX
+			 */
+			bindings = <
+				XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
+				XXX XXX XXX XXX XXX XXX XXX &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 XXX XXX
+				XXX XXX XXX XXX XXX XXX XXX &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 XXX XXX
+				XXX XXX ___ ___ XXX XXX
 				>;
 		};
 	};
