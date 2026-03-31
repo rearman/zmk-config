@@ -9,7 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include "42-keys.h"
-#include "swapped-keys.dtsi"
 
 #define MACRO(NAME, BINDINGS) \
 	NAME: NAME { \
@@ -109,6 +108,7 @@
 
 	keymap {
 		compatible = "zmk,keymap";
+		#include "swapped-keys.dtsi"
 		default_layer {
 			display-name = "GROUND";
 			/*	L5	L4	L3	L2	L1	L0	R0	R1	R2	R3	R4	R5
