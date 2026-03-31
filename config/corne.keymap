@@ -120,13 +120,13 @@
 		num_layer {
 			display-name = "#";
 			/*
-			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	7	8	9	XXX	___
+			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	7	8	9	=	___
 			 *	___	___	___	___	___	XXX	XXX	4	5	6	.	___
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	1	2	3	:	___
 			 *				___	___	___	LY3	0	___
 			 */
 			bindings = <
-				___ XXX XXX XXX XXX XXX XXX &kp N7 &kp N8 &re_nine XXX ___
+				___ XXX XXX XXX XXX XXX XXX &kp N7 &kp N8 &re_nine &kp EQUAL ___
 				___ ___ ___ ___ ___ XXX XXX &kp N4 &kp N5 &kp N6 &kp DOT ___
 				___ XXX XXX XXX XXX XXX XXX &kp N1 &kp N2 &kp N3 &re_colon ___
 				___ ___ ___ &mo 5 &re_zero ___
@@ -150,25 +150,25 @@
 		sym_layer {
 			display-name = "%";
 			/*
-			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	&	*	{	XXX	___
-			 *	___	___	___	___	___	XXX	XXX	$	%	^	.	___
-			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	!	@	#	:	___
-			 *				___	___	___	LY5	}	___
+			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	&	*	{	+	?
+			 *	___	___	___	___	___	XXX	XXX	$	%	^	.	_
+			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	!	@	#	:	|
+			 *				___	___	___	___	}	___
 			 */
 			bindings = <
-				___ XXX XXX XXX XXX XXX XXX &kp AMPS &kp ASTRK &kp LBRC XXX ___
-				___ ___ ___ ___ ___ XXX XXX &kp DLLR &kp PRCNT &kp CARET &kp DOT ___
-				___ XXX XXX XXX XXX XXX XXX &kp EXCL &kp AT &kp HASH &re_colon ___
+				___ XXX XXX XXX XXX XXX XXX &kp AMPS &kp ASTRK &kp LBRC &kp PLUS &kp QMARK
+				___ ___ ___ ___ ___ XXX XXX &kp DLLR &kp PRCNT &kp CARET &kp DOT &kp UNDER
+				___ XXX XXX XXX XXX XXX XXX &kp EXCL &kp AT &kp HASH &re_colon &kp PIPE
 				___ ___ ___ ___ &kp RBRC ___
 				>;
 		};
 		fun_layer {
 			display-name = "G";
 			/*
-			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	7	8	9	XXX	___
-			 *	___	___	___	___	___	XXX	XXX	4	5	6	.	___
-			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	1	2	3	:	___
-			 *				___	___	___	LY5	0	___
+			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	F7	F8	F9	XXX	___
+			 *	___	___	___	___	___	XXX	XXX	F4	F5	F6	F11	___
+			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	F1	F2	F3	F12	___
+			 *				___	___	___	___	F10	___
 			 */
 			bindings = <
 				___ XXX XXX XXX XXX XXX XXX &kp F7 &kp F8 &kp F9 XXX ___
