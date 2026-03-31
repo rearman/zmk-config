@@ -1,0 +1,11 @@
+#define MACRO(NAME, BINDINGS) \
+	NAME: NAME { \
+		compatible = "zmk,behavior-macro"; \
+		#binding-cells = <0>; \
+		wait-ms = <30>; \
+		tap-ms = <40>; \
+		bindings = <BINDINGS>; \
+	};
+
+MACRO(thorn, &kp PAUSE_BREAK &kp T &kp H)
+MACRO(eng, &kp PAUSE_BREAK &kp N &kp G)

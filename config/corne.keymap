@@ -10,15 +10,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include "42-keys.h"
 
-#define MACRO(NAME, BINDINGS) \
-	NAME: NAME { \
-		compatible = "zmk,behavior-macro"; \
-		#binding-cells = <0>; \
-		wait-ms = <30>; \
-		tap-ms = <40>; \
-		bindings = <BINDINGS>; \
-	};
-
 #define ___ &trans
 #define XXX &none
 #define L1(key) &lt 1 key
@@ -56,8 +47,7 @@
 
 / {
 	macros {
-		MACRO(thorn, &kp PAUSE_BREAK &kp T &kp H)
-		MACRO(eng, &kp PAUSE_BREAK &kp N &kp G)
+		#include "macros.dtsi";
 	};
 
 	behaviors {
@@ -110,7 +100,7 @@
 	keymap {
 		compatible = "zmk,keymap";
 		default_layer {
-			display-name = "GROUND";
+			display-name = "A";
 			/*	L5	L4	L3	L2	L1	L0	R0	R1	R2	R3	R4	R5
 			 *  T	TAB	'	,	.	P	Y	F	G	C	R	L	/
 			 *  M	=	A	O	E	U	I	D	H	T	N	S	-
@@ -125,7 +115,7 @@
 				>;
 		};
 		num_layer {
-			display-name = "RIME";
+			display-name = "#";
 			/*
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	7	8	9	XXX	___
 			 *	___	___	___	___	___	XXX	XXX	4	5	6	.	___
@@ -140,7 +130,7 @@
 				>;
 		};
 		nav_layer {
-			display-name = "STEER";
+			display-name = "^";
 			/*
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	HOM	UP	PUP	PSC	___
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	LFT	APP	RHT	DEL	___
@@ -155,7 +145,7 @@
 				>;
 		};
 		bt_layer {
-			display-name = "BT";
+			display-name = "@";
 			/*
 			 *	XXX	XXX	XXX	XXX	XXX	XXX	XXX	XXX	XXX	XXX	XXX	XXX
 			 *	XXX	XXX	XXX	XXX	XXX	XXX	XXX	BT4	BT5	BT6	XXX	XXX
