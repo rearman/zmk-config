@@ -10,7 +10,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include "42-keys.h"
 #include "swapped-keys.dtsi"
-#include "combos.dtsi"
 
 #define MACRO(NAME, BINDINGS) \
 	NAME: NAME { \
@@ -41,7 +40,7 @@
 #define LGT(layer) &mod_tog LGUI layer
 #define RGT(layer) &mod_tog RGUI layer
 
-#define LHG(key) &hmLGUI key
+#define LHG(key) &hml LGUI key
 #define LHA(key) &hml LALT key
 #define LHC(key) &hml LCTL key
 #define LHS(key) &hml LSFT key
@@ -105,6 +104,7 @@
 
 	combos {
 		compatible = "zmk,combos";
+		#include "combos.dtsi"
 	};
 
 	keymap {
