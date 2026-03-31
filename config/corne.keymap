@@ -16,12 +16,11 @@
 #define L2(key) &lt 2 key
 #define L3(key) &lt 3 key
 #define L4(key) &lt 4 key
-#define L5(key) &lt 5 key
 
 #define GL(key) &mt LGUI key
 #define CL(key) &mt LCTL key
 #define AL(key) &mt LALT key
-#define SL(key) &ls_tilde LSFT key
+#define SL(key) &mt LSFT key
 
 #define GR(key) &mt RGUI key
 #define CR(key) &mt RCTL key
@@ -112,7 +111,7 @@
 			 */
 			bindings = <
 				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
-				GL(EQUAL) L4(A) L3(O) L2(E) L1(U) &kp I &kp D &kp H &kp T &kp N &kp  GR(MINUS)
+				GL(EQUAL) L4(A) L3(O) L2(E) L1(U) &kp I &kp D &kp H &kp T &kp N &kp S GR(MINUS)
 				&re_tilde &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
 				AL(ESC) CL(DEL) SL(BSPC) SR(SPACE) CR(RET) AR(CAPS)
 				>;
@@ -123,7 +122,7 @@
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	7	8	9	=	___
 			 *	___	___	___	___	___	XXX	XXX	4	5	6	.	___
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	1	2	3	:	___
-			 *				___	___	___	LY3	0	___
+			 *				___	___	___	___	0	___
 			 */
 			bindings = <
 				___ XXX XXX XXX XXX XXX XXX &kp N7 &kp N8 &re_nine &kp EQUAL ___
