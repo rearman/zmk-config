@@ -20,17 +20,12 @@
 #define GL(key) &mt LGUI key
 #define CL(key) &mt LCTL key
 #define AL(key) &mt LALT key
-#define SL(key) &mt LSFT key
+#define SL(key) &ls_tilde LSFT key
 
 #define GR(key) &mt RGUI key
 #define CR(key) &mt RCTL key
 #define AR(key) &mt RALT key
 #define SR(key) &mt RSFT key
-
-#define LAT(layer) &mod_tog LALT layer
-#define RAT(layer) &mod_tog RALT layer
-#define LGT(layer) &mod_tog LGUI layer
-#define RGT(layer) &mod_tog RGUI layer
 
 #define LHG(key) &hml LGUI key
 #define LHA(key) &hml LALT key
@@ -54,14 +49,6 @@
 
 	behaviors {
 		#include "swapped-keys.dtsi"
-		mod_tog: modifier_layer_tog {
-			compatible = "zmk,behavior-hold-tap";
-			#binding-cells = <2>;
-			tapping_term_ms = <175>;
-			quick_tap_ms = <150>;
-			flavor = "hold-preferred";
-			bindings = <&kp>, <&tog>;
-		};
 		ls_tilde: lshift_and_tilde {
 			compatible = "zmk,behavior-hold-tap";
 			#binding-cells = <2>;
@@ -111,9 +98,9 @@
 			 */
 			bindings = <
 				&kp TAB &kp SQT &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L &kp FSLH
-				GL(EQUAL) L4(A) L3(O) L2(E) L1(U) &kp I &kp D &kp H &kp T &kp N &kp S GR(MINUS)
+				&kp EQUAL LHG(A) LHA(O) LHC(E) LHS(U) &kp I &kp D RHS(H) RHC(T) RHA(N) RHG(S) &kp MINUS
 				&re_tilde &re_colon &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp BSLH
-				AL(ESC) CL(DEL) SL(BSPC) SR(SPACE) CR(RET) AR(CAPS)
+				&kp ESC L3(DEL) L1(BSPC) L2(SPACE) &kp RET &kp CAPS
 				>;
 		};
 		num_layer {
@@ -122,13 +109,13 @@
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	7	8	9	=	___
 			 *	___	___	___	___	___	XXX	XXX	4	5	6	.	___
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	1	2	3	:	___
-			 *				___	___	___	___	0	___
+			 *				___	___	___	LY4	0	___
 			 */
 			bindings = <
 				___ XXX XXX XXX XXX XXX XXX &kp N7 &kp N8 &re_nine &kp EQUAL ___
 				___ ___ ___ ___ ___ XXX XXX &kp N4 &kp N5 &kp N6 &kp DOT ___
 				___ XXX XXX XXX XXX XXX XXX &kp N1 &kp N2 &kp N3 &re_colon ___
-				___ ___ ___ ___ &re_zero ___
+				___ ___ ___ &mo 4 &re_zero ___
 				>;
 		};
 		nav_layer {
@@ -137,13 +124,13 @@
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	HOM	UP	PUP	PSC	___
 			 *	___	___	___	___	___	XXX	XXX	LFT	APP	RHT	DEL	___
 			 *	___	XXX	XXX	XXX	XXX	XXX	XXX	END	DN	PDN	INS	___
-			 *				___	___	LY5	___	___	___
+			 *				___	___	LY4	___	___	___
 			 */
 			bindings = <
 				___ XXX XXX XXX XXX XXX XXX &kp HOME &kp UP &kp PG_UP &kp PSCRN ___
 				___ ___ ___ ___ ___ XXX XXX &kp LEFT &kp K_APP &kp RIGHT &kp DEL ___
 				___ XXX XXX XXX XXX XXX XXX &kp END &kp DOWN &kp PG_DN &kp INS ___
-				___ ___ ___ ___ ___ ___
+				___ ___ &mo 4 ___ ___ ___
 				>;
 		};
 		fun_layer {
@@ -171,9 +158,9 @@
 			 */
 			bindings = <
 				XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX XXX
-				XXX ___ XXX XXX XXX XXX XXX &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 XXX XXX
+				XXX XXX XXX XXX XXX XXX XXX &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 XXX XXX
 				XXX XXX XXX XXX XXX XXX XXX &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 XXX XXX
-				XXX XXX XXX XXX XXX XXX
+				XXX XXX ___ ___ XXX XXX
 				>;
 		};
 	};
