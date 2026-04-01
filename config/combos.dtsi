@@ -1,5 +1,6 @@
 #define COMBO(NAME, BINDINGS, KEYPOS) \
 	combo_##NAME { \
+		compatible = "zmk,combos"; \
 		timeout-ms = <50>; \
 		key-positions = <KEYPOS>; \
 		bindings = <BINDINGS>; \
