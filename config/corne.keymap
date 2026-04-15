@@ -34,7 +34,6 @@
 
 / {
 	macros {
-		compatible = "zmk,behavior-macro";
 		#include "macros.dtsi"
 	};
 
@@ -65,6 +64,7 @@
 	};
 
 	combos {
+		compatible = "zmk,combos";
 		#include "combos.dtsi"
 	};
 
