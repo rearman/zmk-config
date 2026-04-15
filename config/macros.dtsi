@@ -7,7 +7,7 @@
 		bindings = <BINDINGS>; \
 	};
 
-MACRO(eth, &kp PAUSE_BREAK &kp D &kp H)
+MACRO(oeth, &kp PAUSE_BREAK &kp D &kp H)
 MACRO(thorn, &kp PAUSE_BREAK &kp T &kp H)
 MACRO(eng, &kp PAUSE_BREAK &kp N &kp G)
 MACRO(wynn, &kp PAUSE_BREAK &kp W &kp Y)
