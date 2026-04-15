@@ -34,6 +34,7 @@
 
 / {
 	macros {
+		compatible = "zmk,behavior-macro";
 		#include "macros.dtsi"
 	};
 
