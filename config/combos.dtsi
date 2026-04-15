@@ -13,10 +13,10 @@ COMBO(copy, &kp LC(C), LT1 LT2 LT3)	// p . , -> C-C
 COMBO(paste, &kp LC(V), LT1 LT3)	// p , -> C-V
 
 /* SPECIAL CHARACTERS */
-COMBO(oeth, &oeth, RM0 RM1)	// d h -> ð
+//COMBO(oeth, &oeth, RM0 RM1)	// d h -> ð
 COMBO(thorn, &thorn, RM1 RM2)	// h t -> þ
 COMBO(eng, &eng, RT1 RM3)	// g n -> ŋ
-COMBO(wynn, &wynn, LT0 RB0)	// y w -> ƿ
+//COMBO(wynn, &wynn, LT0 RB0)	// y w -> ƿ
 
 COMBO(lpar, &re_lpar, LT3 LM3)	// , o -> (
 COMBO(rpar, &re_rpar, LT2 LM2)	// . e -> )
